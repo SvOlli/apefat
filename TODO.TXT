@@ -1,0 +1,12 @@
+
+- song delay option
+- song arrangement pattern
+- export
+- multiple bar tabs
+- save data on crash
+- cleanup 6502 simulator
+  - pull out Cpu6502Cfg into own .hpp
+  - add TIA simulation
+  - add sync (sta $00 = delay until new frame)
+- live play
+

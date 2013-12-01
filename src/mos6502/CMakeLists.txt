@@ -1,0 +1,24 @@
+#
+# src/apps/mos6502/CMakeLists.txt
+#
+# written by SvOlli
+# distributed as public domain
+#
+
+MESSAGE( STATUS "==== src/mos6502 ====" )
+
+PROJECT( mos6502 )
+
+INCLUDE( LocalTools )
+
+INCLUDE_DIRECTORIES(
+)
+
+ADD_SOURCE( cpu6502           cpp hpp )
+
+ADD_LIBRARY( mos6502
+   ${mos6502_HEADERS}
+   ${mos6502_SOURCES}
+)
+
+PROPAGATE_LIBRARY( mos6502 )
