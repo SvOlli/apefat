@@ -44,6 +44,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::updateMenus()
 {
+   QSettings settings;
    QMenuBar *mainMenuBar = menuBar();
    if( mainMenuBar )
    {
@@ -57,6 +58,10 @@ void MainWindow::updateMenus()
    fileMenu->addAction( tr("&Open"), mpMainWidget, SLOT(fileOpen()), QKeySequence( tr("Ctrl+O") ) );
    fileMenu->addAction( tr("&Save"), mpMainWidget, SLOT(fileSave()), QKeySequence( tr("Ctrl+S") ) );
    fileMenu->addAction( tr("E&xit"), qApp,         SLOT(quit()),     QKeySequence( tr("Ctrl+Q") ) );
+   QMenu *settingsMenu = mainMenuBar->addMenu( tr("&Settings") );
+   QAction *action = settingsMenu->addAction( tr("&Small screen mode"), mpMainWidget, SLOT(smallScreenMode(bool)) );
+   action->setCheckable( true );
+   action->setChecked( settings.value( "SmallScreenMode", false ).toBool() );
    setMenuBar( mainMenuBar );
 }
 

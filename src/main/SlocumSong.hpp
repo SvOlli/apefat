@@ -103,7 +103,7 @@ public:
     \param channel
     \param index
    */
-   bool insertBar( quint8 channel, quint8 index, const SlocumBar &bar );
+   bool insertBar( quint8 channel, quint8 index, const SlocumBar &bar = SlocumBar() );
    /*!
     \brief insert a bar at a specific place in song in one channel only
 

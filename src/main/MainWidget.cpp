@@ -18,6 +18,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QScrollArea>
+#include <QSettings>
 #include <QTabWidget>
 #include <QTextEdit>
 #include <QTimer>
@@ -47,7 +48,17 @@ MainWidget::MainWidget( QWidget *parent )
 , mpTabs( new QTabWidget( this ) )
 , mpSongTab( new SongTabWidget( mpSlocumSong, this ) )
 , mpBarsTab( new BarsTabWidget( mpSlocumSong, this ) )
+, mpBarsScrollArea( 0 )
 {
+   QSettings settings;
+   QVariant songData( settings.value( "SongData") );
+   if( songData.type() == QVariant::Map )
+   {
+      mpSlocumSong->fromVariantMap( songData.toMap() );
+      mpSongTab->setFromSong( mpSlocumSong );
+      mpBarsTab->setFromSong( mpSlocumSong );
+      mpBarsTab->setBar( 0 );
+   }
    QBoxLayout *mainLayout = new QVBoxLayout( this );
 
    //mpSlocumSong->setDefaults();
@@ -56,16 +67,7 @@ MainWidget::MainWidget( QWidget *parent )
    setLayout( mainLayout );
    mainLayout->addWidget( mpTabs );
    mpTabs->addTab( mpSongTab, tr("Song Parameter") );
-   if( false ) // small screen workaround
-   {
-      QScrollArea *scrollArea = new QScrollArea( this );
-      scrollArea->setWidget( mpBarsTab );
-      mpTabs->addTab( scrollArea, tr("Bar") );
-   }
-   else
-   {
-      mpTabs->addTab( mpBarsTab, tr("Bar") );
-   }
+   smallScreenMode( settings.value( "SmallScreenMode", false ).toBool() );
 
    // workaround for forcing to draw the barsWidget at least once
    mpTabs->setCurrentWidget( mpBarsTab );
@@ -75,6 +77,7 @@ MainWidget::MainWidget( QWidget *parent )
 
 MainWidget::~MainWidget()
 {
+   QSettings().setValue( "SongData", mpSlocumSong->toVariantMap() );
    delete mpSlocumSong;
 }
 
@@ -180,4 +183,33 @@ bool MainWidget::setSongFromJson( const QByteArray &data )
    mpBarsTab->setFromSong( mpSlocumSong );
    mpBarsTab->setBar( 0 );
    return ok;
+}
+
+
+void MainWidget::smallScreenMode( bool enabled )
+{
+   int index = mpTabs->currentIndex();
+   // small screen workaround, can't do this with the designer :-P
+   if( enabled )
+   {
+      mpTabs->removeTab( 1 );
+      if( !mpBarsScrollArea )
+      {
+         mpBarsScrollArea = new QScrollArea( this );
+      }
+      mpBarsScrollArea->setWidget( mpBarsTab );
+      mpTabs->addTab( mpBarsScrollArea, tr("Bar") );
+   }
+   else
+   {
+      mpTabs->removeTab( 1 );
+      mpTabs->addTab( mpBarsTab, tr("Bar") );
+      if( mpBarsScrollArea )
+      {
+         mpBarsScrollArea->deleteLater();
+         mpBarsScrollArea = 0;
+      }
+   }
+   mpTabs->setCurrentIndex( index );
+   QSettings().setValue( "SmallScreenMode", enabled );
 }

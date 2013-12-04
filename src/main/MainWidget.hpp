@@ -84,6 +84,14 @@ public slots:
    */
    bool setSongFromJson( const QByteArray &data );
 
+   /*!
+    \brief put in scroll areas for large widgets
+
+    \param enabled
+    \return bool
+   */
+   void smallScreenMode( bool enabled );
+
 private:
    Q_DISABLE_COPY( MainWidget )
 
@@ -92,8 +100,9 @@ private:
    SlocumSong           *mpSlocumSong; /*!< \brief song data */
    int                  mCurrentBar; /*!< \brief index of current bar */
    QTabWidget           *mpTabs; /*!< \brief tabs */
-   SongTabWidget        *mpSongTab;
-   BarsTabWidget        *mpBarsTab;
+   SongTabWidget        *mpSongTab; /*!< \brief widget for the song tab */
+   BarsTabWidget        *mpBarsTab; /*!< \brief widget for the bars tabs */
+   QScrollArea          *mpBarsScrollArea; /*!< \brief scroll area for the bars tabs */
 };
 
 #endif // MAINWIDGET_HPP
