@@ -75,7 +75,6 @@ public slots:
     \param index
    */
    void setTab( int index = 0 );
-
    /*!
     \brief set the song data from Json serialized data
 
@@ -83,7 +82,6 @@ public slots:
     \return data was valid
    */
    bool setSongFromJson( const QByteArray &data );
-
    /*!
     \brief put in scroll areas for large widgets
 
@@ -91,6 +89,12 @@ public slots:
     \return bool
    */
    void smallScreenMode( bool enabled );
+   /*!
+    \brief handle changed tab
+
+    \param tab
+   */
+   void tabChanged( int tab );
 
 private:
    Q_DISABLE_COPY( MainWidget )

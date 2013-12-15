@@ -21,7 +21,10 @@
 /* local headers */
 
 /* forward declaration of Qt classes */
-class QScrollArea;
+class QLabel;
+class QListView;
+class QPushButton;
+class QSpinBox;
 
 /* forward declaration of local classes */
 class BarWidget;
@@ -29,6 +32,8 @@ class HiHatWidget;
 class SoundWidget;
 class SlocumBar;
 class SlocumSong;
+class VoiceModel;
+class VoiceWidget;
 
 /*!
  \brief representing the tab "Song"
@@ -64,9 +69,21 @@ public slots:
    /*!
     \brief re-load configuration from song data
 
-    \param slocumSong
+    \param slocumSong (0: reload current)
    */
-   void setFromSong( const SlocumSong *slocumSong );
+   void setFromSong( SlocumSong *slocumSong = 0 );
+   /*!
+    \brief \todo
+
+    \param value
+   */
+   void changeSliders( int value );
+   /*!
+    \brief \todo
+
+    \param value
+   */
+   void setSongDelay( int value );
 
 protected:
 
@@ -76,7 +93,12 @@ private:
    SlocumSong           *mpSlocumSong; /*!< \brief song data to edit */
    HiHatWidget          *mpHiHatWidget; /*!< \brief hihat pattern */
    SoundWidget          *mpSoundWidget; /*!< \brief sound pattern */
-   QScrollArea          *mpChannels; /*!< \brief container for both channels */
+   QLabel               *mpDelayName; /*!< \brief \todo */
+   QSpinBox             *mpDelayValue; /*!< \brief \todo */
+   QPushButton          *mpLinkButton; /*!< \brief \todo */
+   QLabel               *mpUniqueInfo; /*!< \brief \todo */
+   VoiceWidget          *mpVoice0; /*!< \brief voice editing */
+   VoiceWidget          *mpVoice1; /*!< \brief voice editing */
 };
 
 #endif // SONGTABWIDGET_HPP

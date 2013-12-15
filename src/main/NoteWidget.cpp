@@ -33,7 +33,7 @@
 #include <QtDebug>
 
 
-const char NoteWidget::cMimeType[] = "x-vcs-tracker-note";
+const char NoteWidget::cMimeType[] = "x-apefat-note";
 bool       NoteWidget::cDragImage  = false;
 
 
@@ -51,7 +51,9 @@ NoteWidget::NoteWidget( const SlocumSong *slocumSong, SlocumNote *slocumNote, in
    mpLayout->addWidget( mpSound );
    mpLayout->addWidget( mpPitch );
    mpLayout->addWidget( mpAccent );
-   mpLayout->addStretch();
+   mpLayout->setStretch( 0, 4 );
+   mpLayout->setStretch( 1, 5 );
+   mpLayout->setStretch( 2, 1 );
    //mpLayout->addStretch();
    connect( mpSound, SIGNAL(valueChanged(quint8)),
             this, SLOT(setSoundValue(quint8)) );

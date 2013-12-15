@@ -65,86 +65,28 @@ public slots:
 
     \param slocumSong
    */
-   void setFromSong( const SlocumSong *slocumSong );
+   void setFromSong( SlocumSong *slocumSong );
    /*!
-    \brief move to a specific bar for both channels
+    \brief move to a specific bar for both voices
 
     \param bar
    */
    void setBar( int bar );
-   /*!
-    \brief move to first bar
-
-    Handler for \ref mpFirstButton
-
-   */
-   void moveFirst();
-   /*!
-    \brief move to previous bar
-
-    Handler for \ref mpPreviousButton
-
-   */
-   void movePrevious();
-   /*!
-    \brief move to next bar
-
-    Handler for \ref mpNextButton
-
-   */
-   void moveNext();
-   /*!
-    \brief move to last bar
-
-    Handler for \ref mpLastButton
-
-   */
-   void moveLast();
-   /*!
-    \brief insert a bar before current one
-
-    Handler for \ref mpAddBeforeButton
-
-   */
-   void insertBefore();
-   /*!
-    \brief insert a bar after current one
-
-    Handler for \ref mpAddAfterButton
-
-   */
-   void insertAfter();
 
 protected:
 
 signals:
-   /*!
-    \brief signalizes that a bar has been added
-
-   */
-   void barAdded();
-   /*!
-    \brief the current bar has changed
-
-    \param bar
-   */
-   void barChanged( int bar );
 
 private:
    Q_DISABLE_COPY( BarsTabWidget )
 
    SlocumSong           *mpSlocumSong; /*!< \brief song data to edit */
    int                  mCurrentBar; /*!< \brief the current bar */
-   BarWidget            *mpChannel0; /*!< \brief channel 0 */
-   BarWidget            *mpChannel1; /*!< \brief channel 1 */
+   BarWidget            *mpVoice0; /*!< \brief voice 0 */
+   BarWidget            *mpVoice1; /*!< \brief voice 1 */
    QLabel               *mpLeadInLabel; /*!< \brief label for left text */
    QLabel               *mpLeadOutLabel; /*!< \brief label for right text */
-   QPushButton          *mpFirstButton; /*!< \brief button for going to first bar */
-   QPushButton          *mpPreviousButton; /*!< \brief button for going to last bar */
-   QPushButton          *mpNextButton; /*!< \brief button for going to next bar */
-   QPushButton          *mpLastButton; /*!< \brief button for going to last bar */
-   QPushButton          *mpAddBeforeButton; /*!< \brief button for adding before current bar */
-   QPushButton          *mpAddAfterButton; /*!< \brief button for adding after current bar */
+   QPushButton          *mpLinkButton; /*!< \brief button for going to first bar */
 };
 
 #endif // BARSTABWIDGET_HPP

@@ -30,7 +30,7 @@
 /*!
  \brief data representation of a beat (8 notes)
 
- Up to 256 of these are used in \ref SlocumSong for each of the two channels.
+ Up to 256 of these are used in \ref SlocumSong for each of the two voices.
  User interaction is done using \ref BarWidget.
 
 */

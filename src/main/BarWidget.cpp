@@ -14,9 +14,11 @@
 /* Qt headers */
 #include <QBoxLayout>
 #include <QCheckBox>
+#include <QCommonStyle>
 #include <QDragEnterEvent>
 #include <QLabel>
 #include <QLineEdit>
+#include <QPushButton>
 
 /* local library headers */
 #include <json.h>
@@ -29,27 +31,44 @@
 #include <QtDebug>
 
 
-BarWidget::BarWidget( const SlocumSong *slocumSong, SlocumBar *slocumBar, QWidget *parent )
+BarWidget::BarWidget( SlocumSong *slocumSong, int voice, QWidget *parent )
 : QWidget( parent )
 , mpSlocumSong( slocumSong )
-, mpSlocumBar( slocumBar )
+, mpSlocumBar( mpSlocumSong->voice( voice )->bar( 0 ) )
 , mpSaveBar( 0 )
 , mpLayout( new QVBoxLayout( this ) )
+, mpPositionText( new QLabel( this ) )
+, mpFirstButton( new QPushButton( QCommonStyle().standardIcon( QStyle::SP_MediaSkipBackward ), "", this ) )
+, mpPreviousButton( new QPushButton( QCommonStyle().standardIcon( QStyle::SP_MediaSeekBackward ), "", this ) )
+, mpNextButton( new QPushButton( QCommonStyle().standardIcon( QStyle::SP_MediaSeekForward ), "", this ) )
+, mpLastButton( new QPushButton( QCommonStyle().standardIcon( QStyle::SP_MediaSkipForward ), "", this ) )
+, mpAddBeforeButton( new QPushButton( QCommonStyle().standardIcon( QStyle::SP_FileDialogNewFolder ), "", this ) )
+, mpAddAfterButton( new QPushButton( QCommonStyle().standardIcon( QStyle::SP_FileDialogNewFolder ), "", this ) )
 , mpLabelName( new QLabel( this ) )
 , mpValueName( new QLineEdit( this ) )
 , mpLowVolume( new QCheckBox( this ) )
+, mVoice( voice )
+, mBar( 0 )
 , mBeats()
 {
-   setEnabled( slocumBar );
+   QBoxLayout *posLayout  = new QHBoxLayout();
    QBoxLayout *nameLayout = new QHBoxLayout();
-   nameLayout->setContentsMargins( 2, 2, 2, 2 );
-   nameLayout->setSpacing( 2 );
-   nameLayout->addWidget( mpLabelName );
-   nameLayout->addWidget( mpValueName, 1 );
-   nameLayout->addWidget( mpLowVolume );
-   mpLayout->setSpacing( 2 );
-   mpLayout->setContentsMargins( 2, 2, 2, 2 );
+   mpLayout->addLayout( posLayout );
    mpLayout->addLayout( nameLayout );
+
+   posLayout->addWidget( mpFirstButton );
+   posLayout->addWidget( mpAddBeforeButton );
+   posLayout->addWidget( mpPreviousButton );
+   posLayout->addWidget( mpPositionText );
+   posLayout->addWidget( mpNextButton );
+   posLayout->addWidget( mpAddAfterButton );
+   posLayout->addWidget( mpLastButton );
+   posLayout->setStretch( 3, 1 );
+
+   nameLayout->addWidget( mpLabelName );
+   nameLayout->addWidget( mpValueName );
+   nameLayout->addWidget( mpLowVolume );
+   nameLayout->setStretch( 1, 1 );
 
    for( int i = 0; i < SlocumBar::size(); ++i )
    {
@@ -62,6 +81,20 @@ BarWidget::BarWidget( const SlocumSong *slocumSong, SlocumBar *slocumBar, QWidge
             this, SLOT(setLowVolume(bool)) );
    connect( mpValueName, SIGNAL(textChanged(QString)),
             this, SLOT(setName(QString)) );
+
+   connect( mpFirstButton, SIGNAL(clicked()),
+            this, SLOT(moveFirst()) );
+   connect( mpPreviousButton, SIGNAL(clicked()),
+            this, SLOT(movePrevious()) );
+   connect( mpNextButton, SIGNAL(clicked()),
+            this, SLOT(moveNext()) );
+   connect( mpLastButton, SIGNAL(clicked()),
+            this, SLOT(moveLast()) );
+   connect( mpAddBeforeButton, SIGNAL(clicked()),
+            this, SLOT(insertBefore()) );
+   connect( mpAddAfterButton, SIGNAL(clicked()),
+            this, SLOT(insertAfter()) );
+
    setTexts();
    setAcceptDrops( true );
 }
@@ -76,6 +109,10 @@ void BarWidget::setTexts()
 {
    mpLabelName->setText( tr("Name:") );
    mpLowVolume->setText( tr("Low Volume") );
+   mpPositionText->setText( tr("Voice %1 Bar %2/%3")
+                            .arg( mVoice )
+                            .arg( mBar + 1, 3, 10, QChar('0') )
+                            .arg( mpSlocumSong->size( mVoice ), 3, 10, QChar('0') ) );
 }
 
 
@@ -91,16 +128,29 @@ void BarWidget::setName( const QString &setname )
 }
 
 
-void BarWidget::setFromSong( const SlocumSong *slocumSong, SlocumBar *slocumBar )
+void BarWidget::setFromSong( SlocumSong *slocumSong, quint8 bar )
 {
    mpSlocumSong  = slocumSong;
-   mpSlocumBar   = slocumBar;
+   mpSlocumBar   = mpSlocumSong->voice( mVoice )->bar( bar );
    mpValueName->setText( mpSlocumBar->name );
    mpLowVolume->setChecked( mpSlocumBar->isLow );
    for( int i = 0; i < SlocumBar::size(); ++i )
    {
       mBeats.at( i )->setFromSong( mpSlocumSong, &(mpSlocumBar->beat[i]) );
    }
+
+   bool isFirst  = (bar <= 0);
+   bool isLast   = (bar >= mpSlocumSong->size( mVoice )-1);
+   bool maxedOut = (mpSlocumSong->size( mVoice ) == 256); // \todo remove hardwired "256"
+
+   mpFirstButton->setDisabled( isFirst );
+   mpPreviousButton->setDisabled( isFirst );
+   mpNextButton->setDisabled( isLast );
+   mpLastButton->setDisabled( isLast );
+   mpAddBeforeButton->setDisabled( maxedOut );
+   mpAddAfterButton->setDisabled( maxedOut );
+
+   setTexts();
 }
 
 
@@ -113,6 +163,26 @@ void BarWidget::setValues( const SlocumBar &bar )
    {
       mBeats.at( i )->setValues( bar.beat[i] );
    }
+}
+
+
+void BarWidget::setBar( int bar )
+{
+   if( bar >= mpSlocumSong->size( mVoice ) )
+   {
+      bar = mpSlocumSong->size( mVoice ) - 1;
+   }
+   if( bar < 0 )
+   {
+      bar = 0;
+   }
+   if( bar != mBar )
+   {
+      mBar = bar;
+      emit barChanged( mBar );
+   }
+
+   setFromSong( mpSlocumSong, mBar );
 }
 
 
@@ -225,4 +295,44 @@ BeatWidget *BarWidget::beatWidgetAt( const QPoint &pos )
       beatWidget = qobject_cast<BeatWidget*>(o);
    }
    return beatWidget;
+}
+
+
+void BarWidget::moveFirst()
+{
+   setBar( 0 );
+}
+
+
+void BarWidget::movePrevious()
+{
+   setBar( mBar - 1 );
+}
+
+
+void BarWidget::moveNext()
+{
+   setBar( mBar + 1 );
+}
+
+
+void BarWidget::moveLast()
+{
+   setBar( mpSlocumSong->size( mVoice ) - 1 );
+}
+
+
+void BarWidget::insertBefore()
+{
+   quint8 bar = mBar & 0xff;
+   mpSlocumSong->voice( mVoice )->insert( bar, SlocumBar() );
+   setBar( bar );
+}
+
+
+void BarWidget::insertAfter()
+{
+   quint8 bar = (mBar + 1) & 0xff;
+   mpSlocumSong->voice( mVoice )->insert( bar, SlocumBar() );
+   setBar( bar );
 }

@@ -25,12 +25,12 @@ SlocumSong::SlocumSong( const QString &setname )
 , mDelay( 0 )
 , mSound( mName )
 , mHiHat( mName )
-, mChannel()
+, mVoice()
 , mSongType( "slocum0" )
 {
    SlocumBar dummy;
-   mChannel[0].append( dummy );
-   mChannel[1].append( dummy );
+   mVoice[0].append( dummy );
+   mVoice[1].append( dummy );
 }
 
 
@@ -39,10 +39,18 @@ SlocumSong::SlocumSong( const QVariantMap &variantMap )
 , mDelay( 0 )
 , mSound()
 , mHiHat()
-, mChannel()
+, mVoice()
 , mSongType( "slocum0" )
 {
    fromVariantMap( variantMap );
+   if( mVoice[0].size() < 1 )
+   {
+      mVoice[0].append( SlocumBar() );
+   }
+   if( mVoice[1].size() < 1 )
+   {
+      mVoice[1].append( SlocumBar() );
+   }
 }
 
 
@@ -75,29 +83,34 @@ SlocumHiHat *SlocumSong::hihat()
 }
 
 
+SlocumBarList *SlocumSong::voice( int i )
+{
+   Q_ASSERT( (i>=0) && (i<2) );
+   return &mVoice[i];
+}
+
+
 QVariantMap SlocumSong::toVariantMap() const
 {
    QVariantMap variantMap;
-   QVariantList channels;
+   QVariantList voices;
 
-   Q_ASSERT( mChannel[0].size() == mChannel[1].size() );
-
-   for( int i = 0; i < mChannel[0].size(); ++i )
+   for( int c = 0; c < 2; ++c )
    {
-      QVariantMap entry;
-      QString channelPattern( "channel%1" );
-      for( int c = 0; c < 2; ++c )
+      QVariantList voice;
+      for( int i = 0; i < mVoice[c].size(); ++i )
       {
-         entry.insert( channelPattern.arg(c), mChannel[c].at(i).toVariantMap() );
+         voice.append( mVoice[c].at(i).toVariantMap() );
       }
-      channels.append( entry );
+      voices.append( QVariant(voice) );
    }
 
    variantMap.insert( "name", mName );
+   variantMap.insert( "delay", mDelay );
    variantMap.insert( "type", mSongType );
    variantMap.insert( "sound", mSound.toVariantMap() );
    variantMap.insert( "hihat", mHiHat.toVariantMap() );
-   variantMap.insert( "channels", channels );
+   variantMap.insert( "voices", voices );
 
    return variantMap;
 }
@@ -109,35 +122,51 @@ bool SlocumSong::fromVariantMap( const QVariantMap &variantMap )
    Q_ASSERT( variantMap.contains( "name" ) );
    mName = variantMap.value( "name" ).toString();
 
+#if 0
+   bool ok = true;
+   Q_ASSERT( variantMap.contains( "delay" ) );
+   mDelay = variantMap.value( "delay" ).toInt( ok );
+   Q_ASSERT( ok );
+#endif
+
    Q_ASSERT( variantMap.contains( "sound" ) );
    mSound.fromVariantMap( variantMap.value( "sound" ).toMap() );
 
    Q_ASSERT( variantMap.contains( "hihat" ) );
    mHiHat.fromVariantMap( variantMap.value( "hihat" ).toMap() );
 
-   Q_ASSERT( variantMap.contains( "channels" ) );
-   QVariantList channels( variantMap.value( "channels" ).toList() );
+   Q_ASSERT( variantMap.contains( "voices" ) );
+   QVariantList voices( variantMap.value( "voices" ).toList() );
 
 #if 0
    Q_ASSERT( variantMap.contains( "type" ) );
    Q_ASSERT( variantMap.value( "type" ).toString() == mSongType );
 #endif
 
-   mChannel[0].clear();
-   mChannel[1].clear();
+   mVoice[0].clear();
+   mVoice[1].clear();
    SlocumBar slocumBar;
-   QString channelPattern( "channel%1" );
-   foreach( const QVariant &entryMap, channels )
+
+   Q_ASSERT( voices.size() == 2 );
+   for( int c = 0; c < voices.size(); ++c )
    {
-      for( int c = 0; c < 2; ++c )
+      Q_ASSERT( voices.at(c).type() == QVariant::List );
+      QVariantList voice( voices.at(c).toList() );
+      for( int i = 0; i < voice.size(); ++i )
       {
-         QVariantMap entry( entryMap.toMap() );
-         Q_ASSERT( entry.contains( channelPattern.arg(c) ) );
-         slocumBar.fromVariantMap( entry.value( channelPattern.arg(c) ).toMap() );
-         mChannel[c].append( slocumBar );
+         slocumBar.fromVariantMap( voice.at(i).toMap() );
+         mVoice[c].append( slocumBar );
       }
    }
 
+   if( mVoice[0].size() < 1 )
+   {
+      mVoice[0].append( SlocumBar() );
+   }
+   if( mVoice[1].size() < 1 )
+   {
+      mVoice[1].append( SlocumBar() );
+   }
    return true;
 }
 
@@ -160,7 +189,7 @@ int SlocumSong::countUniqueBars( bool lowVolume )
 
    for( int c = 0; c < 2; ++c )
    {
-      foreach( const SlocumBar &bar, mChannel[c] )
+      foreach( const SlocumBar &bar, mVoice[c] )
       {
          // bar is patched, so the name is not considered in operator==
          // alternative: do not use const-ref and set bar.name=""
@@ -175,151 +204,51 @@ int SlocumSong::countUniqueBars( bool lowVolume )
 }
 
 
-void SlocumSong::sanitize()
+void SlocumSong::sanitize( quint8 voice )
 {
-   if( mChannel[0].size() == mChannel[1].size() )
+   if( !mVoice[0].size() )
+   {
+      mVoice[0].append( SlocumBar() );
+   }
+   if( !mVoice[1].size() )
+   {
+      mVoice[1].append( SlocumBar() );
+   }
+
+   if( mVoice[0].size() == mVoice[1].size() )
    {
       return;
    }
 
-   QList<SlocumBar> *pShortChannel = &mChannel[0];
-   QList<SlocumBar> *pLargeChannel = &mChannel[1];
-   if( pShortChannel->size() > pLargeChannel->size() )
+   QList<SlocumBar> *pShortVoice = &mVoice[0];
+   QList<SlocumBar> *pLargeVoice = &mVoice[1];
+   if( pShortVoice->size() > pLargeVoice->size() )
    {
-      pShortChannel = &mChannel[1];
-      pLargeChannel = &mChannel[0];
+      pShortVoice = &mVoice[1];
+      pLargeVoice = &mVoice[0];
    }
-   /* first run: remove empty patterns from larger channel */
-   while( (pLargeChannel->last().isEmpty()) &&
-          (pLargeChannel->size() > pShortChannel->size()) )
+   /* first run: remove empty patterns from larger voice */
+   /* only if it's not one being enlarged */
+   if( pLargeVoice != &mVoice[voice] )
    {
-      pLargeChannel->removeLast();
+      while( (pLargeVoice->last().isEmpty()) &&
+             (pLargeVoice->size() > pShortVoice->size()) )
+      {
+         pLargeVoice->removeLast();
+      }
    }
-   /* second run: pad shorter channel with empty patterns */
-   while( (pLargeChannel->size() > pShortChannel->size()) )
+   /* second run: pad shorter voice with empty patterns */
+   while( (pLargeVoice->size() > pShortVoice->size()) )
    {
-      pShortChannel->append( SlocumBar() );
+      pShortVoice->append( SlocumBar() );
    }
 
-   Q_ASSERT( mChannel[0].size() == mChannel[1].size() );
+   Q_ASSERT( mVoice[0].size() == mVoice[1].size() );
 }
 
 
-SlocumBar *SlocumSong::getBar( quint8 channel, quint8 index )
+int SlocumSong::size( quint8 voice )
 {
-   Q_ASSERT( channel < 2 );
-   return &(mChannel[channel][index]);
+   Q_ASSERT( voice < 2 );
+   return mVoice[voice].size();
 }
-
-
-bool SlocumSong::insertBar( quint8 channel, quint8 index, const SlocumBar &bar )
-{
-   Q_ASSERT( channel < 2 );
-   Q_ASSERT( index <= mChannel[channel].size() );
-   mChannel[channel].insert( index, bar );
-   sanitize();
-   return true;
-}
-
-
-void SlocumSong::deleteBar( quint8 channel, quint8 index )
-{
-   Q_ASSERT( channel < 2 );
-   Q_ASSERT( index < mChannel[channel].size() );
-   mChannel[channel].removeAt( index );
-   sanitize();
-}
-
-
-bool SlocumSong::insertBars( quint8 index )
-{
-   Q_ASSERT( index <= size() );
-   if( size() > 255 )
-   {
-      return false;
-   }
-   for( int c = 0; c < 2; ++c )
-   {
-      mChannel[c].insert( index, SlocumBar() );
-   }
-   sanitize();
-   return true;
-}
-
-
-void SlocumSong::deleteBars( quint8 index )
-{
-   Q_ASSERT( index < size() );
-   for( int c = 0; c < 2; ++c )
-   {
-      mChannel[c].removeAt( index );
-   }
-}
-
-
-void SlocumSong::moveBar( quint8 fromChannel, quint8 toChannel,
-                          quint8 fromIndex,   quint8 toIndex )
-{
-   Q_ASSERT( fromChannel < 2 );
-   Q_ASSERT( toChannel < 2 );
-   Q_ASSERT( fromIndex < mChannel[fromChannel].size() );
-   Q_ASSERT( toIndex <= mChannel[toChannel].size() );
-
-   mChannel[toChannel].insert( toIndex, mChannel[fromChannel].takeAt( fromIndex ) );
-   sanitize();
-}
-
-
-int SlocumSong::size()
-{
-   Q_ASSERT( mChannel[0].size() == mChannel[1].size() );
-   return mChannel[0].size();
-}
-
-
-#if 0
-void SlocumSong::setDefaults()
-{
-   mSound.type[0] = 4;
-   mSound.type[1] = 6;
-   mSound.type[2] = 7;
-   mSound.type[3] = 8;
-   mSound.type[4] = 15;
-   mSound.type[5] = 12;
-   mSound.type[6] = 1;
-   mSound.type[7] = 14;
-
-   mSound.atten[0] = 8;
-   mSound.atten[1] = 0;
-   mSound.atten[2] = 5;
-   mSound.atten[3] = 9;
-   mSound.atten[4] = 0;
-   mSound.atten[5] = 6;
-   mSound.atten[6] = 4;
-   mSound.atten[7] = 0;
-
-   mHiHat.start  = 0;
-   mHiHat.sound  = 8;
-   mHiHat.pitch  = 0;
-   mHiHat.volume = 7;
-
-   for( int i = 0; i < mHiHat.size(); ++i )
-   {
-      mHiHat.pattern[i] = false;
-   }
-   mHiHat.pattern[0] = true;
-   mHiHat.pattern[4] = true;
-   mHiHat.pattern[8] = true;
-   mHiHat.pattern[12] = true;
-   mHiHat.pattern[16] = true;
-   mHiHat.pattern[20] = true;
-   mHiHat.pattern[24] = true;
-   mHiHat.pattern[28] = true;
-   mHiHat.pattern[30] = true;
-
-   mChannel[0].clear();
-   mChannel[0].append( SlocumBar() );
-   mChannel[1].clear();
-   mChannel[1].append( SlocumBar() );
-}
-#endif

@@ -33,7 +33,7 @@
 #include <QtDebug>
 
 
-const char BeatWidget::cMimeType[] = "x-vcs-tracker-beat";
+const char BeatWidget::cMimeType[] = "x-apefat-beat";
 bool       BeatWidget::cDragImage  = false;
 
 

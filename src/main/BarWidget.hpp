@@ -25,6 +25,7 @@ class QBoxLayout;
 class QCheckBox;
 class QLabel;
 class QLineEdit;
+class QPushButton;
 
 /* forward declaration of local classes */
 class BeatWidget;
@@ -47,7 +48,7 @@ public:
     \param slocumBar
     \param parent
    */
-   explicit BarWidget( const SlocumSong *slocumSong, SlocumBar *slocumBar, QWidget *parent = 0 );
+   explicit BarWidget( SlocumSong *slocumSong, int voice, QWidget *parent = 0 );
    /*!
     \brief destructor
 
@@ -78,13 +79,69 @@ public slots:
     \param slocumSong pointer to global song data used for reading configuration
     \param slocumBar pointer to bar to edit
    */
-   void setFromSong( const SlocumSong *slocumSong, SlocumBar *slocumBar );
+   void setFromSong( SlocumSong *slocumSong, quint8 bar );
    /*!
     \brief set the values of the bar
 
     \param bar
    */
    void setValues( const SlocumBar &bar );
+   /*!
+    \brief move to a specific bar
+
+    \param bar
+   */
+   void setBar( int bar );
+   /*!
+    \brief move to first bar
+
+    Handler for \ref mpFirstButton
+
+   */
+   void moveFirst();
+   /*!
+    \brief move to previous bar
+
+    Handler for \ref mpPreviousButton
+
+   */
+   void movePrevious();
+   /*!
+    \brief move to next bar
+
+    Handler for \ref mpNextButton
+
+   */
+   void moveNext();
+   /*!
+    \brief move to last bar
+
+    Handler for \ref mpLastButton
+
+   */
+   void moveLast();
+   /*!
+    \brief insert a bar before current one
+
+    Handler for \ref mpAddBeforeButton
+
+   */
+   void insertBefore();
+   /*!
+    \brief insert a bar after current one
+
+    Handler for \ref mpAddAfterButton
+
+   */
+   void insertAfter();
+
+signals:
+   /*!
+    \brief the current bar has changed
+
+    \param bar
+   */
+   void barChanged( int bar );
 
 protected:
    /*!
@@ -130,13 +187,22 @@ private:
    */
    BeatWidget *beatWidgetAt( const QPoint &pos );
 
-   const SlocumSong        *mpSlocumSong; /*!< \brief pointer to song for reading configuration */
+   SlocumSong              *mpSlocumSong; /*!< \brief pointer to song for reading configuration */
    SlocumBar               *mpSlocumBar; /*!< \brief pointer of bar to edit */
    SlocumBar               *mpSaveBar; /*!< \brief bar saved for undoing drag'n'drop */
    QBoxLayout              *mpLayout; /*!< \brief main layout */
+   QLabel                  *mpPositionText; /*!< \brief info about current voice and bar */
+   QPushButton             *mpFirstButton; /*!< \brief button for going to first bar */
+   QPushButton             *mpPreviousButton; /*!< \brief button for going to last bar */
+   QPushButton             *mpNextButton; /*!< \brief button for going to next bar */
+   QPushButton             *mpLastButton; /*!< \brief button for going to last bar */
+   QPushButton             *mpAddBeforeButton; /*!< \brief button for adding before current bar */
+   QPushButton             *mpAddAfterButton; /*!< \brief button for adding after current bar */
    QLabel                  *mpLabelName; /*!< \brief label for name */
    QLineEdit               *mpValueName; /*!< \brief value for name */
    QCheckBox               *mpLowVolume; /*!< \brief value for low volume bar */
+   const quint8            mVoice; /*!< \brief current voice */
+   quint8                  mBar;  /*!< \brief current bar */
    QList<BeatWidget*>      mBeats; /*!< \brief list of beats in this bar */
 };
 

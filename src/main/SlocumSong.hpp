@@ -18,7 +18,7 @@
 /* local library headers */
 
 /* local headers */
-#include "SlocumBar.hpp"
+#include "SlocumBarList.hpp"
 #include "SlocumHiHat.hpp"
 #include "SlocumSound.hpp"
 
@@ -41,6 +41,7 @@
  manipulation.
 
 */
+
 class SlocumSong
 {
 public:
@@ -87,65 +88,11 @@ public:
    */
    SlocumHiHat *hihat();
    /*!
-    \brief get a specific bar of the song
+    \brief pointer to the songs hi hat configuration
 
-    \param channel 0 or 1
-    \param index
-    \return SlocumBar
+    \return SlocumHiHat
    */
-   SlocumBar *getBar( quint8 channel, quint8 index );
-   /*!
-    \brief insert a bar at a specific place in song in one channel only
-
-    the other channel will be automatically padded, if the current channel does
-    not end in an empty one
-
-    \param channel
-    \param index
-   */
-   bool insertBar( quint8 channel, quint8 index, const SlocumBar &bar = SlocumBar() );
-   /*!
-    \brief insert a bar at a specific place in song in one channel only
-
-    the other channel will be automatically padded, if the current channel does
-    not end in an empty one
-
-    \param channel
-    \param index
-   */
-   void deleteBar( quint8 channel, quint8 index );
-   /*!
-    \brief insert a bar at a specific place in song in both channels
-
-    \param index
-   */
-   bool insertBars( quint8 index );
-   /*!
-    \brief delete a bar at a specific place in song in both channels
-
-    Song must always have at least on bar, so deleting the final bar is not
-    possible. This can fail, since the number of bars is limited to 256.
-
-    \param index
-    \return bool
-   */
-   void deleteBars( quint8 index );
-   /*!
-    \brief move one bar inside one channel
-
-    \param fromChannel 0 or 1
-    \param toChannel 0 or 1
-    \param fromIndex
-    \param toIndex
-   */
-   void moveBar( quint8 fromChannel, quint8 toChannel,
-                 quint8 fromIndex,   quint8 toIndex );
-   /*!
-    \brief return number of bars in the song
-
-    \return int
-   */
-   int size();
+   SlocumBarList *voice( int i );
 
    /*!
     \brief serialize data
@@ -180,32 +127,31 @@ public:
     \return int
    */
    int countUniqueBars( bool lowVolume );
-
-#if 0
    /*!
-    \brief reset the data
+    \brief return number of bars in a voice
 
+    \param voice id of voice (0 or 1)
+    \return int
    */
-   void setDefaults();
-#endif
+   int size( quint8 voice );
 
 private:
    /*!
     \brief make sure constrains for an editable song is met
 
     This method is used internally only to make sure that the song contains at
-    least one bar, and the number of bars for each channel is the same. This is
-    done by removing empty bars at the end of the larger channel, or if this is
-    not possible, by padding the shorter channel with empty bars.
+    least one bar, and the number of bars for each voice is the same. This is
+    done by removing empty bars at the end of the larger voice, or if this is
+    not possible, by padding the shorter voice with empty bars.
 
    */
-   void sanitize();
+   void sanitize( quint8 voice );
 
    QString           mName; /*!< \brief informal name of the song */
    int               mDelay; /*!< \brief delay (speed) */
    SlocumSound       mSound; /*!< \brief sound configuration */
    SlocumHiHat       mHiHat; /*!< \brief hihat configuration */
-   QList<SlocumBar>  mChannel[2]; /*!< \brief both channel  */
+   SlocumBarList     mVoice[2]; /*!< \brief both voice  */
    const QString     mSongType; /*!< \brief currently only "slocum0", intended to distinguish different formats */
 };
 

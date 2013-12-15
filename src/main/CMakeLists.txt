@@ -20,17 +20,16 @@ INCLUDE_DIRECTORIES(
 )
 
 ADD_SOURCE( Application          cpp         )
-ADD_SOURCE( BarPreviewWidget     cpp hpp moc )
 ADD_SOURCE( BarWidget            cpp hpp moc )
 ADD_SOURCE( BarsTabWidget        cpp hpp moc )
 ADD_SOURCE( BeatWidget           cpp hpp moc )
-ADD_SOURCE( ChannelWidget        cpp hpp moc )
 ADD_SOURCE( HiHatWidget          cpp hpp moc )
 ADD_SOURCE( MainWindow           cpp hpp moc )
 ADD_SOURCE( MainWidget           cpp hpp moc )
 ADD_SOURCE( NoteWidget           cpp hpp moc )
 ADD_SOURCE( PitchComboBox        cpp hpp moc )
 ADD_SOURCE( SlocumBar            cpp hpp     )
+ADD_SOURCE( SlocumBarList        cpp hpp     )
 ADD_SOURCE( SlocumBeat           cpp hpp     )
 ADD_SOURCE( SlocumHiHat          cpp hpp     )
 ADD_SOURCE( SlocumNote           cpp hpp     )
@@ -39,6 +38,9 @@ ADD_SOURCE( SlocumSound          cpp hpp     )
 ADD_SOURCE( SongTabWidget        cpp hpp moc )
 ADD_SOURCE( SoundComboBox        cpp hpp moc )
 ADD_SOURCE( SoundWidget          cpp hpp moc )
+ADD_SOURCE( Trace                cpp hpp     )
+ADD_SOURCE( VoiceModel           cpp hpp moc )
+ADD_SOURCE( VoiceWidget          cpp hpp moc )
 
 QT4_WRAP_CPP( apefat_MOC_GENERATED
    ${apefat_MOC_HEADERS}

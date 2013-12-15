@@ -42,8 +42,8 @@ int main()
 #endif
 
 
-Cpu6502::Cpu6502(Cpu6502Cfg *_cfg)
-: cfg( _cfg )
+Cpu6502::Cpu6502( Cpu6502Cfg *cfg )
+: mpCfg( cfg )
 {
 }
 
@@ -103,11 +103,13 @@ void Cpu6502::reset()
    this->clk = 0;
    this->clkcount = 0;
 
-   cfg->reset();
+   mpCfg->reset();
 }
+
 
 void Cpu6502::invalid()
 {
+   mpCfg->invalid();
 }
 
 

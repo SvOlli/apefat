@@ -38,7 +38,7 @@
 
 #include <QtDebug>
 
-const char MainWidget::cFileExtension[] = ".json";
+const char MainWidget::cFileExtension[] = ".psmk";
 
 
 MainWidget::MainWidget( QWidget *parent )
@@ -66,12 +66,11 @@ MainWidget::MainWidget( QWidget *parent )
 
    setLayout( mainLayout );
    mainLayout->addWidget( mpTabs );
-   mpTabs->addTab( mpSongTab, tr("Song Parameter") );
+   mpTabs->addTab( mpSongTab, tr("Song") ); //!< \todo move to setText()
    smallScreenMode( settings.value( "SmallScreenMode", false ).toBool() );
-
-   // workaround for forcing to draw the barsWidget at least once
-   mpTabs->setCurrentWidget( mpBarsTab );
-   QTimer::singleShot( 1, this, SLOT(setTab()) );
+   connect( mpTabs, SIGNAL(currentChanged(int)),
+            this, SLOT(tabChanged(int)) );
+   tabChanged( 0 );
 }
 
 
@@ -85,7 +84,7 @@ MainWidget::~MainWidget()
 void MainWidget::fileOpen()
 {
    QString fileName( QFileDialog::getOpenFileName( this, tr("Open File:"), QDir::homePath(),
-                                                   tr("VCS Tracker File (*%1)").arg( cFileExtension ) ) );
+                                                   tr("Paul Slocum Music Kit (*%1)").arg( cFileExtension ) ) );
 
    if( !fileName.isEmpty() )
    {
@@ -105,7 +104,7 @@ void MainWidget::fileOpen()
 void MainWidget::fileSave()
 {
    QString fileName( QFileDialog::getSaveFileName( this, tr("Save File:"), QDir::homePath(),
-                                                   tr("VCS Tracker File (*%1)").arg( cFileExtension ) ) );
+                                                   tr("Paul Slocum Music Kit (*%1)").arg( cFileExtension ) ) );
 
    if( !fileName.endsWith( cFileExtension ) )
    {
@@ -196,6 +195,7 @@ void MainWidget::smallScreenMode( bool enabled )
       if( !mpBarsScrollArea )
       {
          mpBarsScrollArea = new QScrollArea( this );
+         mpBarsScrollArea->setAlignment( Qt::AlignCenter );
       }
       mpBarsScrollArea->setWidget( mpBarsTab );
       mpTabs->addTab( mpBarsScrollArea, tr("Bar") );
@@ -212,4 +212,13 @@ void MainWidget::smallScreenMode( bool enabled )
    }
    mpTabs->setCurrentIndex( index );
    QSettings().setValue( "SmallScreenMode", enabled );
+}
+
+
+void MainWidget::tabChanged( int tab )
+{
+   if( tab == 0 )
+   {
+      mpSongTab->setTexts();
+   }
 }

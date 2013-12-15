@@ -54,7 +54,7 @@ public:
    void u_stoshr( unsigned int val, ADDRESS address, BYTE index );
 
 private:
-   Cpu6502Cfg *cfg;
+   Cpu6502Cfg *mpCfg;
    ADDRESS     pc;
    BYTE        status;
    BYTE        stack;
@@ -100,14 +100,14 @@ private:
 #define S_ZERO        0x02
 #define S_CARRY       0x01
 
-#define LOAD(a)               (cfg->peek(a))
+#define LOAD(a)               (mpCfg->peek(a))
 #define LOADEXEC(a)           LOAD(a)
 #define DLOAD(a)              LOAD(a)
 #define LOAD_ZERO(a)          LOAD((ADDRESS)a)
 #define LOAD_ADDR(a)          ((LOADEXEC(a+1)<<8)+LOADEXEC(a))
 #define LOAD_ZERO_ADDR(a)     LOAD_ADDR(a)
 
-#define STORE(a,b)            (cfg->poke((a),(b)))
+#define STORE(a,b)            (mpCfg->poke((a),(b)))
 #define STORE_ZERO(a,b)       STORE(((ADDRESS)a),(b))
 
 #define PUSH(b)               STORE(SP+0x100,(b));SP--

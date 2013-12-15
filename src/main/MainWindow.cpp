@@ -54,10 +54,15 @@ void MainWindow::updateMenus()
    mainMenuBar->setObjectName( "MainMenu" );
    //todo: move to setText()
    QMenu *fileMenu = mainMenuBar->addMenu( tr("&File") );
+   QKeySequence quitSequence( QKeySequence::Quit );
+   if( quitSequence.isEmpty() )
+   {
+      quitSequence = QKeySequence( tr("Ctrl+Q") );
+   }
    fileMenu->setObjectName( "FileMenu" );
-   fileMenu->addAction( tr("&Open"), mpMainWidget, SLOT(fileOpen()), QKeySequence( tr("Ctrl+O") ) );
-   fileMenu->addAction( tr("&Save"), mpMainWidget, SLOT(fileSave()), QKeySequence( tr("Ctrl+S") ) );
-   fileMenu->addAction( tr("E&xit"), qApp,         SLOT(quit()),     QKeySequence( tr("Ctrl+Q") ) );
+   fileMenu->addAction( tr("&Open"), mpMainWidget, SLOT(fileOpen()), QKeySequence( QKeySequence::Open ) );
+   fileMenu->addAction( tr("&Save"), mpMainWidget, SLOT(fileSave()), QKeySequence( QKeySequence::Save ) );
+   fileMenu->addAction( tr("E&xit"), qApp,         SLOT(quit()),     quitSequence );
    QMenu *settingsMenu = mainMenuBar->addMenu( tr("&Settings") );
    QAction *action = settingsMenu->addAction( tr("&Small screen mode"), mpMainWidget, SLOT(smallScreenMode(bool)) );
    action->setCheckable( true );
