@@ -204,7 +204,7 @@ int SlocumSong::countUniqueBars( bool lowVolume )
 }
 
 
-void SlocumSong::sanitize( quint8 voice )
+void SlocumSong::sanitize()
 {
    if( !mVoice[0].size() )
    {
@@ -228,14 +228,10 @@ void SlocumSong::sanitize( quint8 voice )
       pLargeVoice = &mVoice[0];
    }
    /* first run: remove empty patterns from larger voice */
-   /* only if it's not one being enlarged */
-   if( pLargeVoice != &mVoice[voice] )
+   while( (pLargeVoice->last().isEmpty()) &&
+          (pLargeVoice->size() > pShortVoice->size()) )
    {
-      while( (pLargeVoice->last().isEmpty()) &&
-             (pLargeVoice->size() > pShortVoice->size()) )
-      {
-         pLargeVoice->removeLast();
-      }
+      pLargeVoice->removeLast();
    }
    /* second run: pad shorter voice with empty patterns */
    while( (pLargeVoice->size() > pShortVoice->size()) )

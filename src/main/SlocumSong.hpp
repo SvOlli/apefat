@@ -134,19 +134,17 @@ public:
     \return int
    */
    int size( quint8 voice );
-
-private:
    /*!
     \brief make sure constrains for an editable song is met
 
-    This method is used internally only to make sure that the song contains at
-    least one bar, and the number of bars for each voice is the same. This is
-    done by removing empty bars at the end of the larger voice, or if this is
-    not possible, by padding the shorter voice with empty bars.
-
+    Make sure that the song contains at least one bar, and the number of bars
+    for each voice is the same. This is done by removing empty bars at the end
+    of the larger voice, or if this is not possible, by padding the shorter
+    voice with empty bars.
    */
-   void sanitize( quint8 voice );
+   void sanitize();
 
+private:
    QString           mName; /*!< \brief informal name of the song */
    int               mDelay; /*!< \brief delay (speed) */
    SlocumSound       mSound; /*!< \brief sound configuration */

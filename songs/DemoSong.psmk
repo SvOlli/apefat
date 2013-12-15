@@ -1,0 +1,8137 @@
+{
+  "delay" : 0,
+  "hihat" : {
+   "name" : "Slocum Demo Song HiHat Pattern",
+   "patterns" : [
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    false ],
+   "pitch" : 0,
+   "sound" : 8,
+   "start" : 0,
+   "volume" : 7 },
+  "name" : "",
+  "sound" : {
+   "name" : "Slocum Demo Song Sound Configuration",
+   "sounds" : [
+    {
+     "atten" : 8,
+     "type" : 4 },
+    {
+     "atten" : 0,
+     "type" : 6 },
+    {
+     "atten" : 5,
+     "type" : 7 },
+    {
+     "atten" : 9,
+     "type" : 8 },
+    {
+     "atten" : 0,
+     "type" : 15 },
+    {
+     "atten" : 6,
+     "type" : 12 },
+    {
+     "atten" : 4,
+     "type" : 1 },
+    {
+     "atten" : 0,
+     "type" : 14 } ] },
+  "type" : "slocum0",
+  "voices" : [
+   [
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern1" },
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern2" },
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern1" },
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1c",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 } ] } ],
+     "islow" : false,
+     "name" : "Pattern3" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern128" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern129" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern128" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern129" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern128" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern129" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern128" },
+    {
+     "beats" : [
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern128" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern129" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern128" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern129" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern128" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern129" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern128" },
+    {
+     "beats" : [
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern128" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern129" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern128" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern129" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern128" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1c",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 23,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern129" },
+    {
+     "beats" : [
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1a",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 19,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Bass1b",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 14,
+         "sound" : 1 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : true,
+     "name" : "Pattern128" },
+    {
+     "beats" : [
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "" } ],
+   [
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern1" },
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern2" },
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern1" },
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1c",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 } ] } ],
+     "islow" : false,
+     "name" : "Pattern3" },
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern1" },
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern2" },
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern1" },
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1c",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 } ] } ],
+     "islow" : false,
+     "name" : "Pattern3" },
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern1" },
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern2" },
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern1" },
+    {
+     "beats" : [
+      {
+       "name" : "Kickdrum1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1c",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 } ] } ],
+     "islow" : false,
+     "name" : "Pattern3" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 12,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern4" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 12,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickMel1d",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 6 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 27,
+         "sound" : 6 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern5" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 12,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern4" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1c",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 0 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 25,
+         "sound" : 0 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 28,
+         "sound" : 0 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickMel1e",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 2,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1c",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 } ] } ],
+     "islow" : false,
+     "name" : "Pattern6" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 12,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern4" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 12,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickMel1d",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 6 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 27,
+         "sound" : 6 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern5" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 12,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern4" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1c",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 0 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 25,
+         "sound" : 0 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 28,
+         "sound" : 0 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickMel1e",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 2,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1c",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 } ] } ],
+     "islow" : false,
+     "name" : "Pattern6" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 12,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern4" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 12,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickMel1d",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 6 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 27,
+         "sound" : 6 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern5" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 12,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern4" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1c",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 0 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 25,
+         "sound" : 0 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 28,
+         "sound" : 0 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickMel1e",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 2,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1c",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 } ] } ],
+     "islow" : false,
+     "name" : "Pattern6" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 12,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern4" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 12,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickMel1d",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 6 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 27,
+         "sound" : 6 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern5" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 12,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 5 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickDrum1b",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "Pattern4" },
+    {
+     "beats" : [
+      {
+       "name" : "KickMel1c",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 30,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 22,
+         "sound" : 0 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 25,
+         "sound" : 0 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 28,
+         "sound" : 0 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1a",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "KickMel1e",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 30,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 2,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "Snare1c",
+       "notes" : [
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : true,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 3 },
+        {
+         "accent" : false,
+         "pitch" : 4,
+         "sound" : 4 },
+        {
+         "accent" : false,
+         "pitch" : 5,
+         "sound" : 3 } ] } ],
+     "islow" : false,
+     "name" : "Pattern6" } ] ] }

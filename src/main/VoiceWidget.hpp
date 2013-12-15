@@ -61,18 +61,51 @@ public:
    */
    void setFromSong( SlocumSong *slocumSong );
 
+   /*!
+    \brief \todo
+
+    \return int
+   */
+   int count();
+
+   /*!
+    \brief \todo
+
+    Will only set to count if data ends with enough empty bars.
+
+    \param count
+    \return bool
+   */
+   bool setCount( int count );
+
 public slots:
    /*!
     \brief \todo
 
    */
-#if 1
    void setText();
+   /*!
+    \brief \todo
+
+   */
    void copy();
+   /*!
+    \brief \todo
+
+   */
    void cut();
+   /*!
+    \brief \todo
+
+   */
    void paste();
 
 signals:
+   /*!
+    \brief \todo
+
+   */
+   void sizeChanged();
 
 protected:
    /*!
@@ -81,8 +114,12 @@ protected:
     \param event
    */
    virtual void keyPressEvent( QKeyEvent *event );
+   /*!
+    \brief for handling context menu
+
+    \param event
+   */
    virtual void contextMenuEvent( QContextMenuEvent *event );
-#endif
 
 private:
    Q_DISABLE_COPY( VoiceWidget )

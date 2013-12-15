@@ -39,6 +39,10 @@ MainWindow::MainWindow( QWidget *parent, Qt::WindowFlags flags )
 
 MainWindow::~MainWindow()
 {
+   if( mClearSettingsOnExit )
+   {
+      QSettings().clear();
+   }
 }
 
 
@@ -67,7 +71,16 @@ void MainWindow::updateMenus()
    QAction *action = settingsMenu->addAction( tr("&Small screen mode"), mpMainWidget, SLOT(smallScreenMode(bool)) );
    action->setCheckable( true );
    action->setChecked( settings.value( "SmallScreenMode", false ).toBool() );
+   settingsMenu->addSeparator();
+   action = settingsMenu->addAction( tr("&Clear settings on exit"), this, SLOT(setClearSettingsOnExit(bool)) );
+   action->setCheckable( true );
    setMenuBar( mainMenuBar );
+}
+
+
+void MainWindow::setClearSettingsOnExit( bool enabled )
+{
+   mClearSettingsOnExit = enabled;
 }
 
 

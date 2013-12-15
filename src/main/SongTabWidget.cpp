@@ -95,12 +95,18 @@ SongTabWidget::SongTabWidget( SlocumSong *slocumSong, QWidget *parent )
    connect( mpVoice1, SIGNAL(sizeChanged()),
             this, SLOT(setFromSong()) );
 #endif
+   connect( mpDelayValue, SIGNAL(valueChanged(int)),
+            this, SLOT(setSongDelay(int)) );
    connect( mpVoice0->verticalScrollBar(), SIGNAL(valueChanged(int)),
             this, SLOT(changeSliders(int)) );
    connect( mpVoice1->verticalScrollBar(), SIGNAL(valueChanged(int)),
             this, SLOT(changeSliders(int)) );
-   connect( mpDelayValue, SIGNAL(valueChanged(int)),
-            this, SLOT(setSongDelay(int)) );
+   connect( mpVoice0, SIGNAL(sizeChanged()),
+            this, SLOT(cleanup()) );
+   connect( mpVoice1, SIGNAL(sizeChanged()),
+            this, SLOT(cleanup()) );
+   connect( mpLinkButton, SIGNAL(clicked()),
+            this, SLOT(cleanup()) );
    setTexts();
 }
 
@@ -132,6 +138,32 @@ void SongTabWidget::setFromSong( SlocumSong *slocumSong )
    mpSoundWidget->setFromSong( mpSlocumSong );
    mpVoice0->setFromSong( mpSlocumSong );
    mpVoice1->setFromSong( mpSlocumSong );
+}
+
+
+void SongTabWidget::cleanup()
+{
+   if( mpLinkButton->isChecked() )
+   {
+      VoiceWidget *shortVoice = 0;
+      VoiceWidget *longVoice  = 0;
+      if( mpVoice0->count() == mpVoice1->count() )
+      {
+         return;
+      }
+      else if( mpVoice0->count() < mpVoice1->count() )
+      {
+         shortVoice = mpVoice0;
+         longVoice  = mpVoice1;
+      }
+      else
+      {
+         shortVoice = mpVoice1;
+         longVoice  = mpVoice0;
+      }
+      longVoice->setCount( shortVoice->count() );
+      shortVoice->setCount( longVoice->count() );
+   }
 }
 
 

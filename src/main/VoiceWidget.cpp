@@ -41,9 +41,13 @@ VoiceWidget::VoiceWidget( SlocumSong *slocumSong, int voice, QWidget *parent )
    setDropIndicatorShown( true );
    viewport()->setAcceptDrops( true );
    setModel( mpVoiceModel );
-
    setContextMenuPolicy( Qt::ActionsContextMenu );
    setDragDropMode( QAbstractItemView::DragDrop );
+
+   connect( mpVoiceModel, SIGNAL(rowsInserted(QModelIndex,int,int)),
+            this, SIGNAL(sizeChanged()) );
+   connect( mpVoiceModel, SIGNAL(rowsRemoved(QModelIndex,int,int)),
+            this, SIGNAL(sizeChanged()) );
    setText();
 }
 
@@ -60,7 +64,37 @@ void VoiceWidget::setFromSong( SlocumSong *slocumSong )
 }
 
 
-#if 1
+int VoiceWidget::count()
+{
+   return mpVoiceModel->rowCount();
+}
+
+
+bool VoiceWidget::setCount( int count )
+{
+   while( count > mpVoiceModel->rowCount() )
+   {
+      int nextRow = mpVoiceModel->rowCount();
+      mpVoiceModel->insertRow( nextRow );
+   }
+   while( count < mpVoiceModel->rowCount() )
+   {
+      int row = mpVoiceModel->rowCount() - 1;
+      SlocumBar bar( mpVoiceModel->data( mpVoiceModel->index( row ), Qt::UserRole).toMap() );
+      if( bar.isEmpty() )
+      {
+         mpVoiceModel->removeRow( row );
+      }
+      else
+      {
+         /* should not remove valid data */
+         return false;
+      }
+   }
+   return true;
+}
+
+
 void VoiceWidget::setText()
 {
    QList<QAction*> actionList( actions() );
@@ -157,5 +191,3 @@ void VoiceWidget::keyPressEvent( QKeyEvent *event )
 
    QListView::keyPressEvent( event );
 }
-
-#endif

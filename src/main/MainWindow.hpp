@@ -54,6 +54,12 @@ public slots:
 
    */
    void updateMenus();
+   /*!
+    \brief \todo
+
+    \param enabled
+   */
+   void setClearSettingsOnExit( bool enabled );
 
 protected:
    /*!
@@ -75,6 +81,7 @@ private:
 
    int                  mForbidMove; /*!< \brief counter for compiz-fusion workaround */
    MainWidget           *mpMainWidget; /*!< \brief the main widget */
+   bool                 mClearSettingsOnExit; /*!< \brief uninstall replacement */
 };
 
 #endif

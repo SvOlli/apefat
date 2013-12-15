@@ -75,6 +75,11 @@ public slots:
    /*!
     \brief \todo
 
+   */
+   void cleanup();
+   /*!
+    \brief \todo
+
     \param value
    */
    void changeSliders( int value );
