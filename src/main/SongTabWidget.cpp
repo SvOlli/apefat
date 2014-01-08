@@ -134,6 +134,7 @@ void SongTabWidget::setFromSong( SlocumSong *slocumSong )
    {
       mpSlocumSong = slocumSong;
    }
+   mpDelayValue->setValue( mpSlocumSong->delay() );
    mpHiHatWidget->setFromSong( mpSlocumSong );
    mpSoundWidget->setFromSong( mpSlocumSong );
    mpVoice0->setFromSong( mpSlocumSong );

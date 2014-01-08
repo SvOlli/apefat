@@ -42,7 +42,7 @@ public:
 class Cpu6502
 {
 public:
-   Cpu6502( Cpu6502Cfg *_cfg );
+   Cpu6502( Cpu6502Cfg *cfg );
    virtual ~Cpu6502();
    void dump();
    void step();

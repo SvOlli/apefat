@@ -143,6 +143,27 @@ public:
     voice with empty bars.
    */
    void sanitize();
+   /*!
+    \brief \todo
+
+    \param quint8
+    \return QString
+   */
+   static QString toHex( quint8 value );
+   /*!
+    \brief \todo
+
+    \param quint8
+    \return QString
+   */
+   static QString toBinary( quint8 value );
+
+   /*!
+    \brief export song to source code
+
+    \return QByteArray
+   */
+   QByteArray toSourceCode();
 
 private:
    QString           mName; /*!< \brief informal name of the song */

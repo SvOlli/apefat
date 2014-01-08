@@ -74,7 +74,8 @@ QVariant VoiceModel::data( const QModelIndex &index, int role ) const
    case Qt::DisplayRole:
    case Qt::EditRole:
       {
-         QString text( bar->name );
+         QString text( QString("%1:%2").arg( QString::number(index.row()).rightJustified(3,'0'), bar->name ) );
+
          for( int i = 0; i < SlocumBar::size(); ++i )
          {
             text.append( QString("\n> %1").arg(bar->beat[i].name) );
@@ -153,7 +154,9 @@ bool VoiceModel::removeRows( int row, int count, const QModelIndex &parent )
 
 void VoiceModel::setSlocumSong( SlocumSong *slocumSong )
 {
+   beginResetModel();
    mpSlocumSong = slocumSong;
+   endResetModel();
 }
 
 

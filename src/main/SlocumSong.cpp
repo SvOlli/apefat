@@ -19,6 +19,7 @@
 
 
 #include <QtDebug>
+#include "json.h"
 
 SlocumSong::SlocumSong( const QString &setname )
 : mName( setname )
@@ -122,12 +123,10 @@ bool SlocumSong::fromVariantMap( const QVariantMap &variantMap )
    Q_ASSERT( variantMap.contains( "name" ) );
    mName = variantMap.value( "name" ).toString();
 
-#if 0
    bool ok = true;
    Q_ASSERT( variantMap.contains( "delay" ) );
-   mDelay = variantMap.value( "delay" ).toInt( ok );
+   mDelay = variantMap.value( "delay" ).toInt( &ok );
    Q_ASSERT( ok );
-#endif
 
    Q_ASSERT( variantMap.contains( "sound" ) );
    mSound.fromVariantMap( variantMap.value( "sound" ).toMap() );
@@ -204,6 +203,13 @@ int SlocumSong::countUniqueBars( bool lowVolume )
 }
 
 
+int SlocumSong::size( quint8 voice )
+{
+   Q_ASSERT( voice < 2 );
+   return mVoice[voice].size();
+}
+
+
 void SlocumSong::sanitize()
 {
    if( !mVoice[0].size() )
@@ -243,8 +249,189 @@ void SlocumSong::sanitize()
 }
 
 
-int SlocumSong::size( quint8 voice )
+QString SlocumSong::toHex( quint8 value )
 {
-   Q_ASSERT( voice < 2 );
-   return mVoice[voice].size();
+   QString retval( QString::number( value, 16 ) );
+   retval = retval.rightJustified( 2, '0' );
+   retval.prepend( "$" );
+   return retval;
+}
+
+
+QString SlocumSong::toBinary( quint8 value )
+{
+   QString retval( QString::number( value, 2 ) );
+   retval = retval.rightJustified( 8, '0' );
+   retval.prepend( "%" );
+   return retval;
+}
+
+
+QByteArray SlocumSong::toSourceCode()
+{
+   /*! \todo make template editable */
+   SlocumBarList patternsLow;
+   SlocumBarList patternsHigh;
+   QList<SlocumBeat> beatStore;
+   QStringList voice0;
+   QStringList voice1;
+   QStringList patternArrayLlsb;
+   QStringList patternArrayLmsb;
+   QStringList patternArrayHlsb;
+   QStringList patternArrayHmsb;
+   QStringList beats;
+   QStringList soundAttenArray;
+   QStringList soundTypeArray;
+   QString hatPattern;
+
+   QString tmplString(
+            "\n"
+            ".define TEMPODELAY %TEMPODELAY%\n"
+            "\n"
+            "soundTypeArray:\n"
+            "   .byte %SOUNDTYPEARRAY%\n"
+            "\n"
+            "soundAttenArray:\n"
+            "   .byte %SOUNDATTENARRAY%\n"
+            "\n"
+            "hatPattern:\n"
+            "   .byte %HATPATTERN%\n"
+            "\n"
+            ".define HATSTART  %HATSTART%\n"
+            ".define HATVOLUME %HATVOLUME%\n"
+            ".define HATPITCH  %HATPITCH%\n"
+            ".define HATSOUND  %HATSOUND%\n"
+            "\n"
+            "song1:\n"
+            "%VOICE0%\n"
+            "song2:\n"
+            "%VOICE1%\n"
+            "\n"
+            "patternArrayHlsb:\n"
+            "%PATTERNARRAYHLSB%\n"
+            "patternArrayHmsb:\n"
+            "%PATTERNARRAYHMSB%\n"
+            "patternArrayLlsb:\n"
+            "%PATTERNARRAYLLSB%\n"
+            "patternArrayLmsb:\n"
+            "%PATTERNARRAYLMSB%\n"
+            "\n"
+            "%BEATS%\n"
+            );
+
+   sanitize();
+
+   for( int i = 0; i < SlocumSound::size(); ++i )
+   {
+      soundAttenArray.append( toHex( mSound.atten[i] ) );
+      soundTypeArray.append( toHex( mSound.type[i] ) );
+   }
+
+   for( int i = 0; i < SlocumHiHat::size(); ++i )
+   {
+      if( (i % 8) == 0 )
+      {
+         hatPattern.append( '%' );
+      }
+      hatPattern.append( mHiHat.pattern[i] ? '1' : '0' );
+      if( (i % 8) == 7 )
+      {
+         hatPattern.append( ',' );
+      }
+   }
+   Q_ASSERT( hatPattern.endsWith(',') );
+   hatPattern.chop(1); // cut off last ','
+
+   SlocumBarList voiceList;
+   voiceList.append( mVoice[0] );
+   voiceList.append( mVoice[1] );
+
+   foreach( const SlocumBar &bar, voiceList )
+   {
+      SlocumBarList &list = bar.isLow ? patternsLow : patternsHigh;
+      if( !list.contains( bar ) )
+      {
+         list.append( bar );
+      }
+      for( int i = 0; i < SlocumBar::size(); ++i )
+      {
+         if( !beatStore.contains( bar.beat[i] ) )
+         {
+            beatStore.append( bar.beat[i] );
+         }
+      }
+   }
+   foreach( const SlocumBar &bar, mVoice[0] )
+   {
+      int index = bar.isLow ? patternsLow.indexOf( bar ) | 128 : patternsHigh.indexOf( bar );
+      voice0.append( QString("   .byte %1 ; %2").arg( QString::number(index), bar.name ) );
+   }
+   foreach( const SlocumBar &bar, mVoice[1] )
+   {
+      int index = bar.isLow ? patternsLow.indexOf( bar ) | 128 : patternsHigh.indexOf( bar );
+      voice1.append( QString("   .byte %1 ; %2").arg( QString::number(index), bar.name ) );
+   }
+
+   foreach( const SlocumBar &bar, patternsHigh )
+   {
+      QStringList msb;
+      QStringList lsb;
+      for( int i = 0; i < SlocumBar::size(); ++i )
+      {
+         int index = beatStore.indexOf( bar.beat[i] );
+         lsb.append( QString("<beat%1").arg(index) );
+         msb.append( QString(">beat%1").arg(index) );
+      }
+
+      patternArrayHlsb.append( QString("   .byte %1 ; %2").arg(lsb.join(","), bar.name) );
+      patternArrayHmsb.append( QString("   .byte %1 ; %2").arg(msb.join(","), bar.name) );
+   }
+   foreach( const SlocumBar &bar, patternsLow )
+   {
+      QStringList msb;
+      QStringList lsb;
+      for( int i = 0; i < SlocumBar::size(); ++i )
+      {
+         int index = beatStore.indexOf( bar.beat[i] );
+         lsb.append( QString("<beat%1").arg(index) );
+         msb.append( QString(">beat%1").arg(index) );
+      }
+
+      patternArrayLlsb.append( QString("   .byte %1 ; %2").arg(lsb.join(","), bar.name) );
+      patternArrayLmsb.append( QString("   .byte %1 ; %2").arg(msb.join(","), bar.name) );
+   }
+
+   for( int i = 0; i < beatStore.size(); ++i )
+   {
+      beats.append( QString("beat%1: ; %2").arg(QString::number(i),beatStore[i].name) );
+      const SlocumBeat &beat = beatStore[i];
+      QStringList notes;
+      quint8 accent = 0;
+      for( int n = 0; n < SlocumBeat::size(); ++n )
+      {
+         notes.append( toBinary( (beat.note[n].sound << 5) | beat.note[n].pitch ) );
+         accent <<= 1;
+         accent |= beat.note[n].accent ? 1 : 0;
+      }
+      notes.append( toBinary( accent ) );
+      beats.append( QString("   .byte %1").arg(notes.join(",")) );
+   }
+
+   tmplString.replace( "%TEMPODELAY%", QString::number(mDelay) );
+   tmplString.replace( "%SOUNDTYPEARRAY%", soundTypeArray.join(",") );
+   tmplString.replace( "%SOUNDATTENARRAY%", soundAttenArray.join(",") );
+   tmplString.replace( "%HATPATTERN%", hatPattern );
+   tmplString.replace( "%HATSTART%", QString::number(mHiHat.start) );
+   tmplString.replace( "%HATVOLUME%", QString::number(mHiHat.volume) );
+   tmplString.replace( "%HATPITCH%", QString::number(mHiHat.pitch) );
+   tmplString.replace( "%HATSOUND%", QString::number(mHiHat.sound) );
+   tmplString.replace( "%VOICE0%", voice0.join("\n") );
+   tmplString.replace( "%VOICE1%", voice1.join("\n") );
+   tmplString.replace( "%PATTERNARRAYHLSB%", patternArrayHlsb.join("\n") );
+   tmplString.replace( "%PATTERNARRAYHMSB%", patternArrayHmsb.join("\n") );
+   tmplString.replace( "%PATTERNARRAYLLSB%", patternArrayLlsb.join("\n") );
+   tmplString.replace( "%PATTERNARRAYLMSB%", patternArrayLmsb.join("\n") );
+   tmplString.replace( "%BEATS%", beats.join("\n") );
+
+   return tmplString.toUtf8();
 }

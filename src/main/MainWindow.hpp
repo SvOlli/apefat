@@ -63,12 +63,6 @@ public slots:
 
 protected:
    /*!
-    \brief intercept for writing the settings
-
-    \param event
-   */
-   virtual void closeEvent( QCloseEvent *event );
-   /*!
     \brief very ugly workaround for wrong position restoration on compiz-fusion
 
     \param event

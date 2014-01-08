@@ -70,6 +70,11 @@ public slots:
    */
    void fileSave();
    /*!
+    \brief open a file save dialog and export data in sourcecode format to selected file
+
+   */
+   void fileExport();
+   /*!
     \brief set the current tab
 
     \param index

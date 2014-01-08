@@ -83,7 +83,11 @@ MainWidget::~MainWidget()
 
 void MainWidget::fileOpen()
 {
-   QString fileName( QFileDialog::getOpenFileName( this, tr("Open File:"), QDir::homePath(),
+   QSettings settings;
+   settings.beginGroup( "Paths" );
+   QString songDir( settings.value("SongDirectory", QDir::homePath()).toString() );
+
+   QString fileName( QFileDialog::getOpenFileName( this, tr("Open File:"), songDir,
                                                    tr("Paul Slocum Music Kit (*%1)").arg( cFileExtension ) ) );
 
    if( !fileName.isEmpty() )
@@ -95,6 +99,7 @@ void MainWidget::fileOpen()
          {
             setSongFromJson( file.readAll() );
             file.close();
+            settings.setValue( "SongDirectory", QFileInfo(fileName).absolutePath() );
          }
       }
    }
@@ -103,15 +108,19 @@ void MainWidget::fileOpen()
 
 void MainWidget::fileSave()
 {
-   QString fileName( QFileDialog::getSaveFileName( this, tr("Save File:"), QDir::homePath(),
+   QSettings settings;
+   settings.beginGroup( "Paths" );
+   QString songDir( settings.value("SongDirectory", QDir::homePath()).toString() );
+
+   QString fileName( QFileDialog::getSaveFileName( this, tr("Save File:"), songDir,
                                                    tr("Paul Slocum Music Kit (*%1)").arg( cFileExtension ) ) );
 
-   if( !fileName.endsWith( cFileExtension ) )
-   {
-      fileName.append( cFileExtension );
-   }
    if( !fileName.isEmpty() )
    {
+      if( !fileName.endsWith( cFileExtension ) )
+      {
+         fileName.append( cFileExtension );
+      }
       QFile file( fileName );
       if( file.open( QIODevice::WriteOnly ) )
       {
@@ -163,6 +172,29 @@ void MainWidget::fileSave()
          }
          file.write( saveData );
          file.close();
+         settings.setValue( "SongDirectory", QFileInfo(fileName).absolutePath() );
+      }
+   }
+}
+
+
+void MainWidget::fileExport()
+{
+   QSettings settings;
+   settings.beginGroup( "Paths" );
+   QString songName( settings.value("ExportFile", QDir::homePath()).toString() );
+
+   QString fileName( QFileDialog::getSaveFileName( this, tr("Export File:"), songName,
+                                                   tr("All files(*)") ) );
+
+   if( !fileName.isEmpty() )
+   {
+      QFile file( fileName );
+      if( file.open( QIODevice::WriteOnly ) )
+      {
+         file.write( mpSlocumSong->toSourceCode() );
+         file.close();
+         settings.setValue( "ExportFile", fileName );
       }
    }
 }

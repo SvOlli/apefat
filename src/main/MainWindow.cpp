@@ -24,6 +24,7 @@ MainWindow::MainWindow( QWidget *parent, Qt::WindowFlags flags )
 : QMainWindow( parent, flags )
 , mForbidMove( 50 )
 , mpMainWidget( new MainWidget( this ) )
+, mClearSettingsOnExit( false )
 {
    QSettings settings;
    setCentralWidget( mpMainWidget );
@@ -39,9 +40,16 @@ MainWindow::MainWindow( QWidget *parent, Qt::WindowFlags flags )
 
 MainWindow::~MainWindow()
 {
+   QSettings settings;
    if( mClearSettingsOnExit )
    {
-      QSettings().clear();
+      settings.sync();
+      settings.clear();
+   }
+   else
+   {
+      settings.setValue( "Geometry", saveGeometry() );
+      settings.setValue( "State",    saveState() );
    }
 }
 
@@ -64,9 +72,10 @@ void MainWindow::updateMenus()
       quitSequence = QKeySequence( tr("Ctrl+Q") );
    }
    fileMenu->setObjectName( "FileMenu" );
-   fileMenu->addAction( tr("&Open"), mpMainWidget, SLOT(fileOpen()), QKeySequence( QKeySequence::Open ) );
-   fileMenu->addAction( tr("&Save"), mpMainWidget, SLOT(fileSave()), QKeySequence( QKeySequence::Save ) );
-   fileMenu->addAction( tr("E&xit"), qApp,         SLOT(quit()),     quitSequence );
+   fileMenu->addAction( tr("&Open"),   mpMainWidget, SLOT(fileOpen()),   QKeySequence( QKeySequence::Open ) );
+   fileMenu->addAction( tr("&Save"),   mpMainWidget, SLOT(fileSave()),   QKeySequence( QKeySequence::Save ) );
+   fileMenu->addAction( tr("&Export"), mpMainWidget, SLOT(fileExport()), QKeySequence( tr("Ctrl+E") ) );
+   fileMenu->addAction( tr("E&xit"),   qApp,         SLOT(quit()),       quitSequence );
    QMenu *settingsMenu = mainMenuBar->addMenu( tr("&Settings") );
    QAction *action = settingsMenu->addAction( tr("&Small screen mode"), mpMainWidget, SLOT(smallScreenMode(bool)) );
    action->setCheckable( true );
@@ -96,14 +105,4 @@ bool MainWindow::event( QEvent *event )
       --mForbidMove;
    }
    return QWidget::event( event );
-}
-
-
-void MainWindow::closeEvent( QCloseEvent *event )
-{
-   QSettings settings;
-   settings.setValue( "Geometry", saveGeometry() );
-   settings.setValue( "State",    saveState() );
-
-   event->accept();
 }
