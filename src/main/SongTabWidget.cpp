@@ -27,6 +27,7 @@
 /* local headers */
 #include "BarWidget.hpp"
 #include "HiHatWidget.hpp"
+#include "PlayerWidget.hpp"
 #include "SoundWidget.hpp"
 #include "SlocumSong.hpp"
 #include "VoiceWidget.hpp"
@@ -43,6 +44,7 @@ SongTabWidget::SongTabWidget( SlocumSong *slocumSong, QWidget *parent )
 , mpDelayName( new QLabel( this ) )
 , mpDelayValue( new QSpinBox( this ) )
 , mpLinkButton( new QPushButton( this ) )
+, mpPlayerWidget( new PlayerWidget( this ) )
 , mpUniqueInfo( new QLabel( this ) )
 , mpVoice0( new VoiceWidget( mpSlocumSong, 0, this ) )
 , mpVoice1( new VoiceWidget( mpSlocumSong, 1, this ) )
@@ -76,6 +78,7 @@ SongTabWidget::SongTabWidget( SlocumSong *slocumSong, QWidget *parent )
    speedLayout->addWidget( mpDelayValue );
    speedLayout->addWidget( mpLinkButton );
    speedLayout->addWidget( mpUniqueInfo );
+   speedLayout->addWidget( mpPlayerWidget );
    speedLayout->addStretch( 1 );
    songLayout->addLayout( speedLayout );
 
@@ -139,6 +142,7 @@ void SongTabWidget::setFromSong( SlocumSong *slocumSong )
    mpSoundWidget->setFromSong( mpSlocumSong );
    mpVoice0->setFromSong( mpSlocumSong );
    mpVoice1->setFromSong( mpSlocumSong );
+   mpPlayerWidget->setFromSong( mpSlocumSong );
 }
 
 

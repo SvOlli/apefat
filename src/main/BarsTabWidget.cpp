@@ -39,15 +39,24 @@ BarsTabWidget::BarsTabWidget( SlocumSong *slocumSong, QWidget *parent )
 , mpLeadInLabel( new QLabel( this ) )
 , mpLeadOutLabel( new QLabel( this ) )
 , mpLinkButton( new QPushButton( this ) )
+, mpPlayButton( new QPushButton( this ) )
 {
    mpLinkButton->setCheckable( true );
    mpLinkButton->setChecked( true );
+   mpPlayButton->setCheckable( true );
+   mpPlayButton->setDisabled( true );
+
    QBoxLayout *layout = new QHBoxLayout( this );
+   QBoxLayout *buttonLayout = new QVBoxLayout();
    layout->setContentsMargins( 0, 0, 0, 0 );
 
    layout->addWidget( mpLeadInLabel );
    layout->addWidget( mpVoice0 );
-   layout->addWidget( mpLinkButton );
+   buttonLayout->addStretch( 1 );
+   buttonLayout->addWidget( mpPlayButton );
+   buttonLayout->addWidget( mpLinkButton );
+   buttonLayout->addStretch( 1 );
+   layout->addLayout( buttonLayout );
    layout->addWidget( mpVoice1 );
    layout->addWidget( mpLeadOutLabel );
 
@@ -72,6 +81,7 @@ BarsTabWidget::~BarsTabWidget()
 void BarsTabWidget::setTexts()
 {
    mpLinkButton->setText( tr("Link") );
+   mpPlayButton->setText( tr("Play Bar") );
 }
 
 

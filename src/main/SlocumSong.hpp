@@ -30,6 +30,31 @@
 
 
 /*!
+ * \brief The SongBinary struct
+ */
+struct SongBinary
+{
+   int            songSize;
+   int            highBeatSize;
+   int            lowBeatSize;
+   int            beatsSize;
+   unsigned char  voice0[256];
+   unsigned char  voice1[256];
+   int            highBeatIndex[64][4];
+   int            lowBeatIndex[64][4];
+   unsigned char  beats[512][9];
+   unsigned char  soundTypeArray[8];
+   unsigned char  soundAttenArray[8];
+   unsigned char  hatPattern[4];
+   unsigned char  hatStart;
+   unsigned char  hatVolume;
+   unsigned char  hatPitch;
+   unsigned char  hatSound;
+   unsigned char  tempoDelay;
+};
+
+
+/*!
  \brief class holding the whole sound structure
 
  This class holds the whole song as it's played: repetitions done by repeating
@@ -164,6 +189,12 @@ public:
     \return QByteArray
    */
    QByteArray toSourceCode();
+
+   /*!
+    * \brief toSongBinary
+    * \param songBinary
+    */
+   void toSongBinary( SongBinary *songBinary );
 
 private:
    QString           mName; /*!< \brief informal name of the song */

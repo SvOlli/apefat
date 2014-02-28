@@ -32,6 +32,7 @@ class QTextEdit;
 class BarWidget;
 class BarsTabWidget;
 class HiHatWidget;
+class PlayerEmulation;
 class SlocumSong;
 class SongTabWidget;
 class SoundWidget;

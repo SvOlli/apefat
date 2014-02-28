@@ -32,6 +32,7 @@ class HiHatWidget;
 class SoundWidget;
 class SlocumBar;
 class SlocumSong;
+class PlayerWidget;
 class VoiceModel;
 class VoiceWidget;
 
@@ -101,6 +102,7 @@ private:
    QLabel               *mpDelayName; /*!< \brief \todo */
    QSpinBox             *mpDelayValue; /*!< \brief \todo */
    QPushButton          *mpLinkButton; /*!< \brief \todo */
+   PlayerWidget         *mpPlayerWidget; /*!< \brief \todo */
    QLabel               *mpUniqueInfo; /*!< \brief \todo */
    VoiceWidget          *mpVoice0; /*!< \brief voice editing */
    VoiceWidget          *mpVoice1; /*!< \brief voice editing */

@@ -107,9 +107,9 @@ void Cpu6502::reset()
 }
 
 
-void Cpu6502::invalid()
+void Cpu6502::invalid( BYTE opcode )
 {
-   mpCfg->invalid();
+   mpCfg->invalid( opcode );
 }
 
 
@@ -153,7 +153,7 @@ void Cpu6502::step()
 
    case 0x02:
    {
-      invalid();
+      invalid( b );
       break;
    }
 
@@ -401,7 +401,7 @@ void Cpu6502::step()
 
    case 0x12:
    {
-      invalid();
+      invalid( b );
       break;
    }
 
@@ -643,7 +643,7 @@ void Cpu6502::step()
 
    case 0x22:
    {
-      invalid();
+      invalid( b );
       break;
    }
 
@@ -919,7 +919,7 @@ void Cpu6502::step()
 
    case 0x32:
    {
-      invalid();
+      invalid( b );
       break;
    }
 
@@ -1174,7 +1174,7 @@ void Cpu6502::step()
 
    case 0x42:
    {
-      invalid();
+      invalid( b );
       break;
    }
 
@@ -1429,7 +1429,7 @@ void Cpu6502::step()
 
    case 0x52:
    {
-      invalid();
+      invalid( b );
       break;
    }
 
@@ -1689,7 +1689,7 @@ void Cpu6502::step()
 
    case 0x62:
    {
-      invalid();
+      invalid( b );
       break;
    }
 
@@ -2089,7 +2089,7 @@ void Cpu6502::step()
 
    case 0x72:
    {
-      invalid();
+      invalid( b );
       break;
    }
 
@@ -2647,7 +2647,7 @@ void Cpu6502::step()
 
    case 0x92:
    {
-      invalid();
+      invalid( b );
       break;
    }
 
@@ -3060,7 +3060,7 @@ void Cpu6502::step()
 
    case 0xb2:
    {
-      invalid();
+      invalid( b );
       break;
    }
 
@@ -3559,7 +3559,7 @@ void Cpu6502::step()
 
    case 0xd2:
    {
-      invalid();
+      invalid( b );
       break;
    }
 
@@ -4160,7 +4160,7 @@ void Cpu6502::step()
 
    case 0xf2:
    {
-      invalid();
+      invalid( b );
       break;
    }
 

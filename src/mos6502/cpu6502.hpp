@@ -31,9 +31,16 @@ class Cpu6502Cfg
 {
 public:
    virtual ~Cpu6502Cfg() {}
-   virtual void invalid() = 0;
+
+   /*!
+    * \brief invalid
+    * \param opcode
+    *
+    * opcode can be only one of 0x02, 0x12, 0x22, 0x32, 0x42, 0x52, 0x62, 0x72
+    * 0x92, 0xb2, 0xd2, 0xf2. These are the opcodes that cause the 6502 to stop.
+    */
+   virtual void invalid( BYTE opcode ) = 0;
    virtual void reset() = 0;
-   virtual void crash() = 0;
    virtual BYTE peek( ADDRESS addr ) = 0;
    virtual void poke( ADDRESS addr, BYTE value ) = 0;
 };
@@ -50,7 +57,7 @@ public:
    void crash();
    void nmi();
    void irq();
-   void invalid();
+   void invalid( BYTE opcode );
    void u_stoshr( unsigned int val, ADDRESS address, BYTE index );
 
 private:

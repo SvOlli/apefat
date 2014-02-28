@@ -1,5 +1,5 @@
 /*
- * src/apps/Partyman/PlaylistContentWidget.hpp
+ * VoiceWidget.hpp
  * written by Sven Oliver Moll
  *
  * distributed under the terms of the GNU General Public License (GPL)

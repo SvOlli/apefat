@@ -10,6 +10,7 @@
 #include "SlocumSong.hpp"
 
 /* system headers */
+#include <cstring>
 
 /* Qt headers */
 
@@ -434,4 +435,104 @@ QByteArray SlocumSong::toSourceCode()
    tmplString.replace( "%BEATS%", beats.join("\n") );
 
    return tmplString.toUtf8();
+}
+
+
+void SlocumSong::toSongBinary( SongBinary *songBinary )
+{
+   int i;
+
+   // clear out entire binary song data
+   ::memset( songBinary, 0, sizeof(SongBinary) );
+
+   songBinary->tempoDelay = (quint8)(mDelay & 0xff);
+   for( i = 0; i < SlocumSound::size(); ++i )
+   {
+      songBinary->soundAttenArray[i] = mSound.atten[i];
+      songBinary->soundTypeArray[i]  = mSound.type[i];
+   }
+
+   for( i = 0; i < SlocumHiHat::size(); ++i )
+   {
+      if( mHiHat.pattern[i] )
+      {
+         songBinary->hatPattern[i/8] |= 1 << (7 - i % 8);
+      }
+   }
+   songBinary->hatPitch  = mHiHat.pitch;
+   songBinary->hatSound  = mHiHat.sound;
+   songBinary->hatStart  = mHiHat.start;
+   songBinary->hatVolume = mHiHat.volume;
+
+   SlocumBarList voiceList;
+   voiceList.append( mVoice[0] );
+   voiceList.append( mVoice[1] );
+
+   QList<SlocumBeat> beatStore;
+   SlocumBarList patternsLow;
+   SlocumBarList patternsHigh;
+   foreach( const SlocumBar &bar, voiceList )
+   {
+      SlocumBarList &list = bar.isLow ? patternsLow : patternsHigh;
+      if( !list.contains( bar ) )
+      {
+         list.append( bar );
+      }
+      for( int i = 0; i < SlocumBar::size(); ++i )
+      {
+         if( !beatStore.contains( bar.beat[i] ) )
+         {
+            beatStore.append( bar.beat[i] );
+         }
+      }
+   }
+
+   songBinary->songSize = 0;
+   foreach( const SlocumBar &bar, mVoice[0] )
+   {
+      int index = bar.isLow ? patternsLow.indexOf( bar ) | 128 : patternsHigh.indexOf( bar );
+      songBinary->voice0[songBinary->songSize++] = index;
+   }
+
+   songBinary->songSize = 0;
+   foreach( const SlocumBar &bar, mVoice[1] )
+   {
+      int index = bar.isLow ? patternsLow.indexOf( bar ) | 128 : patternsHigh.indexOf( bar );
+      songBinary->voice1[songBinary->songSize++] = index;
+   }
+
+   songBinary->highBeatSize = 0;
+   foreach( const SlocumBar &bar, patternsHigh )
+   {
+      for( int b = 0; b < SlocumBar::size(); ++b )
+      {
+         int index = beatStore.indexOf( bar.beat[b] );
+         songBinary->highBeatIndex[songBinary->highBeatSize][b] = index;
+      }
+      songBinary->highBeatSize++;
+   }
+
+   songBinary->lowBeatSize = 0;
+   foreach( const SlocumBar &bar, patternsLow )
+   {
+      for( int b = 0; b < SlocumBar::size(); ++b )
+      {
+         int index = beatStore.indexOf( bar.beat[b] );
+         songBinary->lowBeatIndex[songBinary->lowBeatSize][b] = index;
+      }
+      songBinary->lowBeatSize++;
+   }
+
+   songBinary->beatsSize = 0;
+   foreach( const SlocumBeat &beat, beatStore )
+   {
+      quint8 accent = 0;
+      for( int n = 0; n < SlocumBeat::size(); ++n )
+      {
+         songBinary->beats[songBinary->beatsSize][n] = (beat.note[n].sound << 5) | beat.note[n].pitch;
+         accent <<= 1;
+         accent |= beat.note[n].accent ? 1 : 0;
+      }
+      songBinary->beats[songBinary->beatsSize++][SlocumBeat::size()] = accent;
+   }
 }

@@ -10,7 +10,7 @@
 #define TRACE_HPP TRACE_HPP
 
 /* system headers */
-#ifndef Q_OS_WIN32
+#ifndef WIN32
 #include <cstdio>
 #include <sys/time.h>
 #include <sys/resource.h>

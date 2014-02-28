@@ -31,6 +31,7 @@
 #include "HiHatWidget.hpp"
 #include "BarWidget.hpp"
 #include "BarsTabWidget.hpp"
+#include "PlayerEmulation.hpp"
 #include "SlocumSong.hpp"
 #include "SongTabWidget.hpp"
 #include "SoundWidget.hpp"

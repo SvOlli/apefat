@@ -1,13 +1,13 @@
 /**
- * BarsTabWidget.hpp
+ * PlayerWidget.hpp
  * written by Sven Oliver Moll
  *
  * distributed under the terms of the GNU Lesser General Public License (LGPL)
  * available at http://www.gnu.org/licenses/lgpl.html
  */
 
-#ifndef BARSTABWIDGET_HPP
-#define BARSTABWIDGET_HPP BARSTABWIDGET_HPP
+#ifndef PLAYERWIDGET_HPP
+#define PLAYERWIDGET_HPP PLAYERWIDGET_HPP
 
 /* base class */
 #include <QWidget>
@@ -28,6 +28,7 @@ class QPushButton;
 class BarWidget;
 class SlocumBar;
 class SlocumSong;
+class PlayerEmulation;
 
 /*!
  \brief representing a tab for a bar
@@ -36,7 +37,7 @@ class SlocumSong;
  etc.
 
 */
-class BarsTabWidget : public QWidget
+class PlayerWidget : public QWidget
 {
    Q_OBJECT
 
@@ -47,12 +48,12 @@ public:
     \param slocumSong
     \param parent
    */
-   explicit BarsTabWidget( SlocumSong *slocumSong, QWidget *parent = 0 );
+   explicit PlayerWidget( QWidget *parent = 0 );
    /*!
     \brief destructor
 
    */
-   virtual ~BarsTabWidget();
+   virtual ~PlayerWidget();
 
 public slots:
    /*!
@@ -66,28 +67,18 @@ public slots:
     \param slocumSong
    */
    void setFromSong( SlocumSong *slocumSong );
-   /*!
-    \brief move to a specific bar for both voices
 
-    \param bar
-   */
-   void setBar( int bar );
+   void startStop( bool play );
 
 protected:
 
 signals:
 
 private:
-   Q_DISABLE_COPY( BarsTabWidget )
+   Q_DISABLE_COPY( PlayerWidget )
 
-   SlocumSong           *mpSlocumSong; /*!< \brief song data to edit */
-   int                  mCurrentBar; /*!< \brief the current bar */
-   BarWidget            *mpVoice0; /*!< \brief voice 0 */
-   BarWidget            *mpVoice1; /*!< \brief voice 1 */
-   QLabel               *mpLeadInLabel; /*!< \brief label for left text */
-   QLabel               *mpLeadOutLabel; /*!< \brief label for right text */
-   QPushButton          *mpLinkButton; /*!< \brief button for going to first bar */
    QPushButton          *mpPlayButton; /*!< \brief button to start playing current bar */
+   PlayerEmulation      *mpPlayerEmulation; /*!< \brief player */
 };
 
-#endif // BARSTABWIDGET_HPP
+#endif // PLAYERWIDGET_HPP
