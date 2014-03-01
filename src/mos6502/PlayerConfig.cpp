@@ -9,6 +9,8 @@
 /* class declaration */
 #include "PlayerConfig.hpp"
 
+#include "QFile"
+
 #include "System.hpp"
 #include "TIASnd.hpp"
 
@@ -84,4 +86,14 @@ bool PlayerConfig::keepOnRunning()
    bool retval = mKeepOnRunning;
    mKeepOnRunning = true;
    return retval;
+}
+
+
+void PlayerConfig::dumpMem()
+{
+   static int counter = 0;
+   QFile tmp( QString("/tmp/apefat.%1.dump").arg(counter++) );
+   tmp.open( QIODevice::WriteOnly );
+   tmp.write( (const char*)&mMemory[0], 0x2000 );
+   tmp.close();
 }

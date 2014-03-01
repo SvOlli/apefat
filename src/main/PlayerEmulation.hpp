@@ -81,6 +81,13 @@ public slots:
    */
    void runFrame();
 
+signals:
+   /*!
+    \brief \todo
+
+   */
+   void state( const QString &msg );
+
 private:
    Q_DISABLE_COPY( PlayerEmulation )
 
@@ -95,6 +102,7 @@ private:
    SoundSDL2         *mpSoundSDL; /*!< \brief \todo TODO */
    PlayerConfig      *mpPlayerConfig; /*!< \brief \todo TODO */
    Cpu6502           *mp6502; /*!< \brief \todo TODO */
+   SlocumSong        *mpSlocumSong; /*!< \brief \todo TODO */
    SongBinary        mSongBinary; /*!< \brief \todo TODO */
    QByteArray        mPlayerData; /*!< \brief \todo TODO */
 };

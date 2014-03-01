@@ -67,8 +67,18 @@ public slots:
     \param slocumSong
    */
    void setFromSong( SlocumSong *slocumSong );
+   /*!
+    \brief set translatable texts
 
+    \param play
+   */
    void startStop( bool play );
+   /*!
+    \brief set translatable texts
+
+    \param play
+   */
+   void state( const QString &msg );
 
 protected:
 
@@ -77,8 +87,9 @@ signals:
 private:
    Q_DISABLE_COPY( PlayerWidget )
 
-   QPushButton          *mpPlayButton; /*!< \brief button to start playing current bar */
    PlayerEmulation      *mpPlayerEmulation; /*!< \brief player */
+   QPushButton          *mpPlayButton; /*!< \brief button to start playing current bar */
+   QLabel               *mpState; /*!< \brief \todo TODO */
 };
 
 #endif // PLAYERWIDGET_HPP

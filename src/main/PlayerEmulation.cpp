@@ -34,6 +34,7 @@ PlayerEmulation::PlayerEmulation( QObject *parent )
 , mpSoundSDL( new SoundSDL2( mpTIA ) )
 , mpPlayerConfig( new PlayerConfig( mpTIA ) )
 , mp6502( new Cpu6502( mpPlayerConfig ) )
+, mpSlocumSong( 0 )
 , mSongBinary()
 , mPlayerData()
 {
@@ -59,12 +60,13 @@ PlayerEmulation::~PlayerEmulation()
 
 void PlayerEmulation::setSong( SlocumSong *song, SlocumBar *bar )
 {
-   song->toSongBinary( &mSongBinary );
+   mpSlocumSong = song;
 }
 
 
 void PlayerEmulation::songToMemory()
 {
+   mpSlocumSong->toSongBinary( &mSongBinary );
    /*
       ; patterndata from $0200-$1400 (=$e200-$f400)
 
@@ -121,8 +123,8 @@ void PlayerEmulation::songToMemory()
       for( int j = 0; j < 4; ++j )
       {
          ADDRESS a = 0x0200 + 9 * mSongBinary.highBeatIndex[i][j];
-         mpPlayerConfig->poke( 0xf600 + i, a & 0xff );
-         mpPlayerConfig->poke( 0xf700 + i, a >> 16  );
+         mpPlayerConfig->poke( 0xf600 + i * 4 + j, a & 0xff );
+         mpPlayerConfig->poke( 0xf700 + i * 4 + j, a >> 8   );
       }
    }
 
@@ -131,8 +133,8 @@ void PlayerEmulation::songToMemory()
       for( int j = 0; j < 4; ++j )
       {
          ADDRESS a = 0x0200 + 9 * mSongBinary.lowBeatIndex[i][j];
-         mpPlayerConfig->poke( 0xf800 + i, a & 0xff );
-         mpPlayerConfig->poke( 0xf900 + i, a >> 16  );
+         mpPlayerConfig->poke( 0xf800 + i * 4 + j, a & 0xff );
+         mpPlayerConfig->poke( 0xf900 + i * 4 + j, a >> 8   );
       }
    }
 
@@ -183,4 +185,20 @@ void PlayerEmulation::runFrame()
    {
       mp6502->step();
    }
+   QString stateMsg;
+   stateMsg.sprintf( "<pre>%02x:%02x:%02x:%02x %x:%02x:%x %x:%02x:%x</pre>",
+                     mpPlayerConfig->peek(0x80),
+                     mpPlayerConfig->peek(0x81),
+                     mpPlayerConfig->peek(0x82),
+                     mpPlayerConfig->peek(0x83),
+                     mpPlayerConfig->peek(0x15),
+                     mpPlayerConfig->peek(0x17),
+                     mpPlayerConfig->peek(0x19),
+                     mpPlayerConfig->peek(0x16),
+                     mpPlayerConfig->peek(0x18),
+                     mpPlayerConfig->peek(0x1a) );
+
+   emit state( stateMsg );
+
+   //mpPlayerConfig->dumpMem();
 }

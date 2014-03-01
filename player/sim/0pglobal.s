@@ -4,8 +4,6 @@
 .segment "ZEROPAGE"
 
 ; must be first, at $80
-schedule:
-   .byte 0
 slocumAtten:
    .byte 0
 slocumMeasure:

@@ -27,6 +27,8 @@ public:
 
    bool keepOnRunning();
 
+   void dumpMem();
+
 private:
    bool        mKeepOnRunning;
    BYTE        mMemory[0x2000];

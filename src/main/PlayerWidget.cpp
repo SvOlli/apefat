@@ -33,8 +33,9 @@
 
 PlayerWidget::PlayerWidget( QWidget *parent )
 : QWidget( parent )
-, mpPlayButton( new QPushButton( this ) )
 , mpPlayerEmulation( new PlayerEmulation( this ) )
+, mpPlayButton( new QPushButton( this ) )
+, mpState( new QLabel( this ) )
 {
    mpPlayButton->setCheckable( true );
    mpPlayerEmulation->loadPlayer( ":/player.bin" );
@@ -42,9 +43,12 @@ PlayerWidget::PlayerWidget( QWidget *parent )
    QBoxLayout *layout = new QHBoxLayout( this );
    layout->setContentsMargins( 0, 0, 0, 0 );
    layout->addWidget( mpPlayButton );
+   layout->addWidget( mpState );
 
    connect( mpPlayButton, SIGNAL(clicked(bool)),
             this, SLOT(startStop(bool)) );
+   connect( mpPlayerEmulation, SIGNAL(state(QString)),
+            this, SLOT(state(QString))) ;
 
    setTexts();
 }
@@ -77,4 +81,10 @@ void PlayerWidget::startStop(bool play)
    {
       mpPlayerEmulation->stop();
    }
+}
+
+
+void PlayerWidget::state( const QString &msg )
+{
+   mpState->setText( msg );
 }

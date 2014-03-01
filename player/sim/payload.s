@@ -14,6 +14,7 @@ reset:
    stx slocumMeasure
 @skipMeasure:
 
+.if 0
    ldx slocumBeat
    dex
    cpx fixedBeatEnd
@@ -22,7 +23,9 @@ reset:
    dex
    stx slocumBeat
 @skipBeat:
+.endif
 
    jsr slocumPlayer
+   lda #$00 ; just to have a defined value in ram
    sta $00
    jmp reset
