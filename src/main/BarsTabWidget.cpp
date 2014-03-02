@@ -40,11 +40,12 @@ BarsTabWidget::BarsTabWidget( SlocumSong *slocumSong, QWidget *parent )
 , mpLeadOutLabel( new QLabel( this ) )
 , mpLinkButton( new QPushButton( this ) )
 , mpPlayButton( new QPushButton( this ) )
+, mpLoopButton( new QPushButton( this ) )
 {
    mpLinkButton->setCheckable( true );
    mpLinkButton->setChecked( true );
    mpPlayButton->setCheckable( true );
-   mpPlayButton->setDisabled( true );
+   mpLoopButton->setCheckable( true );
 
    QBoxLayout *layout = new QHBoxLayout( this );
    QBoxLayout *buttonLayout = new QVBoxLayout();
@@ -54,6 +55,7 @@ BarsTabWidget::BarsTabWidget( SlocumSong *slocumSong, QWidget *parent )
    layout->addWidget( mpVoice0 );
    buttonLayout->addStretch( 1 );
    buttonLayout->addWidget( mpPlayButton );
+   buttonLayout->addWidget( mpLoopButton );
    buttonLayout->addWidget( mpLinkButton );
    buttonLayout->addStretch( 1 );
    layout->addLayout( buttonLayout );
@@ -67,6 +69,12 @@ BarsTabWidget::BarsTabWidget( SlocumSong *slocumSong, QWidget *parent )
             this, SLOT(setBar(int)) );
    connect( mpVoice1, SIGNAL(barChanged(int)),
             this, SLOT(setBar(int)) );
+   connect( mpLinkButton, SIGNAL(clicked(bool)),
+            this, SLOT(handleLink(bool)) );
+   connect( mpPlayButton, SIGNAL(clicked(bool)),
+            this, SLOT(handlePlay(bool)) );
+
+   handleLink( mpLinkButton->isChecked() );
 
    setTexts();
    setBar( 0 );
@@ -78,10 +86,23 @@ BarsTabWidget::~BarsTabWidget()
 }
 
 
+QPushButton *BarsTabWidget::playButton() const
+{
+   return mpPlayButton;
+}
+
+
+QPushButton *BarsTabWidget::loopButton() const
+{
+   return mpLoopButton;
+}
+
+
 void BarsTabWidget::setTexts()
 {
    mpLinkButton->setText( tr("Link") );
-   mpPlayButton->setText( tr("Play Bar") );
+   mpPlayButton->setText( tr("Play") );
+   mpLoopButton->setText( tr("Loop") );
 }
 
 
@@ -99,5 +120,25 @@ void BarsTabWidget::setBar( int bar )
    {
       mpVoice0->setBar( bar );
       mpVoice1->setBar( bar );
+   }
+}
+
+
+void BarsTabWidget::handleLink( bool enabled )
+{
+   mpPlayButton->setEnabled( enabled );
+   mpLoopButton->setEnabled( enabled );
+   if( enabled )
+   {
+      mpVoice1->setBar( mpVoice0->bar() );
+   }
+}
+
+
+void BarsTabWidget::handlePlay( bool enabled )
+{
+   if( enabled )
+   {
+      emit startPlay( mpVoice0->bar() );
    }
 }

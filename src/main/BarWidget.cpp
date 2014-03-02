@@ -186,6 +186,12 @@ void BarWidget::setBar( int bar )
 }
 
 
+int BarWidget::bar() const
+{
+   return mBar;
+}
+
+
 void BarWidget::dragEnterEvent( QDragEnterEvent *event )
 {
    dragMoveEvent( event );

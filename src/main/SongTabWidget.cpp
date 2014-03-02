@@ -119,6 +119,12 @@ SongTabWidget::~SongTabWidget()
 }
 
 
+PlayerWidget *SongTabWidget::playerWidget() const
+{
+   return mpPlayerWidget;
+}
+
+
 void SongTabWidget::setTexts()
 {
    mpDelayName->setText( tr("Delay:") );

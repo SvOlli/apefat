@@ -54,6 +54,12 @@ public:
 
    */
    virtual ~BarWidget();
+   /*!
+    \brief \todo
+
+    \return int
+   */
+   int bar() const;
 
 public slots:
    /*!

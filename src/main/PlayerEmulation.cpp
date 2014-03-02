@@ -37,6 +37,8 @@ PlayerEmulation::PlayerEmulation( QObject *parent )
 , mpSlocumSong( 0 )
 , mSongBinary()
 , mPlayerData()
+, mCurrentBar( 0 )
+, mLoopEnabled( false )
 {
    mpFrameTimer->setInterval( 1000 / 50 );
    mpFrameTimer->setSingleShot( false );
@@ -149,8 +151,6 @@ void PlayerEmulation::songToMemory()
    }
 
    mpPlayerConfig->poke( 0x01, 0xff );
-   mpPlayerConfig->poke( 0x02, 0xff );
-   mpPlayerConfig->poke( 0x03, 0xff );
 }
 
 
@@ -165,14 +165,13 @@ void PlayerEmulation::loadPlayer( const QString &fileName )
 }
 
 
-void PlayerEmulation::start( unsigned char bar, bool loop )
+void PlayerEmulation::start()
 {
    mp6502->reset();
    songToMemory();
-   mpPlayerConfig->poke( 0x81, bar );
-   if( loop )
+   if( mCurrentBar < 255 )
    {
-      mpPlayerConfig->poke( 0x01, bar );
+      mpPlayerConfig->poke( 0x01, mCurrentBar & 0xff );
    }
    mpSoundSDL->mute( false );
    mpFrameTimer->start();
@@ -205,7 +204,33 @@ void PlayerEmulation::runFrame()
                      mpPlayerConfig->peek(0x18),
                      mpPlayerConfig->peek(0x1a) );
 
+   int bar = mpPlayerConfig->peek(0x81);
+   if( bar != mCurrentBar )
+   {
+      if( mLoopEnabled )
+      {
+         mpPlayerConfig->poke( 0x81, mCurrentBar & 0xff );
+      }
+      else
+      {
+         mCurrentBar = bar;
+         emit currentBar( mCurrentBar );
+      }
+   }
    emit state( stateMsg );
 
    //mpPlayerConfig->dumpMem();
+}
+
+
+void PlayerEmulation::setCurrentBar( int bar )
+{
+   mCurrentBar = bar;
+   mpPlayerConfig->poke( 0x01, mCurrentBar & 0xff );
+}
+
+
+void PlayerEmulation::setLooping( bool enabled )
+{
+   mLoopEnabled = enabled;
 }

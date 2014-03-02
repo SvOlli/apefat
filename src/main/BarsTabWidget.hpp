@@ -53,6 +53,18 @@ public:
 
    */
    virtual ~BarsTabWidget();
+   /*!
+    \brief \todo
+
+    \return QPushButton
+   */
+   QPushButton *playButton() const;
+   /*!
+    \brief \todo
+
+    \return QPushButton
+   */
+   QPushButton *loopButton() const;
 
 public slots:
    /*!
@@ -72,10 +84,27 @@ public slots:
     \param bar
    */
    void setBar( int bar );
+   /*!
+    \brief \todo
+
+    \param enabled
+   */
+   void handleLink( bool enabled );
+   /*!
+    \brief \todo
+
+   */
+   void handlePlay( bool enabled );
 
 protected:
 
 signals:
+   /*!
+    \brief \todo
+
+    \param bar
+   */
+   void startPlay( int bar );
 
 private:
    Q_DISABLE_COPY( BarsTabWidget )
@@ -88,6 +117,7 @@ private:
    QLabel               *mpLeadOutLabel; /*!< \brief label for right text */
    QPushButton          *mpLinkButton; /*!< \brief button for going to first bar */
    QPushButton          *mpPlayButton; /*!< \brief button to start playing current bar */
+   QPushButton          *mpLoopButton; /*!< \brief button to start playing current bar */
 };
 
 #endif // BARSTABWIDGET_HPP

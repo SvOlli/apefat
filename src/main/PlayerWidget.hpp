@@ -21,8 +21,11 @@
 /* local headers */
 
 /* forward declaration of Qt classes */
+class QAbstractButton;
 class QLabel;
 class QPushButton;
+class QSpinBox;
+class QThread;
 
 /* forward declaration of local classes */
 class BarWidget;
@@ -54,6 +57,18 @@ public:
 
    */
    virtual ~PlayerWidget();
+   /*!
+    \brief \todo
+
+    \param button
+   */
+   void registerPlayButton( QAbstractButton *button );
+   /*!
+    \brief \todo
+
+    \param button
+   */
+   void registerLoopButton( QAbstractButton *button );
 
 public slots:
    /*!
@@ -68,11 +83,17 @@ public slots:
    */
    void setFromSong( SlocumSong *slocumSong );
    /*!
-    \brief set translatable texts
+    \brief \todo
 
     \param play
    */
    void startStop( bool play );
+   /*!
+    \brief \todo
+
+    \param play
+   */
+   void setLoop( bool enabled );
    /*!
     \brief set translatable texts
 
@@ -83,13 +104,40 @@ public slots:
 protected:
 
 signals:
+   /*!
+    \brief \todo
+
+    \param enabled
+   */
+   void setPlayState( bool enabled );
+   /*!
+    \brief \todo
+
+    \param enabled
+   */
+   void setLoopState( bool enabled );
+   /*!
+    \brief \todo
+
+    \param bar
+   */
+   void currentBar( int bar );
+   /*!
+    \brief \todo
+
+    \param bar
+   */
+   void setCurrentBar( int bar );
 
 private:
    Q_DISABLE_COPY( PlayerWidget )
 
    PlayerEmulation      *mpPlayerEmulation; /*!< \brief player */
    QPushButton          *mpPlayButton; /*!< \brief button to start playing current bar */
+   QPushButton          *mpLoopButton; /*!< \brief \todo TODO */
+   QSpinBox             *mpCurrentBar; /*!< \brief \todo TODO */
    QLabel               *mpState; /*!< \brief \todo TODO */
+   //QThread              *mpPlayThread; /*!< \brief \todo TODO */
 };
 
 #endif // PLAYERWIDGET_HPP

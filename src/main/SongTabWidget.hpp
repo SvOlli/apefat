@@ -60,6 +60,12 @@ public:
 
    */
    virtual ~SongTabWidget();
+   /*!
+    \brief \todo
+
+    \return PlayerWidget
+   */
+   PlayerWidget *playerWidget() const;
 
 public slots:
    /*!

@@ -32,6 +32,7 @@
 #include "BarWidget.hpp"
 #include "BarsTabWidget.hpp"
 #include "PlayerEmulation.hpp"
+#include "PlayerWidget.hpp"
 #include "SlocumSong.hpp"
 #include "SongTabWidget.hpp"
 #include "SoundWidget.hpp"
@@ -51,6 +52,14 @@ MainWidget::MainWidget( QWidget *parent )
 , mpBarsTab( new BarsTabWidget( mpSlocumSong, this ) )
 , mpBarsScrollArea( 0 )
 {
+   //! \todo replace this evil hack with something better
+   mpSongTab->playerWidget()->registerPlayButton( mpBarsTab->playButton() );
+   mpSongTab->playerWidget()->registerLoopButton( mpBarsTab->loopButton() );
+   connect( mpSongTab->playerWidget(), SIGNAL(currentBar(int)),
+            mpBarsTab, SLOT(setBar(int)) );
+   connect( mpBarsTab, SIGNAL(startPlay(int)),
+            mpSongTab->playerWidget(), SIGNAL(setCurrentBar(int)) );
+
    QSettings settings;
    QVariant songData( settings.value( "SongData") );
    if( songData.type() == QVariant::Map )

@@ -70,7 +70,7 @@ public slots:
 
     \param bar bar to play (255 = song)
    */
-   void start( unsigned char bar = 255, bool loop = false );
+   void start();
    /*!
     \brief \todo
 
@@ -81,6 +81,17 @@ public slots:
 
    */
    void runFrame();
+   /*!
+    \brief \todo
+
+   */
+   void setCurrentBar( int bar );
+   /*!
+    \brief \todo
+
+    \param enabled
+   */
+   void setLooping( bool enabled );
 
 signals:
    /*!
@@ -88,6 +99,12 @@ signals:
 
    */
    void state( const QString &msg );
+   /*!
+    \brief \todo
+
+    \param bar
+   */
+   void currentBar( int bar );
 
 private:
    Q_DISABLE_COPY( PlayerEmulation )
@@ -106,6 +123,8 @@ private:
    SlocumSong        *mpSlocumSong; /*!< \brief \todo TODO */
    SongBinary        mSongBinary; /*!< \brief \todo TODO */
    QByteArray        mPlayerData; /*!< \brief \todo TODO */
+   int               mCurrentBar; /*!< \brief \todo TODO */
+   bool              mLoopEnabled; /*!< \brief \todo TODO */
 };
 
 #endif
