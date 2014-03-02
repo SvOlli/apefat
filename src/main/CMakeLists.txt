@@ -24,11 +24,11 @@ INCLUDE_DIRECTORIES(
 # workaround for mxe/windows
 IF( NOT SDL_LIBRARIES )
    MESSAGE( STATUS "SDL not found, using workaround" )
-   IF( ${CMAKE_SYSTEM_NAME} == "Windows" )
+   IF( ${CMAKE_COMPILER_IS_MINGW} )
       SET( SDL_LIBRARIES SDL dxguid )
-   ELSE( ${CMAKE_SYSTEM_NAME} == "Windows" )
+   ELSE( ${CMAKE_COMPILER_IS_MINGW} )
       SET( SDL_LIBRARIES SDL )
-   ENDIF( ${CMAKE_SYSTEM_NAME} == "Windows" )
+   ENDIF( ${CMAKE_COMPILER_IS_MINGW} )
 ENDIF( NOT SDL_LIBRARIES )
 
 ADD_SOURCE( Application          cpp         )
