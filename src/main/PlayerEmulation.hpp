@@ -68,8 +68,9 @@ public slots:
    /*!
     \brief \todo
 
+    \param bar bar to play (255 = song)
    */
-   void start();
+   void start( unsigned char bar = 255, bool loop = false );
    /*!
     \brief \todo
 

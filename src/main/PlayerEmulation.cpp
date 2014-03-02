@@ -117,6 +117,8 @@ void PlayerEmulation::songToMemory()
       mpPlayerConfig->poke( 0xf400 + i, mSongBinary.voice0[i] );
       mpPlayerConfig->poke( 0xf500 + i, mSongBinary.voice1[i] );
    }
+   mpPlayerConfig->poke( 0xf400 + mSongBinary.songSize, 255 );
+   mpPlayerConfig->poke( 0xf500 + mSongBinary.songSize, 255 );
 
    for( int i = 0; i < mSongBinary.highBeatSize; ++i )
    {
@@ -163,10 +165,15 @@ void PlayerEmulation::loadPlayer( const QString &fileName )
 }
 
 
-void PlayerEmulation::start()
+void PlayerEmulation::start( unsigned char bar, bool loop )
 {
    mp6502->reset();
    songToMemory();
+   mpPlayerConfig->poke( 0x81, bar );
+   if( loop )
+   {
+      mpPlayerConfig->poke( 0x01, bar );
+   }
    mpSoundSDL->mute( false );
    mpFrameTimer->start();
 }

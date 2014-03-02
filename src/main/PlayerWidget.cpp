@@ -71,7 +71,7 @@ void PlayerWidget::setFromSong( SlocumSong *slocumSong )
 }
 
 
-void PlayerWidget::startStop(bool play)
+void PlayerWidget::startStop( bool play )
 {
    if( play )
    {

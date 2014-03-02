@@ -464,7 +464,10 @@ void SlocumSong::toSongBinary( SongBinary *songBinary )
    songBinary->hatStart  = mHiHat.start;
    songBinary->hatVolume = mHiHat.volume;
 
+   SlocumBar muted( QString("muted") );
+   muted.isLow = true; // usually less used
    SlocumBarList voiceList;
+   voiceList.append( muted );
    voiceList.append( mVoice[0] );
    voiceList.append( mVoice[1] );
 
@@ -487,19 +490,29 @@ void SlocumSong::toSongBinary( SongBinary *songBinary )
       }
    }
 
-   songBinary->songSize = 0;
+   int voiceSize0 = 0;
+   int voiceSize1 = 0;
+   int index;
    foreach( const SlocumBar &bar, mVoice[0] )
    {
-      int index = bar.isLow ? patternsLow.indexOf( bar ) | 128 : patternsHigh.indexOf( bar );
-      songBinary->voice0[songBinary->songSize++] = index;
+      index = bar.isLow ? patternsLow.indexOf( bar ) | 128 : patternsHigh.indexOf( bar );
+      songBinary->voice0[voiceSize0++] = index;
    }
-
-   songBinary->songSize = 0;
    foreach( const SlocumBar &bar, mVoice[1] )
    {
-      int index = bar.isLow ? patternsLow.indexOf( bar ) | 128 : patternsHigh.indexOf( bar );
-      songBinary->voice1[songBinary->songSize++] = index;
+      index = bar.isLow ? patternsLow.indexOf( bar ) | 128 : patternsHigh.indexOf( bar );
+      songBinary->voice1[voiceSize1++] = index;
    }
+   index = muted.isLow ? patternsLow.indexOf( muted ) | 128 : patternsHigh.indexOf( muted );
+   while( voiceSize0 < voiceSize1 )
+   {
+      songBinary->voice0[voiceSize0++] = index;
+   }
+   while( voiceSize1 < voiceSize0 )
+   {
+      songBinary->voice1[voiceSize1++] = index;
+   }
+   songBinary->songSize = voiceSize0;
 
    songBinary->highBeatSize = 0;
    foreach( const SlocumBar &bar, patternsHigh )
