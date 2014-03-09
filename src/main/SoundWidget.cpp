@@ -69,6 +69,10 @@ SoundWidget::SoundWidget( SlocumSong *slocumSong, QWidget *parent )
       connect( atten, SIGNAL(valueChanged(int)),
                mpAttensMapper, SLOT(map()) );
    }
+   connect( mpTypesMapper, SIGNAL(mapped(int)),
+            this, SLOT(typeChanged(int)) );
+   connect( mpAttensMapper, SIGNAL(mapped(int)),
+            this, SLOT(attensChanged(int)) );
    connect( mpValueName, SIGNAL(textChanged(QString)),
             this, SLOT(setName(QString)) );
    setTexts();

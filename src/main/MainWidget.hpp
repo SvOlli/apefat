@@ -35,7 +35,6 @@ class HiHatWidget;
 class PlayerEmulation;
 class SlocumSong;
 class SongTabWidget;
-class SoundWidget;
 
 
 /*!
@@ -60,6 +59,11 @@ public:
    virtual ~MainWidget();
 
 public slots:
+   /*!
+    \brief create an empty song
+
+   */
+   void fileNew();
    /*!
     \brief open a file open dialog and load selected file
 
@@ -104,6 +108,8 @@ public slots:
 
 private:
    Q_DISABLE_COPY( MainWidget )
+
+   bool fileLoad( const QString &fileName );
 
    static const char    cFileExtension[]; /*!< \brief file extension */
 

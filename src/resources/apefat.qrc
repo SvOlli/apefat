@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file alias="player.bin">sim.bin</file>
+        <file>EmptySong.psmk</file>
     </qresource>
 </RCC>

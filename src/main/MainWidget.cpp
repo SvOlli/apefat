@@ -35,7 +35,6 @@
 #include "PlayerWidget.hpp"
 #include "SlocumSong.hpp"
 #include "SongTabWidget.hpp"
-#include "SoundWidget.hpp"
 
 
 #include <QtDebug>
@@ -91,6 +90,12 @@ MainWidget::~MainWidget()
 }
 
 
+void MainWidget::fileNew()
+{
+   fileLoad( QString(":/EmptySong.psmk") );
+}
+
+
 void MainWidget::fileOpen()
 {
    QSettings settings;
@@ -100,6 +105,15 @@ void MainWidget::fileOpen()
    QString fileName( QFileDialog::getOpenFileName( this, tr("Open File:"), songDir,
                                                    tr("Paul Slocum Music Kit (*%1)").arg( cFileExtension ) ) );
 
+   if( fileLoad( fileName ) )
+   {
+      settings.setValue( "SongDirectory", QFileInfo(fileName).absolutePath() );
+   }
+}
+
+
+bool MainWidget::fileLoad( const QString &fileName )
+{
    if( !fileName.isEmpty() )
    {
       QFile file( fileName );
@@ -109,10 +123,11 @@ void MainWidget::fileOpen()
          {
             setSongFromJson( file.readAll() );
             file.close();
-            settings.setValue( "SongDirectory", QFileInfo(fileName).absolutePath() );
+            return true;
          }
       }
    }
+   return false;
 }
 
 

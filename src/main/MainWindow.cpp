@@ -72,6 +72,7 @@ void MainWindow::updateMenus()
       quitSequence = QKeySequence( tr("Ctrl+Q") );
    }
    fileMenu->setObjectName( "FileMenu" );
+   fileMenu->addAction( tr("&New"),    mpMainWidget, SLOT(fileNew()) );
    fileMenu->addAction( tr("&Open"),   mpMainWidget, SLOT(fileOpen()),   QKeySequence( QKeySequence::Open ) );
    fileMenu->addAction( tr("&Save"),   mpMainWidget, SLOT(fileSave()),   QKeySequence( QKeySequence::Save ) );
    fileMenu->addAction( tr("&Export"), mpMainWidget, SLOT(fileExport()), QKeySequence( tr("Ctrl+E") ) );
