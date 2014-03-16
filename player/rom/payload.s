@@ -11,7 +11,7 @@ frmcnt = localramstart+0
 .segment "CODE"
 
 payload:
-   jsr slocumPlayer
+   jsr psmkPlayer
    jsr waitvblank
    jsr waitscreen
    jmp waitoverscan

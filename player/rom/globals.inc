@@ -11,10 +11,10 @@
 
 ; 0pglobal.s
 .globalzp schedule
-.globalzp slocumAtten
-.globalzp slocumMeasure
-.globalzp slocumBeat
-.globalzp slocumTempoCount
+.globalzp psmkAttenuation
+.globalzp psmkPatternIdx
+.globalzp psmkBeatIdx
+.globalzp psmkTempoCount
 .globalzp temp8
 .globalzp temp16
 .globalzp localramstart
@@ -30,7 +30,7 @@
 .global   payload
 
 ; slocumplayer.s
-.global   slocumPlayer
+.global   psmkPlayer
 
 .linecont +
    .define partsaddrlist \

@@ -1,0 +1,361 @@
+{
+  "delay" : 3,
+  "hihat" : {
+   "name" : "New Song HiHat Pattern",
+   "patterns" : [
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    false ],
+   "pitch" : 0,
+   "sound" : 8,
+   "start" : 0,
+   "volume" : 7 },
+  "name" : "",
+  "sound" : {
+   "name" : "New Song Sound Configuration",
+   "sounds" : [
+    {
+     "atten" : 8,
+     "type" : 4 },
+    {
+     "atten" : 0,
+     "type" : 6 },
+    {
+     "atten" : 5,
+     "type" : 7 },
+    {
+     "atten" : 9,
+     "type" : 8 },
+    {
+     "atten" : 0,
+     "type" : 15 },
+    {
+     "atten" : 6,
+     "type" : 12 },
+    {
+     "atten" : 4,
+     "type" : 1 },
+    {
+     "atten" : 0,
+     "type" : 14 } ] },
+  "type" : "slocum0",
+  "voices" : [
+   [
+    {
+     "beats" : [
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "" } ],
+   [
+    {
+     "beats" : [
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] },
+      {
+       "name" : "",
+       "notes" : [
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 },
+        {
+         "accent" : false,
+         "pitch" : 255,
+         "sound" : 255 } ] } ],
+     "islow" : false,
+     "name" : "" } ] ] }

@@ -19,7 +19,7 @@
 /* local library headers */
 
 /* local headers */
-#include "SlocumSong.hpp"
+#include "PsmkPlayerWidget.hpp"
 
 /* forward declaration of Qt classes */
 class QTimer;
@@ -55,13 +55,6 @@ public slots:
    /*!
     \brief \todo
 
-    \param song
-    \param bar
-   */
-   void setSong( SlocumSong *song, SlocumBar *bar = 0 );
-   /*!
-    \brief \todo
-
     \param fileName
    */
    void loadPlayer( const QString &fileName );
@@ -93,37 +86,22 @@ public slots:
    */
    void setLooping( bool enabled );
 
+   void songToMemory( SongBinary *songBinary );
+
 signals:
-   /*!
-    \brief \todo
-
-   */
-   void state( const QString &msg );
-   /*!
-    \brief \todo
-
-    \param bar
-   */
-   void currentBar( int bar );
+   void stateUpdate( int pattern, int note );
 
 private:
    Q_DISABLE_COPY( PlayerEmulation )
-
-   /*!
-    \brief \todo
-
-   */
-   void songToMemory();
 
    QTimer            *mpFrameTimer; /*!< \brief \todo TODO */
    TIASound          *mpTIA; /*!< \brief \todo TODO */
    SoundSDL2         *mpSoundSDL; /*!< \brief \todo TODO */
    PlayerConfig      *mpPlayerConfig; /*!< \brief \todo TODO */
    Cpu6502           *mp6502; /*!< \brief \todo TODO */
-   SlocumSong        *mpSlocumSong; /*!< \brief \todo TODO */
-   SongBinary        mSongBinary; /*!< \brief \todo TODO */
    QByteArray        mPlayerData; /*!< \brief \todo TODO */
-   int               mCurrentBar; /*!< \brief \todo TODO */
+   int               mCurrentPattern; /*!< \brief \todo TODO */
+   int               mCurrentNote;
    bool              mLoopEnabled; /*!< \brief \todo TODO */
 };
 

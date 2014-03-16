@@ -28,14 +28,9 @@
 #include <json.h>
 
 /* local headers */
-#include "HiHatWidget.hpp"
-#include "BarWidget.hpp"
-#include "BarsTabWidget.hpp"
-#include "PlayerEmulation.hpp"
-#include "PlayerWidget.hpp"
-#include "SlocumSong.hpp"
-#include "SongTabWidget.hpp"
-
+#include "PsmkMainWidget.hpp"
+#include "PsmkInstrumentsWidget.hpp"
+#include "PsmkBeatWidget.hpp"
 
 #include <QtDebug>
 
@@ -44,49 +39,28 @@ const char MainWidget::cFileExtension[] = ".psmk";
 
 MainWidget::MainWidget( QWidget *parent )
 : QWidget( parent )
-, mpSlocumSong( new SlocumSong() )
-, mCurrentBar( 0 )
-, mpTabs( new QTabWidget( this ) )
-, mpSongTab( new SongTabWidget( mpSlocumSong, this ) )
-, mpBarsTab( new BarsTabWidget( mpSlocumSong, this ) )
+, mpLayout( new QGridLayout( this ) )
+, mpPsmkSong( new PsmkMainWidget( this ) )
 , mpBarsScrollArea( 0 )
 {
-   //! \todo replace this evil hack with something better
-   mpSongTab->playerWidget()->registerPlayButton( mpBarsTab->playButton() );
-   mpSongTab->playerWidget()->registerLoopButton( mpBarsTab->loopButton() );
-   connect( mpSongTab->playerWidget(), SIGNAL(currentBar(int)),
-            mpBarsTab, SLOT(setBar(int)) );
-   connect( mpBarsTab, SIGNAL(startPlay(int)),
-            mpSongTab->playerWidget(), SIGNAL(setCurrentBar(int)) );
-
    QSettings settings;
    QVariant songData( settings.value( "SongData") );
    if( songData.type() == QVariant::Map )
    {
-      mpSlocumSong->fromVariantMap( songData.toMap() );
-      mpSongTab->setFromSong( mpSlocumSong );
-      mpBarsTab->setFromSong( mpSlocumSong );
-      mpBarsTab->setBar( 0 );
+      mpPsmkSong->fromVariantMap( songData.toMap() );
    }
-   QBoxLayout *mainLayout = new QVBoxLayout( this );
-
    //mpSlocumSong->setDefaults();
-   mainLayout->setContentsMargins( 0, 0, 0, 0 );
+   mpLayout->setContentsMargins( 0, 0, 0, 0 );
 
-   setLayout( mainLayout );
-   mainLayout->addWidget( mpTabs );
-   mpTabs->addTab( mpSongTab, tr("Song") ); //!< \todo move to setText()
+   setLayout( mpLayout );
+
    smallScreenMode( settings.value( "SmallScreenMode", false ).toBool() );
-   connect( mpTabs, SIGNAL(currentChanged(int)),
-            this, SLOT(tabChanged(int)) );
-   tabChanged( 0 );
 }
 
 
 MainWidget::~MainWidget()
 {
-   QSettings().setValue( "SongData", mpSlocumSong->toVariantMap() );
-   delete mpSlocumSong;
+   QSettings().setValue( "SongData", mpPsmkSong->toVariantMap() );
 }
 
 
@@ -149,7 +123,7 @@ void MainWidget::fileSave()
       QFile file( fileName );
       if( file.open( QIODevice::WriteOnly ) )
       {
-         QByteArray data( QtJson::serialize( mpSlocumSong->toVariantMap() ) );
+         QByteArray data( QtJson::serialize( mpPsmkSong->toVariantMap() ) );
          QByteArray saveData;
          int indention = 0;
          foreach( QChar c, data )
@@ -217,7 +191,7 @@ void MainWidget::fileExport()
       QFile file( fileName );
       if( file.open( QIODevice::WriteOnly ) )
       {
-         file.write( mpSlocumSong->toSourceCode() );
+         file.write( mpPsmkSong->toSourceCode() );
          file.close();
          settings.setValue( "ExportFile", fileName );
       }
@@ -225,57 +199,35 @@ void MainWidget::fileExport()
 }
 
 
-void MainWidget::setTab( int index )
-{
-   mpTabs->setCurrentIndex( index );
-}
-
-
 bool MainWidget::setSongFromJson( const QByteArray &data )
 {
    bool ok = true;
-   mpSlocumSong->fromVariantMap( QtJson::parse( QString::fromUtf8( data ), ok ).toMap() );
-   mpSongTab->setFromSong( mpSlocumSong );
-   mpBarsTab->setFromSong( mpSlocumSong );
-   mpBarsTab->setBar( 0 );
+   mpPsmkSong->fromVariantMap( QtJson::parse( QString::fromUtf8( data ), ok ).toMap() );
    return ok;
 }
 
 
 void MainWidget::smallScreenMode( bool enabled )
 {
-   int index = mpTabs->currentIndex();
    // small screen workaround, can't do this with the designer :-P
    if( enabled )
    {
-      mpTabs->removeTab( 1 );
       if( !mpBarsScrollArea )
       {
          mpBarsScrollArea = new QScrollArea( this );
          mpBarsScrollArea->setAlignment( Qt::AlignCenter );
       }
-      mpBarsScrollArea->setWidget( mpBarsTab );
-      mpTabs->addTab( mpBarsScrollArea, tr("Bar") );
+      mpBarsScrollArea->setWidget( mpPsmkSong );
+      mpLayout->addWidget( mpBarsScrollArea, 0, 0 );
    }
    else
    {
-      mpTabs->removeTab( 1 );
-      mpTabs->addTab( mpBarsTab, tr("Bar") );
       if( mpBarsScrollArea )
       {
          mpBarsScrollArea->deleteLater();
          mpBarsScrollArea = 0;
       }
+      mpLayout->addWidget( mpPsmkSong, 0, 0 );
    }
-   mpTabs->setCurrentIndex( index );
    QSettings().setValue( "SmallScreenMode", enabled );
-}
-
-
-void MainWidget::tabChanged( int tab )
-{
-   if( tab == 0 )
-   {
-      mpSongTab->setTexts();
-   }
 }

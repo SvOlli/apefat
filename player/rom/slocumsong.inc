@@ -61,7 +61,7 @@
 ;
 ; 000=square  001=bass  010=pitfall  011=noise
 ; 100=buzz    101=lead  110=saw      111=lowbass
-soundAttenArray:
+psmkSoundAttenArray:
    .byte 8, 0, 5, 9
    .byte 0, 6, 4, 0
 
@@ -103,7 +103,7 @@ soundAttenArray:
 ; 110 6 Saw     = 1
 ; 111 7 Engine  = 3
 ;
-soundTypeArray:
+psmkSoundTypeArray:
     .byte 4,6,7,8
     .byte 15,12,1,14
 
@@ -145,10 +145,9 @@ hatPattern:
    .byte %10001000
    .byte %10001010
 
-.define HATSTART  0
-.define HATVOLUME 7
-.define HATPITCH  0
-.define HATSOUND  8
+.define HATVOLUME $07
+.define HATPITCH  $00
+.define HATSOUND  $08
 
 ;-------------------------------------------------------------
 ; Song Data
@@ -181,10 +180,10 @@ hatPattern:
 ; remember what's going on where.  (Use a semicolon
 ; to indicate a comment)
 ;
-; valid numbers here are 0-31 and 128-159
+; valid numbers here are 0-31 and 64-159
 
 
-song1:
+psmkSong1:
    ; Just the drums:
    ; (Here, I'm playing the same
    ; drum pattern on both oscillators
@@ -193,31 +192,32 @@ song1:
    .byte 1,3
 
    ; Bass comes in (on song1)
-   .byte 128,129
-   .byte 128,129
+   ;.byte 64,65
+   .byte 192,193
+   .byte 64,65
 
-   .byte 128,129
-   .byte 128,0
+   .byte 64,65
+   .byte 64,0
 
    ; Melody part comes in
    ; (Still playing bass on song1)
-   .byte 128,129
-   .byte 128,129
+   .byte 64,65
+   .byte 64,65
 
-   .byte 128,129
-   .byte 128,0
+   .byte 64,65
+   .byte 64,0
 
-   .byte 128,129
-   .byte 128,129
+   .byte 64,65
+   .byte 64,65
 
-   .byte 128,129
-   .byte 128,0
+   .byte 64,65
+   .byte 64,0
 
    ; End of song marker
    .byte 255
 
 
-song2:
+psmkSong2:
    ; Just the drums:
    .byte 1,2
    .byte 1,3
@@ -286,12 +286,11 @@ song2:
 ;
 ; Note that pattern sets in patternArrayH start at
 ; zero, while pattern sets in patternArrayL start at
-; 128.
+; 64.
 ;
 
 
-.if SEPARATE_LOW_HIGH_IN_PATTERNS
-patternArrayHlsb:                   ; starts at 0
+psmkHiVolPatternsLo:                   ; starts at 0
 
    ; Muted pattern
    .lobytes mute,mute,mute,mute         ;0
@@ -306,7 +305,7 @@ patternArrayHlsb:                   ; starts at 0
    .lobytes KickMel1a,Snare1a,KickMel1d,Snare1b   ;5
    .lobytes KickMel1c,Snare1a,KickMel1e,Snare1c   ;6
 
-patternArrayHmsb:                   ; starts at 0
+psmkHiVolPatternsHi:                   ; starts at 0
    ; Muted pattern
    .hibytes mute,mute,mute,mute         ;0
 
@@ -321,41 +320,15 @@ patternArrayHmsb:                   ; starts at 0
    .hibytes KickMel1c,Snare1a,KickMel1e,Snare1c   ;6
 
    ; Lower volume patterns
-patternArrayLlsb:                   ; start at 128
+psmkLoVolPatternsLo:                   ; start at 64
    ; My 2 bass patterns
-   .lobytes Bass1a, Bass1a, Bass1b, Bass1b      ;128
-   .lobytes Bass1c, Bass1c, Bass1b, Bass1b      ;129
+   .lobytes Bass1a, Bass1a, Bass1b, Bass1b      ;64
+   .lobytes Bass1c, Bass1c, Bass1b, Bass1b      ;65
 
-patternArrayLmsb:                   ; start at 128
+psmkLoVolPatternsHi:                   ; start at 64
    ; My 2 bass patterns
-   .hibytes Bass1a, Bass1a, Bass1b, Bass1b      ;128
-   .hibytes Bass1c, Bass1c, Bass1b, Bass1b      ;129
-
-.else
-   ; Higher volume patterns
-patternArrayH:                   ; starts at 0
-
-   ; Muted pattern
-   .word mute,mute,mute,mute         ;0
-
-   ; My 3 drum patterns
-   .word KickDrum1a,Snare1a,KickDrum1b,Snare1a   ;1
-   .word KickDrum1a,Snare1a,KickDrum1b,Snare1b   ;2
-   .word KickDrum1a,Snare1a,KickDrum1a,Snare1c   ;3
-
-   ; 3 More drum patterns, but with a melody
-   .word KickMel1a,Snare1a,KickMel1b,Snare1a   ;4
-   .word KickMel1a,Snare1a,KickMel1d,Snare1b   ;5
-   .word KickMel1c,Snare1a,KickMel1e,Snare1c   ;6
-
-   ; Lower volume patterns
-patternArrayL:                   ; start at 128
-
-   ; My 2 bass patterns
-   .word Bass1a, Bass1a, Bass1b, Bass1b      ;128
-   .word Bass1c, Bass1c, Bass1b, Bass1b      ;129
-   
-.endif
+   .hibytes Bass1a, Bass1a, Bass1b, Bass1b      ;64
+   .hibytes Bass1c, Bass1c, Bass1b, Bass1b      ;65
 
 ;-------------------------------------------------------------
 ; Pattern Data

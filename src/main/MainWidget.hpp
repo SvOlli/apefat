@@ -29,12 +29,8 @@ class QTextEdit;
 /* forward declaration of Qt classes */
 
 /* forward declaration of local classes */
-class BarWidget;
-class BarsTabWidget;
-class HiHatWidget;
 class PlayerEmulation;
-class SlocumSong;
-class SongTabWidget;
+class PsmkMainWidget;
 
 
 /*!
@@ -80,12 +76,6 @@ public slots:
    */
    void fileExport();
    /*!
-    \brief set the current tab
-
-    \param index
-   */
-   void setTab( int index = 0 );
-   /*!
     \brief set the song data from Json serialized data
 
     \param data serialized json data
@@ -99,12 +89,6 @@ public slots:
     \return bool
    */
    void smallScreenMode( bool enabled );
-   /*!
-    \brief handle changed tab
-
-    \param tab
-   */
-   void tabChanged( int tab );
 
 private:
    Q_DISABLE_COPY( MainWidget )
@@ -113,11 +97,8 @@ private:
 
    static const char    cFileExtension[]; /*!< \brief file extension */
 
-   SlocumSong           *mpSlocumSong; /*!< \brief song data */
-   int                  mCurrentBar; /*!< \brief index of current bar */
-   QTabWidget           *mpTabs; /*!< \brief tabs */
-   SongTabWidget        *mpSongTab; /*!< \brief widget for the song tab */
-   BarsTabWidget        *mpBarsTab; /*!< \brief widget for the bars tabs */
+   QGridLayout          *mpLayout;
+   PsmkMainWidget       *mpPsmkSong;
    QScrollArea          *mpBarsScrollArea; /*!< \brief scroll area for the bars tabs */
 };
 

@@ -10,10 +10,10 @@
 ; all symbols visible to other source files
 
 ; 0pglobal.s
-.globalzp slocumAtten
-.globalzp slocumMeasure
-.globalzp slocumBeat
-.globalzp slocumTempoCount
+.globalzp psmkAttenuation
+.globalzp psmkPatternIdx
+.globalzp psmkBeatIdx
+.globalzp psmkTempoCount
 .globalzp temp8
 .globalzp temp16
 .globalzp localramstart
@@ -25,18 +25,18 @@
 .global   waitscreen   ; called with jsr; x,y untouched
 .global   waitoverscan ; called with jmp; y untouched
 
-.global   slocumPlayer
+.global   psmkPlayer
 
-.global   song1
-.global   song2
-.global   patternArrayHlsb
-.global   patternArrayHmsb
-.global   patternArrayLlsb
-.global   patternArrayLmsb
+.global   psmkSong1
+.global   psmkSong2
+.global   psmkHiVolPatternsLo
+.global   psmkHiVolPatternsHi
+.global   psmkLoVolPatternsLo
+.global   psmkLoVolPatternsHi
 .global   patterns
-.global   soundTypeArray
-.global   soundAttenArray
-.global   hatPattern
+.global   psmkSoundTypeArray
+.global   psmkSoundAttenArray
+.global   psmkHatPattern
 .global   HATSTART
 .global   HATVOLUME
 .global   HATPITCH

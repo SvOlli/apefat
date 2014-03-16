@@ -2,7 +2,12 @@
 .include "globals.inc"
 .include "vcs.inc"
 
-.define SEPARATE_LOW_HIGH_IN_PATTERNS 1
+; changes compared to Paul Slocum Music Kit 2.0
+; - ported from dasm to ca65
+; - split of words in tables containing hi/lo-byte, doubling #patterns
+; - shifted bit 7 of patternid to bit 6 to indicate low volume pattern
+; - bit 7 of patternid for voice0 now disables hihat for that pattern
+
 .define SHADOW_REGISTERS 0
 
 .define PERCCUTTER 0
@@ -35,52 +40,57 @@ bitMaskArray:
 ;
 ; Call this once per screen-draw.
 ;--------------------------------------------------------------------------
-slocumPlayer:
+psmkPlayer:
 ;--------------------------------------------------------------------------
 ; Generates tempo based on TEMPODELAY
 ;--------------------------------------------------------------------------
-   inc slocumTempoCount
-   lda slocumTempoCount
+   inc psmkTempoCount
+   lda psmkTempoCount
+   and #$7f
 .ifconst TEMPODELAY
    eor #TEMPODELAY
 .else
    eor TEMPODELAY
 .endif
    bne quitTempo
-   sta slocumTempoCount
+   sta psmkTempoCount
 
-   inc slocumBeat
-   lda slocumBeat
-   eor #32
+   inc psmkBeatIdx
+   lda psmkBeatIdx
+   eor #$20
    bne quitTempo
-   sta slocumBeat
+   sta psmkBeatIdx
 
-   inc slocumMeasure
+   inc psmkPatternIdx
 
 quitTempo:
 ;--------------------------------------------------------------------------
 
-   ; set the volume to zero
-   ldx #0
-
-   ldy slocumMeasure
-   lda song1,y
+   ldx psmkPatternIdx
+   lda psmkSong1,x
 
    ; Check to see if the end of the song was reached
-   cmp #255
+   cmp #$ff
    bne notEndOfSong
 
    ; Go back to the first measure
-   stx slocumMeasure
-   lda song1,x
+   ldx #$00
+   stx psmkPatternIdx
+   lda psmkSong1,x
 
 notEndOfSong:
+   and #$80
+   ora psmkTempoCount
+   sta psmkTempoCount
+   lda psmkSong1,x
+   
+   ldx #$00 ; first voice
    jsr playPattern
 
-   ldx slocumMeasure
-   lda song2,x
+   ldx psmkPatternIdx
+   lda psmkSong2,x
 
-   ldx #1
+   ldx #$01 ; second voice
    ; slip through
    ; songPlayer
 ;--------------------------------------------------------------------------
@@ -88,7 +98,7 @@ notEndOfSong:
 ;--------------------------------------------------------------------------
 ; Plays a pattern
 ;
-; - ACC should contain the offset in the patternArray of the pattern to play
+; - A should contain the offset in the patternArray of the pattern to play
 ; - X should contain the oscillator to be used (0 or 1)
 ;
 ;--------------------------------------------------------------------------
@@ -96,44 +106,20 @@ playPattern:
 
    ; save unaltered patternArray offset
    sta temp16+0
-; patternid = %abcdefgh
-.if SEPARATE_LOW_HIGH_IN_PATTERNS
    asl
    asl
-; patternid = %cdefgh00
-.else
-   ; save patternArray offset
-   asl
-   asl
-   asl
-; patternid = %defgh000
-.endif
    sta temp8
 
    ; custom code to allow 1 quarter note per measure (Thrust):
    ; use beat to determine extra offset within patternArray
-   lda slocumBeat
+   lda psmkBeatIdx
    and #%00011000
-; patternid = %000ij000
-.if SEPARATE_LOW_HIGH_IN_PATTERNS
    lsr
    lsr
    lsr
-; patternid = %000000ij
-.else
-   lsr
-   lsr
-; patternid = %00000ij0
-.endif
 
    ; add in original offset
-.if SEPARATE_LOW_HIGH_IN_PATTERNS
    ora temp8
-; patternid = %cdefghij
-.else
-   ora temp8
-; patternid = %defghij0
-.endif
 
    ; save osc number
    stx temp8
@@ -141,47 +127,37 @@ playPattern:
    tax
 
    ; This mod allows for high and low volume patterns.
-   ; Patterns of offset greater than 128 read from a different
+   ; Patterns of offset greater than 64 read from a different
    ; array and play lower.
-   lda temp16+0
-   bmi lowPattern
+   bit temp16+0
+   bvs lowPattern
 
    ; Loud version
    ; Get address of selected pattern
-.if SEPARATE_LOW_HIGH_IN_PATTERNS
-   lda patternArrayHlsb,x
-   ldy patternArrayHmsb,x
-.else
-   lda patternArrayH,x
-   ldy patternArrayH+1,x
-.endif
+   lda psmkHiVolPatternsLo,x
+   ldy psmkHiVolPatternsHi,x
 
    ; Set 0 attenuation
-   ldx #0
+   ldx #$00
    beq endGetPattern
 
 lowPattern:
    ; Soft version
    ; Get address of selected pattern
-.if SEPARATE_LOW_HIGH_IN_PATTERNS
-   lda patternArrayLlsb,x
-   ldy patternArrayLmsb,x
-.else
-   lda patternArrayL,x
-   ldy patternArrayL+1,x
-.endif
+   lda psmkLoVolPatternsLo,x
+   ldy psmkLoVolPatternsHi,x
 
    ; Set -6 attenuation
-   ldx #4
+   ldx #$04
 
 endGetPattern:
    sta temp16+0
    sty temp16+1
-   stx slocumAtten
+   stx psmkAttenuation
 
    ; The variable, beat, contains the 32nd note
    ; that the beat is currently on.
-   lda slocumBeat
+   lda psmkBeatIdx
 
    ; modification for 1 quarter per measure (Thrust)
    and #%00000111
@@ -189,9 +165,9 @@ endGetPattern:
 
    ; Get sound/note data
    lda (temp16),y
-   eor #255
+   eor #$ff
    beq muteNote
-   eor #255
+   eor #$ff
 
 ;--------------------------------------------------------------------------
 ; Extract Pattern Data
@@ -224,13 +200,13 @@ endGetPattern:
    tax
 
 ;-----------------------
-   lda slocumAtten
+   lda psmkAttenuation
    clc
-   adc soundAttenArray,x
-   sta slocumAtten
+   adc psmkSoundAttenArray,x
+   sta psmkAttenuation
 ;-----------------------
 
-   lda soundTypeArray,x
+   lda psmkSoundTypeArray,x
 ;--------------------------------------------------------------------------
 
    ; Get the osc number again
@@ -269,21 +245,21 @@ noPhase:
 ; changes X,Y,ACC
 ;--------------------------------------------------------------------------
    ; Accent offset is always 8 for Thrust mod
-   ldy #8
+   ldy #$08
 
    lda (temp16),y
    and bitMaskArray,x
-   beq noAccent
+   beq noAccent  ; eq also sets carry
 
    ; It's an Accent, so don't attenuate
-   lda #15
+   lda #$0f
 
 noAccent:
    ; No accent, so use a lower volume
-   ora #13
+   ora #$0d
 ;--------------------------------------------------------------------------
 
-   sbc slocumAtten               ; carry flag???
+   sbc psmkAttenuation               ; carry flag???
 muteNote:
    ldy temp8               ; Get the osc number again
    sta AUDV0,y
@@ -301,30 +277,21 @@ muteNote:
    ldy temp8
    beq noHat
 
-   ; Reat high hat pattern
-   lda slocumMeasure
-.ifconst HATSTART
-   cmp #HATSTART
-.else
-   cmp HATSTART
-.endif
-   bmi noHat
+   ; Only play had on first frame
+   lda psmkTempoCount
+   bne noHat
 
-   lda slocumBeat
+   lda psmkBeatIdx
    and #%00000111
    tax
-   lda slocumBeat
+   lda psmkBeatIdx
    lsr
    lsr
    lsr
    tay
-   lda hatPattern,y
+   lda psmkHatPattern,y
    and bitMaskArray,x
    beq noHat
-
-   ; Only play had on first frame
-   lda slocumTempoCount
-   bne noHat
 
    ; Play hat
 .ifconst HATPITCH
@@ -364,11 +331,11 @@ noHat:
    ; can set it to start working at a certain measure.
    ;--------------------------------------------------------------------------
 .if PERCCUTTER
-   lda slocumMeasure
+   lda psmkPatternIdx
    cmp #111   ; start measure
    bmi noCut
 
-   lda slocumTempoCount
+   lda psmkTempoCount
    and #%11111110
    beq noCut
 

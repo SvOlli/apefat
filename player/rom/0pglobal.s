@@ -6,13 +6,13 @@
 ; must be first, at $80
 schedule:
    .byte 0
-slocumAtten:
+psmkAttenuation:
    .byte 0
-slocumMeasure:
+psmkPatternIdx:
    .byte 0
-slocumBeat:
+psmkBeatIdx:
    .byte 0
-slocumTempoCount:
+psmkTempoCount:
    .byte 0
 temp8:
    .byte 0
