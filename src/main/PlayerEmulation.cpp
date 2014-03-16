@@ -28,8 +28,8 @@
 
 
 PlayerEmulation::PlayerEmulation( QObject *parent )
-: QObject( parent )
-, mpFrameTimer( new QTimer( this ) )
+: QThread( parent )
+, mpFrameTimer( 0 )
 , mpTIA( new TIASound( 31113 ) )
 , mpSoundSDL( new SoundSDL2( mpTIA ) )
 , mpPlayerConfig( new PlayerConfig( mpTIA ) )
@@ -39,6 +39,10 @@ PlayerEmulation::PlayerEmulation( QObject *parent )
 , mCurrentNote( 0 )
 , mLoopEnabled( false )
 {
+   moveToThread( this );
+   // timer must be created after move to thread
+   mpFrameTimer = new QTimer( this );
+
    mpFrameTimer->setInterval( 1000 / 50 );
    mpFrameTimer->setSingleShot( false );
    mpFrameTimer->stop();

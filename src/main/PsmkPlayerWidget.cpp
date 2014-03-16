@@ -29,18 +29,21 @@
 PsmkPlayerWidget::PsmkPlayerWidget( QWidget *parent )
 : QGroupBox( parent )
 , mpSongBinary( new SongBinary() )
-, mpPlayerEmulation( new PlayerEmulation( this ) )
+, mpPlayerEmulation( new PlayerEmulation( /*this*/ 0 ) )
 , mpPlayButton( new QToolButton( this ) )
 , mpLoopButton( new QToolButton( this ) )
 , mpCurrentPattern( new QSpinBox( this ) )
 , mpCurrentNote( new QSpinBox( this ) )
 {
    setup();
+   mpPlayerEmulation->start();
 }
 
 
 PsmkPlayerWidget::~PsmkPlayerWidget()
 {
+   mpPlayerEmulation->quit();
+   mpPlayerEmulation->wait();
    delete mpPlayerEmulation;
    delete mpSongBinary;
 }

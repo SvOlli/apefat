@@ -98,7 +98,7 @@ void PsmkMainWidget::setup()
    layout->addWidget( mpLeadOutLabel );
 
    connect( mpPsmkInstrumentsWidget, SIGNAL(instrumentChanged(int,quint8)),
-            mpPsmkPatternSelector, SLOT(instrumentChanged(int,quint8)) );
+            mpPsmkPatternSelector, SLOT(setInstrument(int,quint8)) );
    connect( mpPsmkPlayerWidget, SIGNAL(playingPattern(int)),
             mpPsmkPatternSelector, SLOT(setPattern(int)) );
    connect( mpPsmkInstrumentsWidget, SIGNAL(instrumentChanged(int,quint8)),

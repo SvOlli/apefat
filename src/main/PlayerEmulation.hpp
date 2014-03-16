@@ -10,7 +10,7 @@
 #define PLAYEREMULATION_HPP PLAYEREMULATION_HPP
 
 /* base class */
-#include <QObject>
+#include <QThread>
 
 /* system headers */
 
@@ -35,7 +35,7 @@ class TIASound;
  \brief \todo complete documentation
 
 */
-class PlayerEmulation : public QObject
+class PlayerEmulation : public QThread
 {
    Q_OBJECT
 
