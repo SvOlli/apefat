@@ -176,6 +176,16 @@ QByteArray PsmkInstrumentsWidget::toBinary()
 }
 
 
+quint8 PsmkInstrumentsWidget::instrument( int index )
+{
+   if( (index < 0) || (index >= PsmkConfig::InstrumentsInSong) )
+   {
+      return 255;
+   }
+   mpTypes[index]->value();
+}
+
+
 void PsmkInstrumentsWidget::setTexts()
 {
    setTitle( tr("Instruments:") );

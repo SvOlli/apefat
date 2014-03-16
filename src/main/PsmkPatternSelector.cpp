@@ -267,7 +267,7 @@ void PsmkPatternSelector::insertAfter()
 }
 
 
-void PsmkPatternSelector::instrumentChanged( int index, quint8 value )
+void PsmkPatternSelector::setInstrument( int index, quint8 value )
 {
    Q_ASSERT( mpVoice0Stack->count() == mpVoice1Stack->count() );
    for( int i = 0; i < mpVoice0Stack->count(); ++i )

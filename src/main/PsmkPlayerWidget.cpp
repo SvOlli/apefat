@@ -91,7 +91,6 @@ void PsmkPlayerWidget::setup()
    connect( mpCurrentPattern, SIGNAL(valueChanged(int)),
             this, SLOT(setPatternByCurrent()) );
 
-   mpPlayerEmulation->start();
    setText();
 }
 
@@ -110,11 +109,11 @@ void PsmkPlayerWidget::startStop( bool play )
    if( play )
    {
       updateSong();
-      mpPlayerEmulation->start();
+      mpPlayerEmulation->startSong();
    }
    else
    {
-      mpPlayerEmulation->stop();
+      mpPlayerEmulation->stopSong();
    }
 }
 

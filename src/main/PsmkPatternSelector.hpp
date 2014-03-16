@@ -49,7 +49,7 @@ public:
 public slots:
    void setTexts();
 
-   void instrumentChanged( int index, quint8 value );
+   void setInstrument( int index, quint8 value );
    void setPattern( int pattern );
    void moveFirst();
    void movePrevious();

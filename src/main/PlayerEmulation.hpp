@@ -62,12 +62,12 @@ public slots:
     \brief \todo
 
    */
-   void start();
+   void startSong();
    /*!
     \brief \todo
 
    */
-   void stop();
+   void stopSong();
    /*!
     \brief \todo
 

@@ -157,6 +157,11 @@ bool PsmkMainWidget::fromVariantMap( const QVariantMap &variantMap )
    {
       retval = fromVariantMapSlocum( variantMap );
    }
+
+   for( int i = 0; i < PsmkConfig::InstrumentsInSong; ++i )
+   {
+      mpPsmkPatternSelector->setInstrument( i, mpPsmkInstrumentsWidget->instrument(i) );
+   }
    return retval;
 }
 

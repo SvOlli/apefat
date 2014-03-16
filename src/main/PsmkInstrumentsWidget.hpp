@@ -90,6 +90,13 @@ public:
     \return QByteArray
    */
    QByteArray toBinary();
+   /*!
+    \brief \todo
+
+    \param index
+    \return quint8
+   */
+   quint8 instrument( int index );
 
 public slots:
    /*!
