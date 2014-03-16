@@ -41,8 +41,6 @@ PlayerEmulation::PlayerEmulation( QObject *parent )
 {
    mpFrameTimer->setInterval( 1000 / 50 );
    mpFrameTimer->setSingleShot( false );
-   mpSoundSDL->open();
-   mpSoundSDL->mute( true );
 
    connect( mpFrameTimer, SIGNAL(timeout()),
             this, SLOT(runFrame()) );
@@ -51,7 +49,7 @@ PlayerEmulation::PlayerEmulation( QObject *parent )
 
 PlayerEmulation::~PlayerEmulation()
 {
-   mpSoundSDL->close();
+   stop();
    delete mp6502;
    delete mpPlayerConfig;
    delete mpTIA;
@@ -155,6 +153,7 @@ void PlayerEmulation::loadPlayer( const QString &fileName )
 
 void PlayerEmulation::start()
 {
+   mpSoundSDL->open();
    mp6502->reset();
    if( mCurrentPattern < 255 )
    {
@@ -169,6 +168,7 @@ void PlayerEmulation::stop()
 {
    mpSoundSDL->mute( true );
    mpFrameTimer->stop();
+   mpSoundSDL->close();
 }
 
 
@@ -196,9 +196,9 @@ void PlayerEmulation::runFrame()
 }
 
 
-void PlayerEmulation::setCurrentBar( int bar )
+void PlayerEmulation::setCurrentPattern( int pattern )
 {
-   mCurrentPattern = bar;
+   mCurrentPattern = pattern;
    mpPlayerConfig->poke( 0x01, mCurrentPattern & 0xff );
 }
 

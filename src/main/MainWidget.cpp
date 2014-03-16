@@ -41,7 +41,7 @@ MainWidget::MainWidget( QWidget *parent )
 : QWidget( parent )
 , mpLayout( new QGridLayout( this ) )
 , mpPsmkSong( new PsmkMainWidget( this ) )
-, mpBarsScrollArea( 0 )
+, mpGlobalScrollArea( 0 )
 {
    QSettings settings;
    QVariant songData( settings.value( "SongData") );
@@ -212,20 +212,20 @@ void MainWidget::smallScreenMode( bool enabled )
    // small screen workaround, can't do this with the designer :-P
    if( enabled )
    {
-      if( !mpBarsScrollArea )
+      if( !mpGlobalScrollArea )
       {
-         mpBarsScrollArea = new QScrollArea( this );
-         mpBarsScrollArea->setAlignment( Qt::AlignCenter );
+         mpGlobalScrollArea = new QScrollArea( this );
+         mpGlobalScrollArea->setAlignment( Qt::AlignCenter );
       }
-      mpBarsScrollArea->setWidget( mpPsmkSong );
-      mpLayout->addWidget( mpBarsScrollArea, 0, 0 );
+      mpGlobalScrollArea->setWidget( mpPsmkSong );
+      mpLayout->addWidget( mpGlobalScrollArea, 0, 0 );
    }
    else
    {
-      if( mpBarsScrollArea )
+      if( mpGlobalScrollArea )
       {
-         mpBarsScrollArea->deleteLater();
-         mpBarsScrollArea = 0;
+         mpGlobalScrollArea->deleteLater();
+         mpGlobalScrollArea = 0;
       }
       mpLayout->addWidget( mpPsmkSong, 0, 0 );
    }

@@ -12,9 +12,11 @@
 /* system headers */
 
 /* Qt headers */
+#include <QApplication>
 #include <QBoxLayout>
 #include <QCommonStyle>
 #include <QSpinBox>
+#include <QThread>
 #include <QToolButton>
 
 /* local library headers */
@@ -39,6 +41,7 @@ PsmkPlayerWidget::PsmkPlayerWidget( QWidget *parent )
 
 PsmkPlayerWidget::~PsmkPlayerWidget()
 {
+   delete mpPlayerEmulation;
    delete mpSongBinary;
 }
 
@@ -54,6 +57,7 @@ void PsmkPlayerWidget::setup()
    QCommonStyle style;
 
    mpPlayerEmulation->loadPlayer( ":/player.bin" );
+
    mpPlayButton->setCheckable( true );
    mpLoopButton->setCheckable( true );
    mpLoopButton->setIcon( style.standardIcon( QStyle::SP_BrowserReload ) );
@@ -84,7 +88,10 @@ void PsmkPlayerWidget::setup()
             this, SIGNAL(playingPattern(int)) );
    connect( mpPlayerEmulation, SIGNAL(stateUpdate(int,int)),
             this, SLOT(updatePlayerState(int,int)) );
+   connect( mpCurrentPattern, SIGNAL(valueChanged(int)),
+            this, SLOT(setPatternByCurrent()) );
 
+   mpPlayerEmulation->start();
    setText();
 }
 
@@ -122,4 +129,10 @@ void PsmkPlayerWidget::updatePlayerState( int pattern, int note )
 void PsmkPlayerWidget::updateSong()
 {
    mpPlayerEmulation->songToMemory( mpSongBinary );
+}
+
+
+void PsmkPlayerWidget::setPatternByCurrent()
+{
+   mpPlayerEmulation->setCurrentPattern( mpCurrentPattern->value() - 1 );
 }

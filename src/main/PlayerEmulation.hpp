@@ -61,7 +61,6 @@ public slots:
    /*!
     \brief \todo
 
-    \param bar bar to play (255 = song)
    */
    void start();
    /*!
@@ -78,17 +77,27 @@ public slots:
     \brief \todo
 
    */
-   void setCurrentBar( int bar );
+   void setCurrentPattern( int pattern );
    /*!
     \brief \todo
 
     \param enabled
    */
    void setLooping( bool enabled );
+   /*!
+    \brief \todo
 
+    \param songBinary
+   */
    void songToMemory( SongBinary *songBinary );
 
 signals:
+   /*!
+    \brief \todo
+
+    \param pattern
+    \param note
+   */
    void stateUpdate( int pattern, int note );
 
 private:
@@ -101,7 +110,7 @@ private:
    Cpu6502           *mp6502; /*!< \brief \todo TODO */
    QByteArray        mPlayerData; /*!< \brief \todo TODO */
    int               mCurrentPattern; /*!< \brief \todo TODO */
-   int               mCurrentNote;
+   int               mCurrentNote; /*!< \brief \todo TODO */
    bool              mLoopEnabled; /*!< \brief \todo TODO */
 };
 

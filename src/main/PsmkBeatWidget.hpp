@@ -125,14 +125,8 @@ public slots:
 
    */
    void setTexts();
-   /*!
-    \brief
-
-   */
-   void debug();
 
 signals:
-   void debugMsg( const QString &msg );
    /*!
     \brief \todo
 

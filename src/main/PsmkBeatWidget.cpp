@@ -190,12 +190,6 @@ void PsmkBeatWidget::setTexts()
 }
 
 
-void PsmkBeatWidget::debug()
-{
-   emit debugMsg( QtJson::serializeStr(toVariantMap()) );
-}
-
-
 void PsmkBeatWidget::dragEnterEvent( QDragEnterEvent *event )
 {
    dragMoveEvent( event );

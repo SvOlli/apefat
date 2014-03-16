@@ -110,10 +110,18 @@ void PsmkHiHatWidget::setup()
       mpPattern[i] = new QCheckBox( this );
       mpPattern[i]->setContentsMargins( 0, 0, 0, 0 );
       mainLayout->addWidget( mpPattern[i] );
+      connect( mpPattern[i], SIGNAL(toggled(bool)),
+               this, SIGNAL(changed()) );
    }
    mainLayout->addStretch( 1 );
    connect( mpValueTone, SIGNAL(valueChanged(quint8)),
             mpValuePitch, SLOT(setSound(quint8)) );
+   connect( mpValueTone, SIGNAL(currentIndexChanged(int)),
+            this, SIGNAL(changed()) );
+   connect( mpValuePitch, SIGNAL(currentIndexChanged(int)),
+            this, SIGNAL(changed()) );
+   connect( mpValueVolume, SIGNAL(valueChanged(int)),
+            this, SIGNAL(changed()) );
 
    setTexts();
 }

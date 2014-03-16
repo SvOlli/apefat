@@ -124,6 +124,11 @@ public slots:
 
    */
    void setTexts();
+   /*!
+    \brief \todo
+
+   */
+   void checkInvalid();
 
 signals:
    /*!

@@ -29,7 +29,6 @@ class QTextEdit;
 /* forward declaration of Qt classes */
 
 /* forward declaration of local classes */
-class PlayerEmulation;
 class PsmkMainWidget;
 
 
@@ -99,7 +98,7 @@ private:
 
    QGridLayout          *mpLayout;
    PsmkMainWidget       *mpPsmkSong;
-   QScrollArea          *mpBarsScrollArea; /*!< \brief scroll area for the bars tabs */
+   QScrollArea          *mpGlobalScrollArea; /*!< \brief scroll area for the bars tabs */
 };
 
 #endif // MAINWIDGET_HPP

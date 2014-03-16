@@ -121,7 +121,7 @@ int PsmkPacker::addBeat( const PsmkBeatWidget *beat )
 int PsmkPacker::indexOfPattern( const QByteArray &pattern ) const
 {
    int index = 0;
-   bool isLow;
+   bool isLow = false;
    switch( pattern.at(0) )
    {
    case 0:

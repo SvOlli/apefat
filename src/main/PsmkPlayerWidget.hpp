@@ -22,6 +22,7 @@
 
 /* forward declaration of Qt classes */
 class QSpinBox;
+class QThread;
 class QToolButton;
 
 /* forward declaration of local classes */
@@ -67,6 +68,7 @@ public slots:
    void startStop( bool play );
    void updatePlayerState( int pattern, int note );
    void updateSong();
+   void setPatternByCurrent();
 
 signals:
    void playingPattern( int pattern );

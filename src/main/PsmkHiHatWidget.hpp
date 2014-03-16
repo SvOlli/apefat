@@ -103,6 +103,13 @@ public slots:
    */
    void setTexts();
 
+signals:
+   /*!
+    \brief \todo
+
+   */
+   void changed();
+
 protected:
    /*!
     \brief handle the context menu

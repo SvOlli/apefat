@@ -85,6 +85,11 @@ public:
 
 public slots:
    /*!
+    \brief \todo
+
+   */
+   void updateSong();
+   /*!
     \brief set translatable texts
 
    */
@@ -112,7 +117,6 @@ private:
    bool fromVariantMapSlocum( const QVariantMap &variantMap );
    bool fromVariantMapPsmk( const QVariantMap &variantMap );
 
-   int                     mCurrentBar; /*!< \brief the current bar */
    QLabel                  *mpLabelName;
    QLineEdit               *mpValueName;
    QLabel                  *mpLabelDelay;

@@ -74,9 +74,9 @@ void PsmkNoteWidget::setup()
    connect( mpInstrument, SIGNAL(isMute(bool)),
             mpAccent, SLOT(setDisabled(bool)) );
    connect( mpInstrument, SIGNAL(currentIndexChanged(int)),
-            this, SIGNAL(changed()) );
+            this, SLOT(checkInvalid()) );
    connect( mpPitch, SIGNAL(currentIndexChanged(int)),
-            this, SIGNAL(changed()) );
+            this, SLOT(checkInvalid()) );
    connect( mpAccent, SIGNAL(clicked()),
             this, SIGNAL(changed()) );
    // workaround for setting notelist in pitch correctly
@@ -193,6 +193,16 @@ void PsmkNoteWidget::setInstruments( quint8 tones[] )
 void PsmkNoteWidget::setTexts()
 {
    mpTypeLabel->setText( tr("Note") );
+}
+
+
+void PsmkNoteWidget::checkInvalid()
+{
+   if( (mpInstrument->value() == 7) && (mpPitch->value() == 31) )
+   {
+      mpInstrument->setValue( 255 );
+   }
+   emit changed();
 }
 
 

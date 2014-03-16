@@ -82,10 +82,11 @@ void PsmkMainWidget::setup()
    buttonLayout->setRowStretch( 6, 1 );
 
    layout->addWidget( mpLeadInLabel );
-   buttonLayout->addWidget( mpLabelName,               0, 0 );
-   buttonLayout->addWidget( mpValueName,               0, 1, 1, 2 );
-   buttonLayout->addWidget( mpLabelDelay,              1, 0 );
-   buttonLayout->addWidget( mpValueDelay,              1, 2 );
+   buttonLayout->setRowMinimumHeight( 0, 8 );
+   buttonLayout->addWidget( mpLabelName,               1, 0 );
+   buttonLayout->addWidget( mpValueName,               1, 1, 1, 2 );
+   buttonLayout->addWidget( mpLabelDelay,              2, 0 );
+   buttonLayout->addWidget( mpValueDelay,              2, 2 );
    buttonLayout->addWidget( mpPsmkPacker,              4, 0, 1, 3 );
    buttonLayout->addWidget( new PsmkClipboard( this ), 5, 0, 1, 3 );
    buttonLayout->addWidget( mpPsmkPlayerWidget,        7, 0, 1, 3 );
@@ -100,8 +101,12 @@ void PsmkMainWidget::setup()
             mpPsmkPatternSelector, SLOT(instrumentChanged(int,quint8)) );
    connect( mpPsmkPlayerWidget, SIGNAL(playingPattern(int)),
             mpPsmkPatternSelector, SLOT(setPattern(int)) );
+   connect( mpPsmkInstrumentsWidget, SIGNAL(instrumentChanged(int,quint8)),
+            this, SLOT(updateSong()) );
+   connect( mpPsmkHiHatWidget, SIGNAL(changed()),
+            this, SLOT(updateSong()) );
    connect( mpPsmkPatternSelector, SIGNAL(changed()),
-            mpPsmkPlayerWidget, SLOT(update()) );
+            this, SLOT(updateSong()) );
 
    QTimer *t = new QTimer( this );
    connect( t, SIGNAL(timeout()),
@@ -128,6 +133,7 @@ QVariantMap PsmkMainWidget::toVariantMap()
 {
    QVariantMap variantMap;
 
+   variantMap.insert( "type", "psmk0" );
    variantMap.insert( "name", mpValueName->text() );
    variantMap.insert( "delay", mpValueDelay->value() );
    variantMap.insert( "instruments", mpPsmkInstrumentsWidget->toVariantMap() );
@@ -159,6 +165,13 @@ QByteArray PsmkMainWidget::toSourceCode()
 {
    mpPsmkPacker->update( this );
    return mpPsmkPacker->toSourceCode( this );
+}
+
+
+void PsmkMainWidget::updateSong()
+{
+   mpPsmkPacker->update( this );
+   mpPsmkPlayerWidget->updateSong(); //! \todo move to signal
 }
 
 
