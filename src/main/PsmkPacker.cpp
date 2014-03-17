@@ -210,13 +210,13 @@ QByteArray PsmkPacker::toSourceCode( const PsmkMainWidget *main )
             "\n"
             ".define TEMPODELAY %TEMPODELAY%\n"
             "\n"
-            "soundTypeArray:\n"
+            "psmkSoundTypeArray:\n"
             "%SOUNDTYPEARRAY%\n"
             "\n"
-            "soundAttenArray:\n"
+            "psmkSoundAttenArray:\n"
             "%SOUNDATTENARRAY%\n"
             "\n"
-            "hatPattern:\n"
+            "psmkHatPattern:\n"
             "%HATPATTERN%\n"
             "\n"
             ".define HATVOLUME %HATVOLUME%\n"
@@ -434,16 +434,14 @@ void PsmkPacker::update( const PsmkMainWidget *main )
          const PsmkPatternWidget *p = qobject_cast<PsmkPatternWidget*>( v->widget( i ) );
          Q_ASSERT( p );
          pattern = addPattern( p );
+         bool hihat = false;
          if( !j )
          {
             const QCheckBox *c =  qobject_cast<QCheckBox*>( main->mpPsmkPatternSelector->mpHiHatStack->widget( i ) );
             Q_ASSERT( c );
-            if( c->isChecked() )
-            {
-               pattern |= 0x80;
-            }
+            hihat = !c->isChecked();
          }
-         mVoice[j].append( pattern );
+         mVoice[j].append( pattern | (hihat ? 0x80 : 0x00) );
          if( !mBeatIndex[pattern][0] )
          {
             for( int b = 0; b < PsmkConfig::BeatsInPattern; ++b )
@@ -454,6 +452,7 @@ void PsmkPacker::update( const PsmkMainWidget *main )
             mBeatIndex[pattern][0] = 1;
          }
       }
+      mVoice[j].append( -1 ); // =255: end marker
    }
    updateMessage();
 }

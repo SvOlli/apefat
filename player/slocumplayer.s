@@ -261,10 +261,10 @@ noAccent:
 
    sbc psmkAttenuation               ; carry flag???
 muteNote:
-   ldy temp8               ; Get the osc number again
-   sta AUDV0,y
+   ldx temp8               ; Get the osc number again
+   sta AUDV0,x
 .if SHADOW_REGISTERS
-   sta audv0,y
+   sta audv0,x
 .endif
 
 
@@ -274,7 +274,7 @@ muteNote:
    ; This plays the high hat sound on the first frame of each beat indicated
    ; in hatPattern
    ;--------------------------------------------------------------------------
-   ldy temp8
+   lda temp8
    beq noHat
 
    ; Only play had on first frame

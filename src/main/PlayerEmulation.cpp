@@ -96,9 +96,9 @@ void PlayerEmulation::songToMemory( SongBinary *songBinary )
    {
       mpPlayerConfig->poke( 0xfdf0 + i, songBinary->hatPattern[i] );
    }
-   mpPlayerConfig->poke( 0xfdf4, songBinary->hatVolume );
+   mpPlayerConfig->poke( 0xfdf4, songBinary->hatType );
    mpPlayerConfig->poke( 0xfdf5, songBinary->hatPitch );
-   mpPlayerConfig->poke( 0xfdf6, songBinary->hatType );
+   mpPlayerConfig->poke( 0xfdf6, songBinary->hatVolume );
    mpPlayerConfig->poke( 0xfdf7, songBinary->tempoDelay );
 
    for( int i = 0; i < songBinary->songSize; ++i )
