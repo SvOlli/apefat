@@ -26,6 +26,7 @@
 class QGridLayout;
 class QLabel;
 class QStackedWidget;
+class QTimer;
 class QToolButton;
 
 /* forward declaration of local classes */
@@ -72,6 +73,7 @@ private:
    void clear();
    void insert( int pos );
 
+   QTimer                  *mpUpdateDelay;
    QLabel                  *mpPositionText; /*!< \brief info about current voice and bar */
    QToolButton             *mpFirstButton; /*!< \brief button for going to first bar */
    QToolButton             *mpPreviousButton; /*!< \brief button for going to last bar */

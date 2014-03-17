@@ -12,11 +12,14 @@
 /* system headers */
 
 /* Qt headers */
+#include <QApplication>
 #include <QCheckBox>
 #include <QCommonStyle>
 #include <QGridLayout>
 #include <QLabel>
+#include <QProgressDialog>
 #include <QStackedWidget>
+#include <QTimer>
 #include <QToolButton>
 
 /* local library headers */
@@ -27,6 +30,7 @@
 
 PsmkPatternSelector::PsmkPatternSelector( QWidget *parent )
 : QWidget( parent )
+, mpUpdateDelay( new QTimer( this ) )
 , mpPositionText( new QLabel( this ) )
 , mpFirstButton( new QToolButton( this ) )
 , mpPreviousButton( new QToolButton( this ) )
@@ -57,6 +61,8 @@ void PsmkPatternSelector::setup()
    mpLastButton->setIcon( style.standardIcon( QStyle::SP_MediaSkipForward ) );
    mpAddBeforeButton->setIcon( style.standardIcon( QStyle::SP_FileDialogNewFolder ) );
    mpAddAfterButton->setIcon( style.standardIcon( QStyle::SP_FileDialogNewFolder ) );
+   mpUpdateDelay->setInterval( 10 );
+   mpUpdateDelay->setSingleShot( true );
 
    QBoxLayout *mainLayout   = new QVBoxLayout( this );
    QBoxLayout *buttonLayout = new QHBoxLayout();
@@ -93,6 +99,8 @@ void PsmkPatternSelector::setup()
             mpVoice1Stack, SLOT(setCurrentIndex(int)) );
    connect( mpVoice0Stack, SIGNAL(currentChanged(int)),
             mpHiHatStack, SLOT(setCurrentIndex(int)) );
+   connect( mpUpdateDelay, SIGNAL(timeout()),
+            this, SLOT(setTexts()) );
 
    insert( 0 );
    setTexts();
@@ -103,20 +111,18 @@ void PsmkPatternSelector::clear()
 {
    for( int i = mpVoice0Stack->count() - 1; i >= 0; --i )
    {
-      delete mpVoice0Stack->widget( i );
-      delete mpVoice1Stack->widget( i );
-      delete mpHiHatStack->widget( i );
+      mpVoice0Stack->widget( i )->deleteLater();
+      mpVoice1Stack->widget( i )->deleteLater();
+      mpHiHatStack->widget( i )->deleteLater();
    }
 }
 
 
 void PsmkPatternSelector::insert( int pos )
 {
-   PsmkPatternWidget *voice0 = new PsmkPatternWidget( this );
-   PsmkPatternWidget *voice1 = new PsmkPatternWidget( this );
+   PsmkPatternWidget *voice0 = new PsmkPatternWidget( &mInstrumentCache[0], this );
+   PsmkPatternWidget *voice1 = new PsmkPatternWidget( &mInstrumentCache[0], this );
    QCheckBox *hihat = new QCheckBox( tr("HiHat"), this );
-   voice0->setInstruments( mInstrumentCache );
-   voice1->setInstruments( mInstrumentCache );
    mpVoice0Stack->insertWidget( pos, voice0 );
    mpVoice1Stack->insertWidget( pos, voice1 );
    mpHiHatStack->insertWidget( pos, hihat );
@@ -169,7 +175,7 @@ void PsmkPatternSelector::setPattern( int pattern )
    mpAddAfterButton->setDisabled( patterns >= 256 );
 
    mpVoice0Stack->setCurrentIndex( pattern );
-   setTexts();
+   mpUpdateDelay->start();
 }
 
 
@@ -198,11 +204,16 @@ bool PsmkPatternSelector::fromVariantList( const QVariantList &variantList )
 {
    bool retval = true;
    clear();
+   int size = variantList.size();
+   QProgressDialog *progress = new QProgressDialog( tr("Loading Song... (%1 Pattern(s))").arg(size), tr("Cancel"),
+                                                    0, size, this );
+   progress->show();
+   int i = 0;
    foreach( const QVariant &entry, variantList )
    {
       QVariantMap map( entry.toMap() );
-      PsmkPatternWidget *voice0 = new PsmkPatternWidget( this );
-      PsmkPatternWidget *voice1 = new PsmkPatternWidget( this );
+      PsmkPatternWidget *voice0 = new PsmkPatternWidget( &mInstrumentCache[0], this );
+      PsmkPatternWidget *voice1 = new PsmkPatternWidget( &mInstrumentCache[0], this );
       QCheckBox         *hihat  = new QCheckBox( tr("HiHat"), this );
       Q_ASSERT( voice0 );
       Q_ASSERT( voice1 );
@@ -220,15 +231,18 @@ bool PsmkPatternSelector::fromVariantList( const QVariantList &variantList )
           !map.contains("voice1") ||
           !map.contains("hihat") )
       {
+         delete progress;
          return false;
       }
-      voice0->setInstruments( mInstrumentCache );
-      voice1->setInstruments( mInstrumentCache );
       retval &= voice0->fromVariantMap( map.value("voice0").toMap() );
       retval &= voice1->fromVariantMap( map.value("voice1").toMap() );
-      hihat->setChecked( map.value("").toBool() );
+      hihat->setChecked( map.value("hihat").toBool() );
+      progress->setValue( ++i );
+      QApplication::processEvents( QEventLoop::ExcludeUserInputEvents |
+                                   QEventLoop::ExcludeSocketNotifiers );
    }
    setPattern( 0 );
+   delete progress;
    return retval;
 }
 

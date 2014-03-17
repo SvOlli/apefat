@@ -52,7 +52,20 @@ PsmkBeatWidget::PsmkBeatWidget( int index, QWidget *parent )
 }
 
 
-void PsmkBeatWidget::setup()
+PsmkBeatWidget::PsmkBeatWidget( int index, quint8 *instruments, QWidget *parent )
+: QWidget( parent )
+, mIndex( index )
+, mpTypeName( new QxtLabel( this ) )
+, mpLabelName( new QLabel( this ) )
+, mpValueName( new QLineEdit( this ) )
+, mpNotes()
+, mSaveBeat()
+{
+   setup( instruments );
+}
+
+
+void PsmkBeatWidget::setup( quint8 *instruments )
 {
    QBoxLayout *mainLayout  = new QHBoxLayout( this );
    QBoxLayout *notesLayout = new QVBoxLayout();
@@ -77,7 +90,7 @@ void PsmkBeatWidget::setup()
 
    for( int i = 0; i < PsmkConfig::NotesInBeat; ++i )
    {
-      mpNotes[i] = new PsmkNoteWidget( i, this );
+      mpNotes[i] = new PsmkNoteWidget( i, instruments, this );
       notesLayout->addWidget( mpNotes[i] );
       connect( mpNotes[i], SIGNAL(changed()),
                this, SIGNAL(changed()) );

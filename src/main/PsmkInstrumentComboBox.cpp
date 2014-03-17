@@ -108,6 +108,19 @@ void PsmkInstrumentComboBox::setTones( quint8 tones[] )
 }
 
 
+void PsmkInstrumentComboBox::setInstruments( quint8 *instruments )
+{
+   if( instruments )
+   {
+      for( int i = 0; i < PsmkConfig::InstrumentsInSong; ++i )
+      {
+         mInstruments[i] = instruments[i];
+      }
+      populate();
+   }
+}
+
+
 void PsmkInstrumentComboBox::indexToValue( int index )
 {
 }

@@ -48,7 +48,20 @@ PsmkPatternWidget::PsmkPatternWidget( QWidget *parent )
 }
 
 
-void PsmkPatternWidget::setup()
+PsmkPatternWidget::PsmkPatternWidget( quint8 *instruments, QWidget *parent )
+: QWidget( parent )
+, mpTypeName( new QxtLabel( this ) )
+, mpLabelName( new QLabel( this ) )
+, mpValueName( new QLineEdit( this ) )
+, mpLowVolume( new QCheckBox( this ) )
+, mpBeats()
+, mSavePattern()
+{
+   setup( instruments );
+}
+
+
+void PsmkPatternWidget::setup( quint8 *instruments )
 {
    QBoxLayout *mainLayout  = new QHBoxLayout( this );
    QBoxLayout *beatsLayout = new QVBoxLayout();
@@ -77,7 +90,7 @@ void PsmkPatternWidget::setup()
 
    for( int i = 0; i < PsmkConfig::BeatsInPattern; ++i )
    {
-      mpBeats[i] = new PsmkBeatWidget( i, this );
+      mpBeats[i] = new PsmkBeatWidget( i, instruments, this );
       beatsLayout->addWidget( mpBeats[i] );
       connect( mpBeats[i], SIGNAL(changed()),
                this, SIGNAL(changed()) );

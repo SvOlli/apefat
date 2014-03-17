@@ -53,7 +53,25 @@ PsmkNoteWidget::PsmkNoteWidget( int index, QWidget *parent )
 }
 
 
-void PsmkNoteWidget::setup()
+PsmkNoteWidget::PsmkNoteWidget( int index, quint8 *instruments, QWidget *parent )
+: QWidget( parent )
+, mIndex( index )
+, mpLayout( new QHBoxLayout( this ) )
+, mpInstrument( new PsmkInstrumentComboBox( this ) )
+, mpPitch( new PsmkPitchComboBox( this ) )
+, mpAccent( new QCheckBox( this ) )
+, mpTypeLabel( new QLabel( this ) )
+{
+   setup( instruments );
+}
+
+
+PsmkNoteWidget::~PsmkNoteWidget()
+{
+}
+
+
+void PsmkNoteWidget::setup( quint8 *instruments )
 {
    mpTypeLabel->setFrameStyle( QFrame::Box );
    mpTypeLabel->setLineWidth( 1 );
@@ -81,13 +99,9 @@ void PsmkNoteWidget::setup()
    connect( mpAccent, SIGNAL(clicked()),
             this, SIGNAL(changed()) );
    // workaround for setting notelist in pitch correctly
+   mpInstrument->setInstruments( instruments );
    mpInstrument->setValue( 255 );
    setTexts();
-}
-
-
-PsmkNoteWidget::~PsmkNoteWidget()
-{
 }
 
 

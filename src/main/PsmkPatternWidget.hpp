@@ -48,11 +48,17 @@ public:
    /*!
     \brief constructor
 
-    \param slocumSong
-    \param slocumBar
     \param parent
    */
-   explicit PsmkPatternWidget(QWidget *parent = 0 );
+   explicit PsmkPatternWidget( QWidget *parent = 0 );
+   /*!
+    \brief constructor
+
+    \param instruments
+    \param parent
+   */
+   explicit PsmkPatternWidget( quint8 *instruments,
+                               QWidget *parent = 0 );
    /*!
     \brief destructor
 
@@ -164,8 +170,9 @@ private:
    /*!
     \brief \todo
 
+    \param instruments
    */
-   void setup();
+   void setup( quint8 *instruments = 0 );
    /*!
     \brief used internally for moving a beat inside a bar
 

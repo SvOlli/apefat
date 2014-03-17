@@ -60,6 +60,12 @@ public:
     \return AUDCx or 255, if disabled
    */
    quint8 value();
+   /*!
+    \brief \todo
+
+    \param instruments
+   */
+   void setInstruments( quint8 *instruments );
 
 public slots:
    /*!

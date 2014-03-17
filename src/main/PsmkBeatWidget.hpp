@@ -54,6 +54,15 @@ public:
    */
    explicit PsmkBeatWidget( int index, QWidget *parent = 0 );
    /*!
+    \brief constructor
+
+    \param index
+    \param instruments
+    \param parent
+   */
+   explicit PsmkBeatWidget( int index, quint8 *instruments,
+                            QWidget *parent = 0 );
+   /*!
     \brief destructor
 
    */
@@ -185,7 +194,12 @@ private:
    static const char       cMimeType[]; /*!< \brief mime type for dragging */
    static bool             cDragImage; /*!< \brief setting for generating image for drag */
 
-   void setup();
+   /*!
+    \brief \todo
+
+    \param instruments
+   */
+   void setup( quint8 *instruments = 0 );
    /*!
     \brief used internally for moving a note inside a beat
 
