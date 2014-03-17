@@ -37,6 +37,7 @@ PsmkPatternSelector::PsmkPatternSelector( QWidget *parent )
 , mpVoice0Stack( new QStackedWidget( this ) )
 , mpVoice1Stack( new QStackedWidget( this ) )
 , mpHiHatStack( new QStackedWidget( this ) )
+, mInstrumentCache()
 {
    setup();
 }
@@ -100,11 +101,11 @@ void PsmkPatternSelector::setup()
 
 void PsmkPatternSelector::clear()
 {
-   for( int i = 0; i < mpVoice0Stack->count(); ++i )
+   for( int i = mpVoice0Stack->count() - 1; i >= 0; --i )
    {
-      mpVoice0Stack->widget( i )->deleteLater();
-      mpVoice1Stack->widget( i )->deleteLater();
-      mpHiHatStack->widget( i )->deleteLater();
+      delete mpVoice0Stack->widget( i );
+      delete mpVoice1Stack->widget( i );
+      delete mpHiHatStack->widget( i );
    }
 }
 
@@ -114,6 +115,8 @@ void PsmkPatternSelector::insert( int pos )
    PsmkPatternWidget *voice0 = new PsmkPatternWidget( this );
    PsmkPatternWidget *voice1 = new PsmkPatternWidget( this );
    QCheckBox *hihat = new QCheckBox( tr("HiHat"), this );
+   voice0->setInstruments( mInstrumentCache );
+   voice1->setInstruments( mInstrumentCache );
    mpVoice0Stack->insertWidget( pos, voice0 );
    mpVoice1Stack->insertWidget( pos, voice1 );
    mpHiHatStack->insertWidget( pos, hihat );
@@ -201,6 +204,9 @@ bool PsmkPatternSelector::fromVariantList( const QVariantList &variantList )
       PsmkPatternWidget *voice0 = new PsmkPatternWidget( this );
       PsmkPatternWidget *voice1 = new PsmkPatternWidget( this );
       QCheckBox         *hihat  = new QCheckBox( tr("HiHat"), this );
+      Q_ASSERT( voice0 );
+      Q_ASSERT( voice1 );
+      Q_ASSERT( hihat  );
       connect( voice0, SIGNAL(changed()),
                this, SIGNAL(changed()) );
       connect( voice1, SIGNAL(changed()),
@@ -216,12 +222,24 @@ bool PsmkPatternSelector::fromVariantList( const QVariantList &variantList )
       {
          return false;
       }
+      voice0->setInstruments( mInstrumentCache );
+      voice1->setInstruments( mInstrumentCache );
       retval &= voice0->fromVariantMap( map.value("voice0").toMap() );
       retval &= voice1->fromVariantMap( map.value("voice1").toMap() );
       hihat->setChecked( map.value("").toBool() );
    }
    setPattern( 0 );
    return retval;
+}
+
+
+void PsmkPatternSelector::setInstrumentCache( const QByteArray &instruments )
+{
+   Q_ASSERT( instruments.size() == PsmkConfig::InstrumentsInSong * 2 );
+   for( int i = 0; i < PsmkConfig::InstrumentsInSong; ++i )
+   {
+      mInstrumentCache[i] = instruments.at( i );
+   }
 }
 
 
@@ -272,9 +290,22 @@ void PsmkPatternSelector::setInstrument( int index, quint8 value )
    Q_ASSERT( mpVoice0Stack->count() == mpVoice1Stack->count() );
    for( int i = 0; i < mpVoice0Stack->count(); ++i )
    {
-      PsmkPatternWidget *v0 = qobject_cast<PsmkPatternWidget*>( mpVoice0Stack->widget( i ) );
-      PsmkPatternWidget *v1 = qobject_cast<PsmkPatternWidget*>( mpVoice1Stack->widget( i ) );
-      v0->setInstrument( index, value );
-      v1->setInstrument( index, value );
+      PsmkPatternWidget *voice0 = qobject_cast<PsmkPatternWidget*>( mpVoice0Stack->widget( i ) );
+      PsmkPatternWidget *voice1 = qobject_cast<PsmkPatternWidget*>( mpVoice1Stack->widget( i ) );
+      voice0->setInstrument( index, value );
+      voice1->setInstrument( index, value );
+   }
+}
+
+
+void PsmkPatternSelector::setInstruments( quint8 tones[] )
+{
+   Q_ASSERT( mpVoice0Stack->count() == mpVoice1Stack->count() );
+   for( int i = 0; i < mpVoice0Stack->count(); ++i )
+   {
+      PsmkPatternWidget *voice0 = qobject_cast<PsmkPatternWidget*>( mpVoice0Stack->widget( i ) );
+      PsmkPatternWidget *voice1 = qobject_cast<PsmkPatternWidget*>( mpVoice1Stack->widget( i ) );
+      voice0->setInstruments( tones );
+      voice1->setInstruments( tones );
    }
 }

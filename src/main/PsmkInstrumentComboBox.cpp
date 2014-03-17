@@ -36,6 +36,11 @@ PsmkInstrumentComboBox::PsmkInstrumentComboBox( QWidget *parent )
 {
    connect( this, SIGNAL(currentIndexChanged(int)),
             this, SLOT(checkIndex(int)) );
+   QComboBox::addItem( "--:no sound", 255 );
+   for( int i = 0; i < PsmkConfig::InstrumentsInSong; ++i )
+   {
+      QComboBox::addItem( QString(), i );
+   }
    populate();
 }
 
@@ -47,7 +52,14 @@ PsmkInstrumentComboBox::~PsmkInstrumentComboBox()
 
 void PsmkInstrumentComboBox::populate()
 {
-   QComboBox::setMaxVisibleItems( TONES_SIZE );
+#if 1
+   QString name( "%1:%2" );
+   for( int i = 0; i < PsmkConfig::InstrumentsInSong; ++i )
+   {
+      QComboBox::setItemText( i + 1, name.arg( QString::number(i),
+                                               Tones_names[mInstruments[i]] ) );
+   }
+#else
    int savedIndex = QComboBox::currentIndex();
    QComboBox::clear();
 
@@ -60,6 +72,7 @@ void PsmkInstrumentComboBox::populate()
                           i );
    }
    QComboBox::setCurrentIndex( savedIndex );
+#endif
 }
 
 

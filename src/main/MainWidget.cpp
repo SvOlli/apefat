@@ -44,12 +44,8 @@ MainWidget::MainWidget( QWidget *parent )
 , mpGlobalScrollArea( 0 )
 {
    QSettings settings;
-   QVariant songData( settings.value( "SongData") );
-   if( songData.type() == QVariant::Map )
-   {
-      mpPsmkSong->fromVariantMap( songData.toMap() );
-   }
-   //mpSlocumSong->setDefaults();
+
+   fileLoad( QString(":/EmptySong.psmk") );
    mpLayout->setContentsMargins( 0, 0, 0, 0 );
 
    setLayout( mpLayout );
@@ -60,7 +56,6 @@ MainWidget::MainWidget( QWidget *parent )
 
 MainWidget::~MainWidget()
 {
-   QSettings().setValue( "SongData", mpPsmkSong->toVariantMap() );
 }
 
 

@@ -40,15 +40,6 @@ PlayerEmulation::PlayerEmulation( QObject *parent )
 , mLoopEnabled( false )
 {
    moveToThread( this );
-   // timer must be created after move to thread
-   mpFrameTimer = new QTimer( this );
-
-   mpFrameTimer->setInterval( 1000 / 50 );
-   mpFrameTimer->setSingleShot( false );
-   mpFrameTimer->stop();
-
-   connect( mpFrameTimer, SIGNAL(timeout()),
-            this, SLOT(runFrame()) );
 }
 
 
@@ -58,7 +49,10 @@ PlayerEmulation::~PlayerEmulation()
    delete mp6502;
    delete mpPlayerConfig;
    delete mpTIA;
-   delete mpSoundSDL;
+   if( mpSoundSDL )
+   {
+      delete mpSoundSDL;
+   }
 }
 
 
@@ -158,6 +152,17 @@ void PlayerEmulation::loadPlayer( const QString &fileName )
 
 void PlayerEmulation::startSong()
 {
+   if( !mpFrameTimer )
+   {
+      // timer must be created after move to thread
+      mpFrameTimer = new QTimer( this );
+      connect( mpFrameTimer, SIGNAL(timeout()),
+               this, SLOT(runFrame()) );
+   }
+
+   mpFrameTimer->setInterval( 1000 / 50 );
+   mpFrameTimer->setSingleShot( false );
+
    mpSoundSDL->open();
    mp6502->reset();
    if( mCurrentPattern < 255 )
@@ -171,9 +176,15 @@ void PlayerEmulation::startSong()
 
 void PlayerEmulation::stopSong()
 {
-   mpFrameTimer->stop();
-   mpSoundSDL->mute( true );
-   mpSoundSDL->close();
+   if( mpFrameTimer )
+   {
+      mpFrameTimer->stop();
+   }
+   if( mpSoundSDL )
+   {
+      mpSoundSDL->mute( true );
+      mpSoundSDL->close();
+   }
 }
 
 

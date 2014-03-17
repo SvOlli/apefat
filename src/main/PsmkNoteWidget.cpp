@@ -58,6 +58,7 @@ void PsmkNoteWidget::setup()
    mpTypeLabel->setFrameStyle( QFrame::Box );
    mpTypeLabel->setLineWidth( 1 );
    mpTypeLabel->setMargin( 1 );
+   mpAccent->setDisabled( true );
    mpLayout->setContentsMargins( 0, 0, 0, 0 );
    mpLayout->addWidget( mpInstrument );
    mpLayout->addWidget( mpPitch );

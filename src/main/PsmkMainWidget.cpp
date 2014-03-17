@@ -31,6 +31,7 @@
 #include <json.h>
 
 /* local headers */
+#include "PsmkContextMenu.hpp"
 #include "PsmkPatternWidget.hpp"
 #include "PsmkToneComboBox.hpp"
 #include "PsmkPitchComboBox.hpp"
@@ -44,7 +45,7 @@
 #include <QtDebug>
 
 
-#include "PsmkNoteWidget.hpp"
+const char PsmkMainWidget::cMimeType[] = "x-apefat-song";
 
 
 PsmkMainWidget::PsmkMainWidget( QWidget *parent )
@@ -58,8 +59,7 @@ PsmkMainWidget::PsmkMainWidget( QWidget *parent )
 , mpPsmkInstrumentsWidget( new PsmkInstrumentsWidget( this ) )
 , mpPsmkHiHatWidget( new PsmkHiHatWidget( this ) )
 , mpPsmkPlayerWidget( new PsmkPlayerWidget( this ) )
-, mpLeadInLabel( new QLabel( this ) )
-, mpLeadOutLabel( new QLabel( this ) )
+, mpUpdateDelay( new QTimer( this ) )
 {
    setup();
 }
@@ -67,12 +67,27 @@ PsmkMainWidget::PsmkMainWidget( QWidget *parent )
 
 PsmkMainWidget::~PsmkMainWidget()
 {
+   bool ok;
+   QSettings settings;
+   settings.beginGroup( "Store/Song" );
+   QVariantMap variantMap( toVariantMap() );
+   QString name( PsmkContextMenu::getNameFromMap( variantMap, &ok ) );
+   if( ok )
+   {
+      if( name.isEmpty() )
+      {
+         name = tr("(Unnamed)");
+      }
+      settings.setValue( name, variantMap );
+   }
 }
 
 
 void PsmkMainWidget::setup()
 {
    mpValueDelay->setRange( 1, 50 );
+   mpUpdateDelay->setSingleShot( true );
+   mpUpdateDelay->setInterval( 20 );
 
    QBoxLayout  *layout = new QHBoxLayout( this );
    QGridLayout *buttonLayout = new QGridLayout();
@@ -81,7 +96,7 @@ void PsmkMainWidget::setup()
    buttonLayout->setColumnStretch( 1, 2 );
    buttonLayout->setRowStretch( 6, 1 );
 
-   layout->addWidget( mpLeadInLabel );
+   layout->addStretch( 1 );
    buttonLayout->setRowMinimumHeight( 0, 8 );
    buttonLayout->addWidget( mpLabelName,               1, 0 );
    buttonLayout->addWidget( mpValueName,               1, 1, 1, 2 );
@@ -95,27 +110,22 @@ void PsmkMainWidget::setup()
    layout->addLayout( buttonLayout );
    layout->addWidget( mpPsmkPatternSelector );
    layout->addWidget( mpPsmkHiHatWidget );
-   layout->addWidget( mpLeadOutLabel );
+   layout->addStretch( 1 );
 
    connect( mpPsmkInstrumentsWidget, SIGNAL(instrumentChanged(int,quint8)),
             mpPsmkPatternSelector, SLOT(setInstrument(int,quint8)) );
    connect( mpPsmkPlayerWidget, SIGNAL(playingPattern(int)),
             mpPsmkPatternSelector, SLOT(setPattern(int)) );
    connect( mpPsmkInstrumentsWidget, SIGNAL(instrumentChanged(int,quint8)),
-            this, SLOT(updateSong()) );
+            mpUpdateDelay, SLOT(start()) );
    connect( mpPsmkHiHatWidget, SIGNAL(changed()),
-            this, SLOT(updateSong()) );
+            mpUpdateDelay, SLOT(start()) );
    connect( mpPsmkPatternSelector, SIGNAL(changed()),
+            mpUpdateDelay, SLOT(start()) );
+   connect( mpValueDelay, SIGNAL(valueChanged(int)),
+            mpUpdateDelay, SLOT(start()) );
+   connect( mpUpdateDelay, SIGNAL(timeout()),
             this, SLOT(updateSong()) );
-
-   QTimer *t = new QTimer( this );
-   connect( t, SIGNAL(timeout()),
-            this, SLOT(updatePacker()) );
-   t->setSingleShot( true );
-   t->setInterval( 1000 );
-   t->start();
-   connect( mpPsmkPatternSelector, SIGNAL(changed()),
-            t, SLOT(start()) );
 
    mpPsmkPatternSelector->setPattern( 0 );
    setTexts();
@@ -158,10 +168,8 @@ bool PsmkMainWidget::fromVariantMap( const QVariantMap &variantMap )
       retval = fromVariantMapSlocum( variantMap );
    }
 
-   for( int i = 0; i < PsmkConfig::InstrumentsInSong; ++i )
-   {
-      mpPsmkPatternSelector->setInstrument( i, mpPsmkInstrumentsWidget->instrument(i) );
-   }
+   updateSong();
+
    return retval;
 }
 
@@ -175,7 +183,8 @@ QByteArray PsmkMainWidget::toSourceCode()
 
 void PsmkMainWidget::updateSong()
 {
-   mpPsmkPacker->update( this );
+//   mpPsmkPacker->update( this );
+   mpPsmkPacker->toSongBinary( mpPsmkPlayerWidget->songBinary(), this );
    mpPsmkPlayerWidget->updateSong(); //! \todo move to signal
 }
 
@@ -234,9 +243,10 @@ bool PsmkMainWidget::fromVariantMapSlocum( const QVariantMap &variantMap )
       newVoices.append( map );
    }
 
-   retval &= mpPsmkHiHatWidget->fromVariantMap( variantMap.value( "hihat" ).toMap() );
-   retval &= mpPsmkPatternSelector->fromVariantList( newVoices );
    retval &= mpPsmkInstrumentsWidget->fromVariantMap( variantMap.value( "sound" ).toMap() );
+   retval &= mpPsmkHiHatWidget->fromVariantMap( variantMap.value( "hihat" ).toMap() );
+   mpPsmkPatternSelector->setInstrumentCache( mpPsmkInstrumentsWidget->toBinary() );
+   retval &= mpPsmkPatternSelector->fromVariantList( newVoices );
 
    setTexts();
 
@@ -261,9 +271,10 @@ bool PsmkMainWidget::fromVariantMapPsmk( const QVariantMap &variantMap )
    {
       return false;
    }
-   retval &= mpPsmkHiHatWidget->fromVariantMap( variantMap.value( "hihat" ).toMap() );
-   retval &= mpPsmkPatternSelector->fromVariantList( variantMap.value( "bars" ).toList() );
    retval &= mpPsmkInstrumentsWidget->fromVariantMap( variantMap.value( "instruments" ).toMap() );
+   retval &= mpPsmkHiHatWidget->fromVariantMap( variantMap.value( "hihat" ).toMap() );
+   mpPsmkPatternSelector->setInstrumentCache( mpPsmkInstrumentsWidget->toBinary() );
+   retval &= mpPsmkPatternSelector->fromVariantList( variantMap.value( "bars" ).toList() );
 
    return retval;
 }
@@ -274,4 +285,15 @@ void PsmkMainWidget::updatePacker()
    //mpPsmkPacker->update( this );
    QApplication::clipboard()->setText( QString::fromUtf8(mpPsmkPacker->toSourceCode(this) ) );
    mpPsmkPacker->toSongBinary( mpPsmkPlayerWidget->songBinary(), this );
+}
+
+
+void PsmkMainWidget::contextMenuEvent( QContextMenuEvent *event )
+{
+   PsmkContextMenu menu( tr("Song"), cMimeType, toVariantMap(), this );
+
+   if( menu.runSelect( event->globalPos() - QPoint( 5, 5 ) ) == PsmkContextMenu::Paste )
+   {
+      fromVariantMap( menu.mimeData().toMap() );
+   }
 }

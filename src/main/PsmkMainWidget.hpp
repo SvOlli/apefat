@@ -27,6 +27,7 @@ class QLineEdit;
 class QPushButton;
 class QSpinBox;
 class QStackedWidget;
+class QTimer;
 
 /* forward declaration of local classes */
 class PsmkHiHatWidget;
@@ -101,6 +102,12 @@ public slots:
    void updatePacker();
 
 protected:
+   /*!
+    \brief \todo
+
+    \param event
+   */
+   void contextMenuEvent( QContextMenuEvent *event );
 
 signals:
    /*!
@@ -112,6 +119,8 @@ signals:
 
 private:
    Q_DISABLE_COPY( PsmkMainWidget )
+
+   static const char       cMimeType[]; /*!< \brief mime type for dragging */
 
    void setup();
    bool fromVariantMapSlocum( const QVariantMap &variantMap );
@@ -126,8 +135,7 @@ private:
    PsmkInstrumentsWidget   *mpPsmkInstrumentsWidget;
    PsmkHiHatWidget         *mpPsmkHiHatWidget;
    PsmkPlayerWidget        *mpPsmkPlayerWidget;
-   QLabel                  *mpLeadInLabel; /*!< \brief label for left text */
-   QLabel                  *mpLeadOutLabel; /*!< \brief label for right text */
+   QTimer                  *mpUpdateDelay;
 };
 
 #endif // PSMKMAINWIDGET_HPP

@@ -182,7 +182,7 @@ quint8 PsmkInstrumentsWidget::instrument( int index )
    {
       return 255;
    }
-   mpTypes[index]->value();
+   return mpTypes[index]->value();
 }
 
 

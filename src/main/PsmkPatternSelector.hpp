@@ -20,6 +20,7 @@
 /* local library headers */
 
 /* local headers */
+#include "PsmkConfig.hpp"
 
 /* forward declaration of Qt classes */
 class QGridLayout;
@@ -46,10 +47,13 @@ public:
    QVariantList toVariantList() const;
    bool fromVariantList( const QVariantList &variantList );
 
+   void setInstrumentCache( const QByteArray &instruments );
+
 public slots:
    void setTexts();
 
    void setInstrument( int index, quint8 value );
+   void setInstruments( quint8 tones[8] );
    void setPattern( int pattern );
    void moveFirst();
    void movePrevious();
@@ -78,6 +82,7 @@ private:
    QStackedWidget          *mpVoice0Stack;
    QStackedWidget          *mpVoice1Stack;
    QStackedWidget          *mpHiHatStack;
+   quint8                  mInstrumentCache[PsmkConfig::InstrumentsInSong];
 };
 
 #endif

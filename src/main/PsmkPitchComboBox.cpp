@@ -39,7 +39,7 @@ PsmkPitchComboBox::PsmkPitchComboBox( QWidget *parent )
    }
    connect( this, SIGNAL(currentIndexChanged(int)),
             this, SLOT(indexToValue()) );
-   setSound( 0 );
+   setSound( 255 );
 }
 
 

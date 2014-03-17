@@ -62,7 +62,7 @@ PsmkContextMenu::PsmkContextMenu( const QString &context,
 
    if( variantMap.contains("name") )
    {
-      mName = variantMap.value("name").toString();
+      mName = getNameFromMap( variantMap );
    }
    if( mName.isEmpty() )
    {
@@ -156,4 +156,14 @@ void PsmkContextMenu::removeStore()
    mpStore      = 0;
    mpLoad       = 0;
    mpRemove     = 0;
+}
+
+
+QString PsmkContextMenu::getNameFromMap( const QVariantMap &variantMap, bool *success )
+{
+   if( success )
+   {
+      *success = variantMap.contains( "name" );
+   }
+   return variantMap.value( "name" ).toString();
 }

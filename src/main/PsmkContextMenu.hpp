@@ -102,6 +102,14 @@ public:
 
    */
    void removeStore();
+   /*!
+    \brief \todo
+
+    \param variantMap
+    \param success
+    \return
+   */
+   static QString getNameFromMap( const QVariantMap &variantMap, bool *success = 0 );
 
 private:
    Q_DISABLE_COPY( PsmkContextMenu )

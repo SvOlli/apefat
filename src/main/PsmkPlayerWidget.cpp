@@ -112,11 +112,13 @@ void PsmkPlayerWidget::startStop( bool play )
    if( play )
    {
       updateSong();
-      mpPlayerEmulation->startSong();
+      QMetaObject::invokeMethod( mpPlayerEmulation, "startSong", Qt::QueuedConnection );
+      //mpPlayerEmulation->startSong();
    }
    else
    {
-      mpPlayerEmulation->stopSong();
+      QMetaObject::invokeMethod( mpPlayerEmulation, "stopSong", Qt::QueuedConnection );
+      //mpPlayerEmulation->stopSong();
    }
 }
 
