@@ -32,7 +32,7 @@
 #include "PsmkNoteWidget.hpp"
 #include "PsmkPatternWidget.hpp"
 #include "PsmkPatternSelector.hpp"
-#include "PsmkMainWidget.hpp"
+#include "PsmkSongWidget.hpp"
 
 
 #include "Trace.hpp"
@@ -192,7 +192,7 @@ int PsmkPacker::addPattern( const PsmkPatternWidget *pattern )
 }
 
 
-QByteArray PsmkPacker::toSourceCode( const PsmkMainWidget *main )
+QByteArray PsmkPacker::toSourceCode( const PsmkSongWidget *main )
 {
    update( main );
    int index = 0;
@@ -287,7 +287,7 @@ QByteArray PsmkPacker::toSourceCode( const PsmkMainWidget *main )
 }
 
 
-void PsmkPacker::toSongBinary( SongBinary *sb, const PsmkMainWidget *main )
+void PsmkPacker::toSongBinary( SongBinary *sb, const PsmkSongWidget *main )
 {
    int i;
    update( main );
@@ -414,7 +414,7 @@ QStringList PsmkPacker::toDec( const QByteArray &value )
 }
 
 
-void PsmkPacker::update( const PsmkMainWidget *main )
+void PsmkPacker::update( const PsmkSongWidget *main )
 {
    clearStorage();
    int pattern;

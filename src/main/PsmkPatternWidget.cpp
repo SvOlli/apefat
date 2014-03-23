@@ -187,6 +187,14 @@ PsmkBeatWidget *PsmkPatternWidget::beat( int i ) const
 }
 
 
+PsmkPatternWidget *PsmkPatternWidget::getClone( QWidget *parent ) const
+{
+   PsmkPatternWidget *cloned = new PsmkPatternWidget( parent );
+   cloned->fromVariantMap( toVariantMap() );
+   return cloned;
+}
+
+
 void PsmkPatternWidget::setInstrument( int index, quint8 tone )
 {
    for( int i = 0; i < PsmkConfig::BeatsInPattern; ++i )

@@ -104,6 +104,12 @@ public:
     \return PsmkBeatWidget*
    */
    PsmkBeatWidget *beat( int i ) const;
+   /*!
+    \brief \todo
+
+    \return PsmkBeatWidget*
+   */
+   PsmkPatternWidget *getClone( QWidget *parent = 0 ) const;
 
 public slots:
    /*!

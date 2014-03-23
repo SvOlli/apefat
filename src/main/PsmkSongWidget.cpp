@@ -1,5 +1,5 @@
 /**
- * PsmkMainWidget.cpp
+ * PsmkSongWidget.cpp
  * written by Sven Oliver Moll
  *
  * distributed under the terms of the GNU General Public License (GPL)
@@ -7,7 +7,7 @@
  */
 
 /* class declaration */
-#include "PsmkMainWidget.hpp"
+#include "PsmkSongWidget.hpp"
 
 /* system headers */
 
@@ -45,10 +45,10 @@
 #include <QtDebug>
 
 
-const char PsmkMainWidget::cMimeType[] = "x-apefat-song";
+const char PsmkSongWidget::cMimeType[] = "x-apefat-song";
 
 
-PsmkMainWidget::PsmkMainWidget( QWidget *parent )
+PsmkSongWidget::PsmkSongWidget( QWidget *parent )
 : QWidget( parent )
 , mpLabelName( new QLabel( this ) )
 , mpValueName( new QLineEdit( this ) )
@@ -65,7 +65,7 @@ PsmkMainWidget::PsmkMainWidget( QWidget *parent )
 }
 
 
-PsmkMainWidget::~PsmkMainWidget()
+PsmkSongWidget::~PsmkSongWidget()
 {
    bool ok;
    QSettings settings;
@@ -83,7 +83,7 @@ PsmkMainWidget::~PsmkMainWidget()
 }
 
 
-void PsmkMainWidget::setup()
+void PsmkSongWidget::setup()
 {
    mpValueDelay->setRange( 1, 50 );
    mpUpdateDelay->setSingleShot( true );
@@ -103,7 +103,6 @@ void PsmkMainWidget::setup()
    buttonLayout->addWidget( mpLabelDelay,              2, 0 );
    buttonLayout->addWidget( mpValueDelay,              2, 2 );
    buttonLayout->addWidget( mpPsmkPacker,              4, 0, 1, 3 );
-   buttonLayout->addWidget( new PsmkClipboard( this ), 5, 0, 1, 3 );
    buttonLayout->addWidget( mpPsmkPlayerWidget,        7, 0, 1, 3 );
    buttonLayout->addWidget( mpPsmkInstrumentsWidget,   8, 0, 1, 3 );
    //buttonLayout->addStretch( 1 );
@@ -132,14 +131,14 @@ void PsmkMainWidget::setup()
 }
 
 
-void PsmkMainWidget::setTexts()
+void PsmkSongWidget::setTexts()
 {
    mpLabelName->setText( tr("Song Name:") );
    mpLabelDelay->setText( tr("Delay:") );
 }
 
 
-QVariantMap PsmkMainWidget::toVariantMap()
+QVariantMap PsmkSongWidget::toVariantMap()
 {
    QVariantMap variantMap;
 
@@ -154,7 +153,7 @@ QVariantMap PsmkMainWidget::toVariantMap()
 }
 
 
-bool PsmkMainWidget::fromVariantMap( const QVariantMap &variantMap )
+bool PsmkSongWidget::fromVariantMap( const QVariantMap &variantMap )
 {
    bool retval = true;
    const QString type( variantMap.value( "type" ).toString() );
@@ -174,14 +173,14 @@ bool PsmkMainWidget::fromVariantMap( const QVariantMap &variantMap )
 }
 
 
-QByteArray PsmkMainWidget::toSourceCode()
+QByteArray PsmkSongWidget::toSourceCode()
 {
    mpPsmkPacker->update( this );
    return mpPsmkPacker->toSourceCode( this );
 }
 
 
-void PsmkMainWidget::updateSong()
+void PsmkSongWidget::updateSong()
 {
 //   mpPsmkPacker->update( this );
    mpPsmkPacker->toSongBinary( mpPsmkPlayerWidget->songBinary(), this );
@@ -189,7 +188,7 @@ void PsmkMainWidget::updateSong()
 }
 
 
-bool PsmkMainWidget::fromVariantMapSlocum( const QVariantMap &variantMap )
+bool PsmkSongWidget::fromVariantMapSlocum( const QVariantMap &variantMap )
 {
    QVariantList newVoices;
 
@@ -254,7 +253,7 @@ bool PsmkMainWidget::fromVariantMapSlocum( const QVariantMap &variantMap )
 }
 
 
-bool PsmkMainWidget::fromVariantMapPsmk( const QVariantMap &variantMap )
+bool PsmkSongWidget::fromVariantMapPsmk( const QVariantMap &variantMap )
 {
    bool retval = true;
    if( !variantMap.contains( "name" ) ||
@@ -280,7 +279,7 @@ bool PsmkMainWidget::fromVariantMapPsmk( const QVariantMap &variantMap )
 }
 
 
-void PsmkMainWidget::updatePacker()
+void PsmkSongWidget::updatePacker()
 {
    //mpPsmkPacker->update( this );
    QApplication::clipboard()->setText( QString::fromUtf8(mpPsmkPacker->toSourceCode(this) ) );
@@ -288,7 +287,7 @@ void PsmkMainWidget::updatePacker()
 }
 
 
-void PsmkMainWidget::contextMenuEvent( QContextMenuEvent *event )
+void PsmkSongWidget::contextMenuEvent( QContextMenuEvent *event )
 {
    PsmkContextMenu menu( tr("Song"), cMimeType, toVariantMap(), this );
 

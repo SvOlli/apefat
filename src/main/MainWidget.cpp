@@ -28,7 +28,7 @@
 #include <json.h>
 
 /* local headers */
-#include "PsmkMainWidget.hpp"
+#include "PsmkSongWidget.hpp"
 #include "PsmkInstrumentsWidget.hpp"
 #include "PsmkBeatWidget.hpp"
 
@@ -40,7 +40,7 @@ const char MainWidget::cFileExtension[] = ".psmk";
 MainWidget::MainWidget( QWidget *parent )
 : QWidget( parent )
 , mpLayout( new QGridLayout( this ) )
-, mpPsmkSong( new PsmkMainWidget( this ) )
+, mpPsmkSong( new PsmkSongWidget( this ) )
 , mpGlobalScrollArea( 0 )
 {
    QSettings settings;

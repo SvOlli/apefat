@@ -1,13 +1,13 @@
 /**
- * PsmkMainWidget.hpp
+ * PsmkSongWidget.hpp
  * written by Sven Oliver Moll
  *
  * distributed under the terms of the GNU Lesser General Public License (LGPL)
  * available at http://www.gnu.org/licenses/lgpl.html
  */
 
-#ifndef PSMKMAINWIDGET_HPP
-#define PSMKMAINWIDGET_HPP PSMKMAINWIDGET_HPP
+#ifndef PSMKSONGWIDGET_HPP
+#define PSMKSONGWIDGET_HPP PSMKSONGWIDGET_HPP
 
 /* base class */
 #include <QWidget>
@@ -44,7 +44,7 @@ class PsmkPlayerWidget;
  etc.
 
 */
-class PsmkMainWidget : public QWidget
+class PsmkSongWidget : public QWidget
 {
    Q_OBJECT
 
@@ -57,12 +57,12 @@ public:
     \param slocumSong
     \param parent
    */
-   explicit PsmkMainWidget( QWidget *parent = 0 );
+   explicit PsmkSongWidget( QWidget *parent = 0 );
    /*!
     \brief destructor
 
    */
-   virtual ~PsmkMainWidget();
+   virtual ~PsmkSongWidget();
    /*!
     \brief \todo
 
@@ -118,7 +118,7 @@ signals:
    void startPlay( int bar );
 
 private:
-   Q_DISABLE_COPY( PsmkMainWidget )
+   Q_DISABLE_COPY( PsmkSongWidget )
 
    static const char       cMimeType[]; /*!< \brief mime type for dragging */
 
@@ -138,4 +138,4 @@ private:
    QTimer                  *mpUpdateDelay;
 };
 
-#endif // PSMKMAINWIDGET_HPP
+#endif // PSMKSONGWIDGET_HPP

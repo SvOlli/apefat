@@ -25,6 +25,7 @@
 /* forward declaration of Qt classes */
 class QGridLayout;
 class QLabel;
+class QPushButton;
 class QStackedWidget;
 class QTimer;
 class QToolButton;
@@ -62,6 +63,7 @@ public slots:
    void moveLast();
    void insertBefore();
    void insertAfter();
+   void runPSE();
 
 signals:
    void changed();
@@ -84,6 +86,7 @@ private:
    QStackedWidget          *mpVoice0Stack;
    QStackedWidget          *mpVoice1Stack;
    QStackedWidget          *mpHiHatStack;
+   QPushButton             *mpPSE;
    quint8                  mInstrumentCache[PsmkConfig::InstrumentsInSong];
 };
 

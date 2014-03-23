@@ -29,7 +29,7 @@ class QLabel;
 /* forward declaration of local classes */
 class PsmkBeatWidget;
 class PsmkPatternWidget;
-class PsmkMainWidget;
+class PsmkSongWidget;
 
 
 /*!
@@ -48,8 +48,8 @@ public:
    int indexOfBeat( const PsmkBeatWidget *beat ) const;
    int indexOfPattern( const QByteArray &pattern ) const;
    int indexOfPattern( const PsmkPatternWidget *pattern ) const;
-   QByteArray toSourceCode( const PsmkMainWidget *main );
-   void toSongBinary( SongBinary *songBinary, const PsmkMainWidget *main );
+   QByteArray toSourceCode( const PsmkSongWidget *main );
+   void toSongBinary( SongBinary *songBinary, const PsmkSongWidget *main );
 
    static QString toHex( quint8 value );
    static QString toBin( quint8 value );
@@ -58,7 +58,7 @@ public:
    static QStringList toDec( const QByteArray &value );
    static QString toList( const QStringList &list, const QString &opcode,
                           int entriesPerLine, const QString &prefix = QString() );
-   void update( const PsmkMainWidget *main );
+   void update( const PsmkSongWidget *main );
 
 public slots:
    void setTexts();

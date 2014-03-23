@@ -29,7 +29,7 @@ class QTextEdit;
 /* forward declaration of Qt classes */
 
 /* forward declaration of local classes */
-class PsmkMainWidget;
+class PsmkSongWidget;
 
 
 /*!
@@ -97,7 +97,7 @@ private:
    static const char    cFileExtension[]; /*!< \brief file extension */
 
    QGridLayout          *mpLayout;
-   PsmkMainWidget       *mpPsmkSong;
+   PsmkSongWidget       *mpPsmkSong;
    QScrollArea          *mpGlobalScrollArea; /*!< \brief scroll area for the bars tabs */
 };
 

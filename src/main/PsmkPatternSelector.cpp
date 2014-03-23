@@ -18,6 +18,7 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QProgressDialog>
+#include <QPushButton>
 #include <QStackedWidget>
 #include <QTimer>
 #include <QToolButton>
@@ -26,6 +27,7 @@
 
 /* local headers */
 #include "PsmkPatternWidget.hpp"
+#include "PsmkPatternSequenceDialog.hpp"
 
 
 PsmkPatternSelector::PsmkPatternSelector( QWidget *parent )
@@ -41,6 +43,7 @@ PsmkPatternSelector::PsmkPatternSelector( QWidget *parent )
 , mpVoice0Stack( new QStackedWidget( this ) )
 , mpVoice1Stack( new QStackedWidget( this ) )
 , mpHiHatStack( new QStackedWidget( this ) )
+, mpPSE( new QPushButton( this ) )
 , mInstrumentCache()
 {
    setup();
@@ -71,7 +74,10 @@ void PsmkPatternSelector::setup()
    buttonLayout->addWidget( mpFirstButton );
    buttonLayout->addWidget( mpAddBeforeButton );
    buttonLayout->addWidget( mpPreviousButton );
-   buttonLayout->addWidget( mpPositionText, 1 );
+   buttonLayout->addWidget( mpPositionText );
+   buttonLayout->addStretch( 1 );
+   buttonLayout->addWidget( mpPSE );
+   buttonLayout->addStretch( 1 );
    buttonLayout->addWidget( mpHiHatStack );
    buttonLayout->addWidget( mpNextButton );
    buttonLayout->addWidget( mpAddAfterButton );
@@ -101,6 +107,8 @@ void PsmkPatternSelector::setup()
             mpHiHatStack, SLOT(setCurrentIndex(int)) );
    connect( mpUpdateDelay, SIGNAL(timeout()),
             this, SLOT(setTexts()) );
+   connect( mpPSE, SIGNAL(clicked()),
+            this, SLOT(runPSE()) );
 
    insert( 0 );
    setTexts();
@@ -138,6 +146,7 @@ void PsmkPatternSelector::insert( int pos )
 
 void PsmkPatternSelector::setTexts()
 {
+   mpPSE->setText( tr("Pattern Sequence Editor") );
    mpPositionText->setText( tr("Pattern %1/%2")
                             .arg( mpVoice0Stack->currentIndex() + 1, 3, 10, QChar('0') )
                             .arg( mpVoice0Stack->count(), 3, 10, QChar('0') )
@@ -296,6 +305,74 @@ void PsmkPatternSelector::insertAfter()
    {
       insert( mpVoice0Stack->currentIndex() + 1 );
    }
+}
+
+
+void PsmkPatternSelector::runPSE()
+{
+   QList<PsmkPatternWidget*> oldVoice0;
+   QList<PsmkPatternWidget*> oldVoice1;
+   QList<bool> hihat;
+   PsmkPatternWidget *pattern;
+   QCheckBox *checkbox;
+   int current = mpVoice0Stack->currentIndex();
+   for( int i = 0; i < mpVoice0Stack->count(); ++i )
+   {
+      pattern = qobject_cast<PsmkPatternWidget*>( mpVoice0Stack->widget( i ) );
+      Q_ASSERT( pattern );
+      oldVoice0.append( pattern );
+      pattern = qobject_cast<PsmkPatternWidget*>( mpVoice1Stack->widget( i ) );
+      Q_ASSERT( pattern );
+      oldVoice1.append( pattern );
+      checkbox = qobject_cast<QCheckBox*>( mpHiHatStack->widget( i ) );
+      Q_ASSERT( checkbox );
+      hihat.append( checkbox->isChecked() );
+   }
+   PsmkPatternSequenceDialog dialog( oldVoice0, oldVoice1, hihat, this );
+
+   if( dialog.exec() == QDialog::Accepted )
+   {
+      QList<PsmkPatternWidget*> newVoice0( dialog.getVoicePatterns(0) );
+      QList<PsmkPatternWidget*> newVoice1( dialog.getVoicePatterns(1) );
+      hihat = dialog.getHiHat();
+      for( int i = mpVoice0Stack->count() - 1; i >= 0; --i )
+      {
+         mpVoice0Stack->removeWidget( mpVoice0Stack->widget( i ) );
+         mpVoice1Stack->removeWidget( mpVoice1Stack->widget( i ) );
+         QWidget *w = mpHiHatStack->widget( i );
+         mpHiHatStack->removeWidget( w );
+         w->deleteLater();
+
+      }
+      foreach( bool isSet, hihat )
+      {
+         checkbox = new QCheckBox( this );
+         checkbox->setChecked( isSet );
+         mpHiHatStack->addWidget( checkbox );
+      }
+      foreach( PsmkPatternWidget* pattern, newVoice0 )
+      {
+         mpVoice0Stack->addWidget( pattern );
+         oldVoice0.removeOne( pattern );
+      }
+      foreach( PsmkPatternWidget* pattern, newVoice1 )
+      {
+         mpVoice1Stack->addWidget( pattern );
+         oldVoice1.removeOne( pattern );
+      }
+      foreach( PsmkPatternWidget* pattern, oldVoice0 )
+      {
+         pattern->deleteLater();
+      }
+      foreach( PsmkPatternWidget* pattern, oldVoice1 )
+      {
+         pattern->deleteLater();
+      }
+   }
+   mpVoice0Stack->setCurrentIndex( current );
+   mpVoice1Stack->setCurrentIndex( current );
+   mpHiHatStack->setCurrentIndex( current );
+   setTexts();
 }
 
 
