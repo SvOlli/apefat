@@ -1,7 +1,7 @@
 /**
  * MainWindow.hpp
  * written by Sven Oliver Moll
- * 
+ *
  * distributed under the terms of the GNU Lesser General Public License (LGPL)
  * available at http://www.gnu.org/licenses/lgpl.html
  */
@@ -33,7 +33,7 @@ class MainWidget;
 class MainWindow : public QMainWindow
 {
    Q_OBJECT
-   
+
 public:
    /*!
     \brief constructor
@@ -69,7 +69,7 @@ protected:
     \return bool
    */
    virtual bool event( QEvent *event );
-   
+
 private:
    Q_DISABLE_COPY( MainWindow )
 
