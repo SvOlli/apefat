@@ -37,7 +37,6 @@
 #include "PsmkPitchComboBox.hpp"
 #include "PsmkInstrumentsWidget.hpp"
 #include "PsmkHiHatWidget.hpp"
-#include "PsmkClipboard.hpp"
 #include "PsmkPatternSelector.hpp"
 #include "PsmkPacker.hpp"
 #include "PsmkPlayerWidget.hpp"
