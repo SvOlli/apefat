@@ -90,4 +90,6 @@ void PsmkPatternSequenceDialog::setTexts()
 {
    mpCancel->setText( tr("Cancel") );
    mpOk->setText( tr("Ok") );
+   setWindowTitle( QApplication::applicationName()+
+                   tr("Pattern Sequence Editor") );
 }

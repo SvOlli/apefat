@@ -1,12 +1,19 @@
 
-- song delay option
-- song arrangement pattern
-- export
-- multiple bar tabs
-- save data on crash
-- cleanup 6502 simulator
-  - pull out Cpu6502Cfg into own .hpp
-  - add TIA simulation
-  - add sync (sta $00 = delay until new frame)
-- live play
+- known bugs:
+  - changing instrument does not change notelist
+
+- skyrunner:
+Wenn man die Lautstärke von "Jet" ändert, dann wird diese Änderung erst
+abgespielt (also hörbar) , wenn man im Track eine Note bearbeitet hat.
+
+Benutzt man "Jet" im LOW-VOlume Pattern, dann wird es DOPPELT so laut
+anstatt leiser. Setzt man versuchsweise das "Betonungshäkchen" dann hört man
+gar nichts mehr vom "Jet".
+
+"Pure High" kann man im Low-Volume Pattern nur mit aktiviertem
+"Betonungshäkchen" hören, ansonsten wird die Note nicht gespielt bzw ist
+unhörbar.
+
+
+- mute channel
 

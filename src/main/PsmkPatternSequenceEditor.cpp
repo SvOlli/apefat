@@ -243,12 +243,9 @@ void PsmkPatternSequenceEditor::handleClone( QWidget *widget )
    QPushButton *button = qobject_cast<QPushButton*>( widget );
    Q_ASSERT( button );
    int myline = mCloneButtons.indexOf( button );
-   qDebug() << "Insert" << mCloneButtons.indexOf( button );
-
    PsmkPatternWidget *voice0 = getVoice( PROXY0ROW + myline * 2, PROXY0COL )->getClone( this );
    PsmkPatternWidget *voice1 = getVoice( PROXY1ROW + myline * 2, PROXY1COL )->getClone( this );
-
-   insertLine( myline, voice0, voice1, mHiHatWidgets.at( myline ) );
+   insertLine( myline, voice0, voice1, mHiHatWidgets.at( myline )->isChecked() );
    updateLayout();
 }
 
@@ -258,7 +255,6 @@ void PsmkPatternSequenceEditor::handleRemove( QWidget *widget )
    QPushButton *button = qobject_cast<QPushButton*>( widget );
    Q_ASSERT( button );
    int myline = mRemoveButtons.indexOf( button );
-   qDebug() << "Remove" << mRemoveButtons.indexOf( button );
    QPushButton *swap0  = mSwap0Buttons.takeAt(myline);
    QPushButton *swap1  = mSwap1Buttons.takeAt(myline);
    QPushButton *swap01 = mSwap01Buttons.takeAt(myline);
@@ -315,7 +311,6 @@ void PsmkPatternSequenceEditor::handleSwap01( QWidget *widget )
    QPushButton *button = qobject_cast<QPushButton*>( widget );
    Q_ASSERT( button );
    int myline = mSwap01Buttons.indexOf( button );
-   qDebug() << "Swap01" << mSwap01Buttons.indexOf( button );
    PsmkPatternProxyWidget *proxy0 = mProxy0Widgets.takeAt( myline );
    PsmkPatternProxyWidget *proxy1 = mProxy1Widgets.takeAt( myline );
    mProxy0Widgets.insert( myline, proxy1 );

@@ -349,16 +349,31 @@ void PsmkPatternSelector::runPSE()
          checkbox = new QCheckBox( this );
          checkbox->setChecked( isSet );
          mpHiHatStack->addWidget( checkbox );
+         // make sure that the connections is only made once
+         disconnect( checkbox, SIGNAL(toggled(bool)),
+                     this, SIGNAL(changed()) );
+         connect( checkbox, SIGNAL(toggled(bool)),
+                  this, SIGNAL(changed()) );
       }
-      foreach( PsmkPatternWidget* pattern, newVoice0 )
+      foreach( PsmkPatternWidget* voice0, newVoice0 )
       {
-         mpVoice0Stack->addWidget( pattern );
-         oldVoice0.removeOne( pattern );
+         mpVoice0Stack->addWidget( voice0 );
+         // make sure that the connections is only made once
+         disconnect( voice0, SIGNAL(changed()),
+                     this, SIGNAL(changed()) );
+         connect( voice0, SIGNAL(changed()),
+                  this, SIGNAL(changed()) );
+         oldVoice0.removeOne( voice0 );
       }
-      foreach( PsmkPatternWidget* pattern, newVoice1 )
+      foreach( PsmkPatternWidget* voice1, newVoice1 )
       {
-         mpVoice1Stack->addWidget( pattern );
-         oldVoice1.removeOne( pattern );
+         mpVoice1Stack->addWidget( voice1 );
+         // make sure that the connections is only made once
+         disconnect( voice1, SIGNAL(changed()),
+                     this, SIGNAL(changed()) );
+         connect( voice1, SIGNAL(changed()),
+                  this, SIGNAL(changed()) );
+         oldVoice1.removeOne( voice1 );
       }
       foreach( PsmkPatternWidget* pattern, oldVoice0 )
       {
@@ -373,6 +388,7 @@ void PsmkPatternSelector::runPSE()
    mpVoice1Stack->setCurrentIndex( current );
    mpHiHatStack->setCurrentIndex( current );
    setTexts();
+   emit changed();
 }
 
 
