@@ -32,6 +32,7 @@ class QSignalMapper;
 class QWidget;
 
 /* forward declaration of local classes */
+class PsmkPacker;
 class PsmkPatternProxyWidget;
 class PsmkPatternWidget;
 
@@ -47,6 +48,7 @@ public:
    explicit PsmkPatternSequenceEditor( const QList<PsmkPatternWidget*> &voice0,
                                        const QList<PsmkPatternWidget*> &voice1,
                                        const QList<bool> &hihat,
+                                       const PsmkPacker *psmkPacker,
                                        QWidget *parent = 0 );
    virtual ~PsmkPatternSequenceEditor();
 
@@ -60,6 +62,7 @@ public slots:
    void handleSwap0( QWidget *widget );
    void handleSwap1( QWidget *widget );
    void handleSwap01( QWidget *widget );
+   void handleSwapAll( QWidget *widget );
 
 private:
    Q_DISABLE_COPY( PsmkPatternSequenceEditor )
@@ -76,6 +79,8 @@ private:
    static const int SWAP0COL;
    static const int SWAP1ROW;
    static const int SWAP1COL;
+   static const int SWAPALLROW;
+   static const int SWAPALLCOL;
    static const int SWAP01ROW;
    static const int SWAP01COL;
    static const int CLONEROW;
@@ -94,7 +99,9 @@ private:
    QSignalMapper                    *mpRemoveMapper;
    QSignalMapper                    *mpSwap0Mapper;
    QSignalMapper                    *mpSwap1Mapper;
+   QSignalMapper                    *mpSwapAllMapper;
    QSignalMapper                    *mpSwap01Mapper;
+   const PsmkPacker                 *mpPsmkPacker;
    QList<QLabel*>                   mLabels;
    QList<PsmkPatternProxyWidget*>   mProxy0Widgets;
    QList<PsmkPatternProxyWidget*>   mProxy1Widgets;
@@ -104,6 +111,7 @@ private:
    QList<QPushButton*>              mSwap0Buttons;
    QList<QPushButton*>              mSwap1Buttons;
    QList<QPushButton*>              mSwap01Buttons;
+   QList<QPushButton*>              mSwapAllButtons;
 };
 
 #endif

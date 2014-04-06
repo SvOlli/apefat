@@ -17,6 +17,7 @@
 /* Qt headers */
 #include <QByteArray>
 #include <QList>
+#include <QMap>
 
 /* local library headers */
 
@@ -51,6 +52,9 @@ public:
    QByteArray toSourceCode( const PsmkSongWidget *main );
    void toSongBinary( SongBinary *songBinary, const PsmkSongWidget *main );
 
+   int beatCount( const QByteArray &beat ) const;
+   int beatCount( const PsmkBeatWidget *beat ) const;
+
    static QString toHex( quint8 value );
    static QString toBin( quint8 value );
    static QStringList toHex( const QByteArray &value );
@@ -78,6 +82,7 @@ private:
    QList<QByteArray> mBeatStore;
    QList<QByteArray> mHighPatternStore;
    QList<QByteArray> mLowPatternStore;
+   QMap<int,int>     mBeatCounter;
    QByteArray        mVoice[2];
    int               mBeatIndex[0x80][5]; // pattern,inuse+beat
    //! \todo remove magic 0x80 with something in PsmkConfig

@@ -31,6 +31,7 @@ class QPushButton;
 
 /* forward declaration of local classes */
 class PsmkBeatWidget;
+class PsmkPacker;
 class QxtLabel;
 
 /*!
@@ -97,7 +98,7 @@ public:
 
     \return QStringList
    */
-   QStringList names();
+   QStringList names( const PsmkPacker *psmkPacker = 0 ) const;
    /*!
     \brief \todo
 
@@ -201,6 +202,7 @@ private:
    QLineEdit               *mpValueName; /*!< \brief value for name */
    QCheckBox               *mpLowVolume; /*!< \brief value for low volume bar */
    PsmkBeatWidget          *mpBeats[PsmkConfig::BeatsInPattern]; /*!< \brief list of beats in this bar */
+   PsmkPacker              *mpPacker; /*! \brief for obtaining statistics */
    QVariantMap             mSavePattern; /*!< \brief bar saved for undoing drag'n'drop */
 };
 

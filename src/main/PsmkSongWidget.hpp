@@ -130,8 +130,8 @@ private:
    QLineEdit               *mpValueName;
    QLabel                  *mpLabelDelay;
    QSpinBox                *mpValueDelay;
-   PsmkPatternSelector     *mpPsmkPatternSelector;
    PsmkPacker              *mpPsmkPacker;
+   PsmkPatternSelector     *mpPsmkPatternSelector;
    PsmkInstrumentsWidget   *mpPsmkInstrumentsWidget;
    PsmkHiHatWidget         *mpPsmkHiHatWidget;
    PsmkPlayerWidget        *mpPsmkPlayerWidget;

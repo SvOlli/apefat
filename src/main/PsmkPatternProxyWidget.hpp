@@ -28,6 +28,7 @@ class QLabel;
 class QTextEdit;
 
 /* forward declaration of local classes */
+class PsmkPacker;
 class PsmkPatternWidget;
 
 /*!
@@ -39,7 +40,9 @@ class PsmkPatternProxyWidget : public QGroupBox
    Q_OBJECT
 
 public:
-   explicit PsmkPatternProxyWidget( PsmkPatternWidget *patternWidget, QWidget *parent = 0 );
+   explicit PsmkPatternProxyWidget( PsmkPatternWidget *patternWidget,
+                                    const PsmkPacker *packer,
+                                    QWidget *parent = 0 );
    virtual ~PsmkPatternProxyWidget();
 
    PsmkPatternWidget *patternWidget() const;

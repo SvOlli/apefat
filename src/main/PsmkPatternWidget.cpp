@@ -26,6 +26,7 @@
 /* local headers */
 #include "PsmkBeatWidget.hpp"
 #include "PsmkContextMenu.hpp"
+#include "PsmkPacker.hpp"
 #include "QxtLabel.hpp"
 
 
@@ -166,12 +167,23 @@ QByteArray PsmkPatternWidget::toBinary() const
 }
 
 
-QStringList PsmkPatternWidget::names()
+QStringList PsmkPatternWidget::names( const PsmkPacker *psmkPacker ) const
 {
    QStringList retval( mpValueName->text() );
+   QString beatText;
    for( int i = 0; i < PsmkConfig::BeatsInPattern; ++i )
    {
-      retval.append( mpBeats[i]->name() );
+      beatText = mpBeats[i]->name();
+      if( beatText.isEmpty() )
+      {
+         beatText = tr("(unnamed)");
+      }
+
+      if( psmkPacker )
+      {
+         beatText.append( QString(" (%1)").arg( psmkPacker->beatCount( mpBeats[i] ) ) );
+      }
+      retval.append( beatText );
    }
    return retval;
 }

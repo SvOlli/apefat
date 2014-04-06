@@ -30,12 +30,13 @@
 
 
 PsmkPatternProxyWidget::PsmkPatternProxyWidget( PsmkPatternWidget *patternWidget,
+                                                const PsmkPacker *packer,
                                                 QWidget *parent )
 : QGroupBox( parent )
 , mpPsmkPatternWidget( patternWidget )
 , mpLabelBeat()
 {
-   QStringList names( mpPsmkPatternWidget->names() );
+   QStringList names( mpPsmkPatternWidget->names( packer ) );
    Q_ASSERT( names.size() == (PsmkConfig::BeatsInPattern + 1) );
    QBoxLayout *layout = new QVBoxLayout( this );
    setTitle( names.at(0) );

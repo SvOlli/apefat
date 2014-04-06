@@ -17,6 +17,8 @@
 
 PlayerConfig::PlayerConfig( TIASound *tia )
 : mKeepOnRunning( true )
+, mMute()
+, mMemory()
 , mpTIA( tia )
 {
 }
@@ -76,7 +78,23 @@ void PlayerConfig::poke( ADDRESS addr, BYTE value )
    }
    else if( (addr >= 0x0015) && (addr <= 0x001a) )
    {
+      if( (addr == 0x0019) || (addr == 0x001a) )
+      {
+         if( mMute[addr-0x0019] )
+         {
+            value = 0;
+         }
+      }
       mpTIA->set( addr, value );
+   }
+}
+
+
+void PlayerConfig::mute( BYTE channel, bool quiet )
+{
+   if( channel < 2 )
+   {
+      mMute[channel] = quiet;
    }
 }
 

@@ -24,6 +24,7 @@ public:
    void reset();
    BYTE peek( ADDRESS addr );
    void poke( ADDRESS addr, BYTE value );
+   void mute( BYTE channel, bool quiet );
 
    bool keepOnRunning();
 
@@ -31,6 +32,7 @@ public:
 
 private:
    bool        mKeepOnRunning;
+   bool        mMute[2];
    BYTE        mMemory[0x2000];
    TIASound    *mpTIA;
 };

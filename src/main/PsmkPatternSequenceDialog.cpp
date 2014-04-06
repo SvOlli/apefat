@@ -37,10 +37,11 @@
 PsmkPatternSequenceDialog::PsmkPatternSequenceDialog( const QList<PsmkPatternWidget*> &voice0,
                                                       const QList<PsmkPatternWidget*> &voice1,
                                                       const QList<bool> &hihat,
+                                                      const PsmkPacker *psmkPacker,
                                                       QWidget *parent )
 : QDialog( parent )
 , mpScrollArea( new QScrollArea( this ) )
-, mpEditor( new PsmkPatternSequenceEditor( voice0, voice1, hihat, this ) )
+, mpEditor( new PsmkPatternSequenceEditor( voice0, voice1, hihat, psmkPacker, this ) )
 , mpCancel( new QPushButton( this ) )
 , mpOk( new QPushButton( this ) )
 {

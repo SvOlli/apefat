@@ -30,7 +30,7 @@
 #include "PsmkPatternSequenceDialog.hpp"
 
 
-PsmkPatternSelector::PsmkPatternSelector( QWidget *parent )
+PsmkPatternSelector::PsmkPatternSelector( const PsmkPacker *psmkPacker, QWidget *parent )
 : QWidget( parent )
 , mpUpdateDelay( new QTimer( this ) )
 , mpPositionText( new QLabel( this ) )
@@ -44,6 +44,7 @@ PsmkPatternSelector::PsmkPatternSelector( QWidget *parent )
 , mpVoice1Stack( new QStackedWidget( this ) )
 , mpHiHatStack( new QStackedWidget( this ) )
 , mpPSE( new QPushButton( this ) )
+, mpPsmkPacker( psmkPacker )
 , mInstrumentCache()
 {
    setup();
@@ -328,7 +329,7 @@ void PsmkPatternSelector::runPSE()
       Q_ASSERT( checkbox );
       hihat.append( checkbox->isChecked() );
    }
-   PsmkPatternSequenceDialog dialog( oldVoice0, oldVoice1, hihat, this );
+   PsmkPatternSequenceDialog dialog( oldVoice0, oldVoice1, hihat, mpPsmkPacker, this );
 
    if( dialog.exec() == QDialog::Accepted )
    {

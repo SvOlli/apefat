@@ -41,6 +41,8 @@ const int PsmkPatternSequenceEditor::LABELROW      = 1;
 const int PsmkPatternSequenceEditor::LABELCOL      = 0;
 const int PsmkPatternSequenceEditor::SWAP0ROW      = 0;
 const int PsmkPatternSequenceEditor::SWAP0COL      = 1;
+const int PsmkPatternSequenceEditor::SWAPALLROW    = 0;
+const int PsmkPatternSequenceEditor::SWAPALLCOL    = 3;
 const int PsmkPatternSequenceEditor::SWAP1ROW      = 0;
 const int PsmkPatternSequenceEditor::SWAP1COL      = 5;
 const int PsmkPatternSequenceEditor::PROXY0ROW     = 1;
@@ -59,6 +61,7 @@ const int PsmkPatternSequenceEditor::HIHATCOL      = 6;
 PsmkPatternSequenceEditor::PsmkPatternSequenceEditor( const QList<PsmkPatternWidget *> &voice0,
                                                       const QList<PsmkPatternWidget *> &voice1,
                                                       const QList<bool> &hihat,
+                                                      const PsmkPacker *psmkPacker,
                                                       QWidget *parent )
 : QWidget( parent )
 , mpLayout( new QGridLayout( this ) )
@@ -66,7 +69,9 @@ PsmkPatternSequenceEditor::PsmkPatternSequenceEditor( const QList<PsmkPatternWid
 , mpRemoveMapper( new QSignalMapper( this ) )
 , mpSwap0Mapper( new QSignalMapper( this ) )
 , mpSwap1Mapper( new QSignalMapper( this ) )
+, mpSwapAllMapper( new QSignalMapper( this ) )
 , mpSwap01Mapper( new QSignalMapper( this ) )
+, mpPsmkPacker( psmkPacker )
 , mProxy0Widgets()
 , mProxy1Widgets()
 , mHiHatWidgets()
@@ -75,6 +80,7 @@ PsmkPatternSequenceEditor::PsmkPatternSequenceEditor( const QList<PsmkPatternWid
 , mSwap0Buttons()
 , mSwap1Buttons()
 , mSwap01Buttons()
+, mSwapAllButtons()
 {
    Q_ASSERT( mProxy0Widgets.size() == mProxy1Widgets.size() );
 
@@ -95,6 +101,8 @@ PsmkPatternSequenceEditor::PsmkPatternSequenceEditor( const QList<PsmkPatternWid
             this, SLOT(handleSwap1(QWidget*)) );
    connect( mpSwap01Mapper, SIGNAL(mapped(QWidget*)),
             this, SLOT(handleSwap01(QWidget*)) );
+   connect( mpSwapAllMapper, SIGNAL(mapped(QWidget*)),
+            this, SLOT(handleSwapAll(QWidget*)) );
 
    updateLayout();
    setTexts();
@@ -146,12 +154,14 @@ void PsmkPatternSequenceEditor::insertLine( int index,
                                             PsmkPatternWidget *voice1,
                                             bool hihat )
 {
-   QPushButton *swap0  = new QPushButton( tr("^ Swap v"), this );
-   QPushButton *swap1  = new QPushButton( tr("v Swap ^"), this );
+   QPushButton *swap0   = new QPushButton( tr("^ Swap v"), this );
+   QPushButton *swap1   = new QPushButton( tr("^ Swap v"), this );
+   QPushButton *swapAll = new QPushButton( tr("^ Swap All v"), this );
    if( !index )
    {
       swap0->hide();
       swap1->hide();
+      swapAll->hide();
    }
    QPushButton *clone  = new QPushButton( tr("Clone"), this );
    QPushButton *swap01 = new QPushButton( tr("<- Swap ->"), this );
@@ -160,14 +170,15 @@ void PsmkPatternSequenceEditor::insertLine( int index,
    Q_ASSERT( voice1 );
    QLabel *label = new QLabel( this );
    label->setAlignment( Qt::AlignVCenter | Qt::AlignRight );
-   PsmkPatternProxyWidget *proxy0 = new PsmkPatternProxyWidget( voice0, this );
-   PsmkPatternProxyWidget *proxy1 = new PsmkPatternProxyWidget( voice1, this );
+   PsmkPatternProxyWidget *proxy0 = new PsmkPatternProxyWidget( voice0, mpPsmkPacker, this );
+   PsmkPatternProxyWidget *proxy1 = new PsmkPatternProxyWidget( voice1, mpPsmkPacker, this );
    QCheckBox              *phihat = new QCheckBox( tr("HiHat"), this );
    phihat->setChecked( hihat );
 
    mLabels.insert( index, label );
    mSwap0Buttons.insert( index, swap0 );
    mSwap1Buttons.insert( index, swap1 );
+   mSwapAllButtons.insert( index, swapAll );
    mCloneButtons.insert( index, clone );
    mSwap01Buttons.insert( index, swap01 );
    mRemoveButtons.insert( index, remove );
@@ -190,6 +201,9 @@ void PsmkPatternSequenceEditor::insertLine( int index,
    mpSwap01Mapper->setMapping( swap01, swap01 );
    connect( swap01, SIGNAL(clicked()),
             mpSwap01Mapper, SLOT(map()) );
+   mpSwapAllMapper->setMapping( swapAll, swapAll );
+   connect( swapAll, SIGNAL(clicked()),
+            mpSwapAllMapper, SLOT(map()) );
 }
 
 
@@ -201,18 +215,20 @@ void PsmkPatternSequenceEditor::updateLayout()
       mSwap1Buttons.at(i)->show();
       mRemoveButtons.at(i)->setEnabled( true );
       mLabels.at(i)->setText( tr("%1:").arg( i + 1 ) );
-      mpLayout->addWidget( mLabels.at(i),        LABELROW  + i * 2, LABELCOL );
-      mpLayout->addWidget( mSwap0Buttons.at(i),  SWAP0ROW  + i * 2, SWAP0COL );
-      mpLayout->addWidget( mSwap1Buttons.at(i),  SWAP1ROW  + i * 2, SWAP1COL );
-      mpLayout->addWidget( mProxy0Widgets.at(i), PROXY0ROW + i * 2, PROXY0COL );
-      mpLayout->addWidget( mCloneButtons.at(i),  CLONEROW  + i * 2, CLONECOL );
-      mpLayout->addWidget( mSwap01Buttons.at(i), SWAP01ROW + i * 2, SWAP01COL );
-      mpLayout->addWidget( mRemoveButtons.at(i), REMOVEROW + i * 2, REMOVECOL );
-      mpLayout->addWidget( mProxy1Widgets.at(i), PROXY1ROW + i * 2, PROXY1COL );
-      mpLayout->addWidget( mHiHatWidgets.at(i),  HIHATROW  + i * 2, HIHATCOL );
+      mpLayout->addWidget( mLabels.at(i),         LABELROW   + i * 2, LABELCOL );
+      mpLayout->addWidget( mSwap0Buttons.at(i),   SWAP0ROW   + i * 2, SWAP0COL );
+      mpLayout->addWidget( mSwap1Buttons.at(i),   SWAP1ROW   + i * 2, SWAP1COL );
+      mpLayout->addWidget( mSwapAllButtons.at(i), SWAPALLROW + i * 2, SWAPALLCOL );
+      mpLayout->addWidget( mProxy0Widgets.at(i),  PROXY0ROW  + i * 2, PROXY0COL );
+      mpLayout->addWidget( mCloneButtons.at(i),   CLONEROW   + i * 2, CLONECOL );
+      mpLayout->addWidget( mSwap01Buttons.at(i),  SWAP01ROW  + i * 2, SWAP01COL );
+      mpLayout->addWidget( mRemoveButtons.at(i),  REMOVEROW  + i * 2, REMOVECOL );
+      mpLayout->addWidget( mProxy1Widgets.at(i),  PROXY1ROW  + i * 2, PROXY1COL );
+      mpLayout->addWidget( mHiHatWidgets.at(i),   HIHATROW   + i * 2, HIHATCOL );
    }
    mSwap0Buttons.at(0)->hide();
    mSwap1Buttons.at(0)->hide();
+   mSwapAllButtons.at(0)->hide();
    if( mRemoveButtons.size() == 1 )
    {
       mRemoveButtons.at(0)->setEnabled( false );
@@ -255,17 +271,19 @@ void PsmkPatternSequenceEditor::handleRemove( QWidget *widget )
    QPushButton *button = qobject_cast<QPushButton*>( widget );
    Q_ASSERT( button );
    int myline = mRemoveButtons.indexOf( button );
-   QPushButton *swap0  = mSwap0Buttons.takeAt(myline);
-   QPushButton *swap1  = mSwap1Buttons.takeAt(myline);
-   QPushButton *swap01 = mSwap01Buttons.takeAt(myline);
-   QPushButton *clone  = mCloneButtons.takeAt(myline);
-   QPushButton *remove = mRemoveButtons.takeAt(myline);
+   QPushButton *swap0   = mSwap0Buttons.takeAt(myline);
+   QPushButton *swap1   = mSwap1Buttons.takeAt(myline);
+   QPushButton *swap01  = mSwap01Buttons.takeAt(myline);
+   QPushButton *swapAll = mSwapAllButtons.takeAt(myline);
+   QPushButton *clone   = mCloneButtons.takeAt(myline);
+   QPushButton *remove  = mRemoveButtons.takeAt(myline);
    PsmkPatternProxyWidget *proxy0 = mProxy0Widgets.takeAt(myline);
    PsmkPatternProxyWidget *proxy1 = mProxy1Widgets.takeAt(myline);
    QCheckBox *hihat = mHiHatWidgets.takeAt(myline);
    QLabel *label = mLabels.takeAt(myline);
    mpLayout->removeWidget( swap0 );
    mpLayout->removeWidget( swap1 );
+   mpLayout->removeWidget( swapAll );
    mpLayout->removeWidget( swap01 );
    mpLayout->removeWidget( clone );
    mpLayout->removeWidget( remove );
@@ -275,6 +293,7 @@ void PsmkPatternSequenceEditor::handleRemove( QWidget *widget )
    mpLayout->removeWidget( label );
    swap0->deleteLater();
    swap1->deleteLater();
+   swapAll->deleteLater();
    swap01->deleteLater();
    clone->deleteLater();
    remove->deleteLater();
@@ -315,5 +334,17 @@ void PsmkPatternSequenceEditor::handleSwap01( QWidget *widget )
    PsmkPatternProxyWidget *proxy1 = mProxy1Widgets.takeAt( myline );
    mProxy0Widgets.insert( myline, proxy1 );
    mProxy1Widgets.insert( myline, proxy0 );
+   updateLayout();
+}
+
+
+void PsmkPatternSequenceEditor::handleSwapAll( QWidget *widget )
+{
+   QPushButton *button = qobject_cast<QPushButton*>( widget );
+   Q_ASSERT( button );
+   int myline = mSwapAllButtons.indexOf( button );
+   mProxy0Widgets.swap( myline, myline - 1 );
+   mProxy1Widgets.swap( myline, myline - 1 );
+   mHiHatWidgets.swap( myline, myline - 1 );
    updateLayout();
 }

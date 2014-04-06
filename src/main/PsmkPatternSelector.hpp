@@ -31,11 +31,9 @@ class QTimer;
 class QToolButton;
 
 /* forward declaration of local classes */
+class PsmkPacker;
 
-/*!
- \brief constants set for psmk tracks
 
-*/
 class PsmkPatternSelector : public QWidget
 {
    Q_OBJECT
@@ -43,7 +41,7 @@ class PsmkPatternSelector : public QWidget
    friend class PsmkPacker;
 
 public:
-   explicit PsmkPatternSelector( QWidget *parent = 0 );
+   explicit PsmkPatternSelector(const PsmkPacker *psmkPacker, QWidget *parent = 0 );
    virtual ~PsmkPatternSelector();
 
    QVariantList toVariantList() const;
@@ -87,6 +85,7 @@ private:
    QStackedWidget          *mpVoice1Stack;
    QStackedWidget          *mpHiHatStack;
    QPushButton             *mpPSE;
+   const PsmkPacker        *mpPsmkPacker;
    quint8                  mInstrumentCache[PsmkConfig::InstrumentsInSong];
 };
 

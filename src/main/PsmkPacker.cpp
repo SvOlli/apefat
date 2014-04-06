@@ -45,6 +45,7 @@ PsmkPacker::PsmkPacker( QWidget *parent )
 , mBeatStore()
 , mHighPatternStore()
 , mLowPatternStore()
+, mBeatCounter()
 , mVoice()
 , mBeatIndex()
 {
@@ -108,13 +109,27 @@ int PsmkPacker::addBeat( const QByteArray &beat )
    {
       mBeatStore.append( beat );
    }
-   return indexOfBeat( beat );
+   int idx = indexOfBeat( beat );
+   mBeatCounter.insert( idx, mBeatCounter.value( idx ) + 1 );
+   return idx;
 }
 
 
 int PsmkPacker::addBeat( const PsmkBeatWidget *beat )
 {
    return addBeat( beat->toBinary() );
+}
+
+
+int PsmkPacker::beatCount( const QByteArray &beat ) const
+{
+   return mBeatCounter.value( indexOfBeat( beat ) );
+}
+
+
+int PsmkPacker::beatCount( const PsmkBeatWidget *beat ) const
+{
+   return beatCount( beat->toBinary() );
 }
 
 
@@ -155,6 +170,7 @@ void PsmkPacker::clearStorage()
    mBeatStore.clear();
    mHighPatternStore.clear();
    mLowPatternStore.clear();
+   mBeatCounter.clear();
    mVoice[0].clear();
    mVoice[1].clear();
    mPatternCount = 0;

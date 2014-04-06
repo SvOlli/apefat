@@ -30,6 +30,7 @@ class QScrollArea;
 class QWidget;
 
 /* forward declaration of local classes */
+class PsmkPacker;
 class PsmkPatternSequenceEditor;
 class PsmkPatternWidget;
 
@@ -45,6 +46,7 @@ public:
    explicit PsmkPatternSequenceDialog( const QList<PsmkPatternWidget*> &voice0,
                                        const QList<PsmkPatternWidget*> &voice1,
                                        const QList<bool> &hihat,
+                                       const PsmkPacker *psmkPacker,
                                        QWidget *parent = 0 );
    virtual ~PsmkPatternSequenceDialog();
 
