@@ -13,10 +13,16 @@
 #include <cstring>
 
 /* Qt headers */
+#if QT_VERSION < 0x050000
 #include <QBoxLayout>
 #include <QCheckBox>
-#include <QDrag>
 #include <QLabel>
+#else
+#include <QtWidgets/QBoxLayout>
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QLabel>
+#endif
+#include <QDrag>
 #include <QMimeData>
 #include <QMouseEvent>
 #include <QPainter>

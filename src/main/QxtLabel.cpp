@@ -33,7 +33,11 @@
 #include <QEvent>
 #include <QPainter>
 #include <QFontMetrics>
+#if QT_VERSION < 0x050000
 #include <QApplication>
+#else
+#include <QtWidgets/QApplication>
+#endif
 
 static const int Vertical_Mask = 0x02;
 

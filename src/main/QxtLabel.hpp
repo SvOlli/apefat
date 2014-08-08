@@ -31,7 +31,12 @@
 
 #define QXTLABEL_H
 
+#include <QtGlobal>
+#if QT_VERSION < 0x050000
 #include <QFrame>
+#else
+#include <QtWidgets/QFrame>
+#endif
 
 #include <Qt>
 #include <QTime>

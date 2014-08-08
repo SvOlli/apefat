@@ -18,13 +18,14 @@ class SlocumSong;
 class PlayerConfig : public Cpu6502Cfg
 {
 public:
+   enum Channels { Mono = 0, Stereo = 1, Left = 2, Right = 3 };
    PlayerConfig( TIASound *tia );
    virtual ~PlayerConfig();
    void invalid( BYTE opcode );
    void reset();
    BYTE peek( ADDRESS addr );
    void poke( ADDRESS addr, BYTE value );
-   void mute( BYTE channel, bool quiet );
+   void setChannels( Channels channels );
 
    bool keepOnRunning();
 
@@ -32,7 +33,6 @@ public:
 
 private:
    bool        mKeepOnRunning;
-   bool        mMute[2];
    BYTE        mMemory[0x2000];
    TIASound    *mpTIA;
 };

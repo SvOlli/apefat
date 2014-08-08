@@ -12,7 +12,11 @@
 /* system headers */
 
 /* Qt headers */
+#if QT_VERSION < 0x050000
 #include <QApplication>
+#else
+#include <QtWidgets/QApplication>
+#endif
 #include <QClipboard>
 #include <QMimeData>
 #include <QSettings>

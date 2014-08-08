@@ -12,10 +12,16 @@
 /* system headers */
 
 /* Qt headers */
+#if QT_VERSION < 0x050000
 #include <QApplication>
 #include <QBoxLayout>
-#include <QClipboard>
 #include <QLabel>
+#else
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QBoxLayout>
+#include <QtWidgets/QLabel>
+#endif
+#include <QClipboard>
 #include <QMimeData>
 #include <QTextEdit>
 

@@ -39,6 +39,7 @@ PlayerEmulation::PlayerEmulation( QObject *parent )
 , mCurrentNote( 0 )
 , mLoopEnabled( false )
 {
+   mpSoundSDL->setChannels( PlayerConfig::Mono );
    moveToThread( this );
 }
 
@@ -222,4 +223,10 @@ void PlayerEmulation::setCurrentPattern( int pattern )
 void PlayerEmulation::setLooping( bool enabled )
 {
    mLoopEnabled = enabled;
+}
+
+
+void PlayerEmulation::setChannels( PlayerConfig::Channels channels )
+{
+   mpPlayerConfig->setChannels( channels );
 }

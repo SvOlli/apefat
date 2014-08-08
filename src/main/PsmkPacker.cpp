@@ -13,15 +13,25 @@
 #include <cstring>
 
 /* Qt headers */
+#if QT_VERSION < 0x050000
 #include <QApplication>
 #include <QBoxLayout>
 #include <QCheckBox>
-#include <QClipboard>
 #include <QLabel>
-#include <QMimeData>
 #include <QSpinBox>
 #include <QStackedWidget>
 #include <QTextEdit>
+#else
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QBoxLayout>
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QSpinBox>
+#include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QTextEdit>
+#endif
+#include <QClipboard>
+#include <QMimeData>
 
 /* local library headers */
 

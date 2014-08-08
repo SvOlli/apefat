@@ -10,7 +10,12 @@
 #define PSMKNOTEWIDGET_HPP PSMKNOTEWIDGET_HPP
 
 /* base class */
+#include <QtGlobal>
+#if QT_VERSION < 0x050000
 #include <QWidget>
+#else
+#include <QtWidgets/QWidget>
+#endif
 
 /* system headers */
 

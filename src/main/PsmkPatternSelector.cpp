@@ -12,6 +12,7 @@
 /* system headers */
 
 /* Qt headers */
+#if QT_VERSION < 0x050000
 #include <QApplication>
 #include <QCheckBox>
 #include <QCommonStyle>
@@ -20,8 +21,19 @@
 #include <QProgressDialog>
 #include <QPushButton>
 #include <QStackedWidget>
-#include <QTimer>
 #include <QToolButton>
+#else
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QCommonStyle>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QProgressDialog>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QToolButton>
+#endif
+#include <QTimer>
 
 /* local library headers */
 

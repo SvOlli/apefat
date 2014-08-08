@@ -10,7 +10,12 @@
 #define PSMKPATTERNSEQUENCEDIALOG_HPP PSMKPATTERNSEQUENCEDIALOG_HPP
 
 /* base class */
+#include <QtGlobal>
+#if QT_VERSION < 0x050000
 #include <QDialog>
+#else
+#include <QtWidgets/QDialog>
+#endif
 
 /* system headers */
 

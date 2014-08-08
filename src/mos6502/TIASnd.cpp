@@ -85,6 +85,25 @@ string TIASound::channels(uInt32 hardware, bool stereo)
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+string TIASound::channels(uInt32 hardware, ChannelMode mode)
+{
+   if(hardware == 1)
+     myChannelMode = Hardware1;
+   else
+     myChannelMode = mode;
+
+   switch(myChannelMode)
+   {
+     case Hardware1:       return "Hardware1";
+     case Hardware2Mono:   return "Hardware2Mono";
+     case Hardware2Stereo: return "Hardware2Stereo";
+     case Hardware2Left:   return "Hardware2Left";
+     case Hardware2Right:  return "Hardware2Right";
+     default:              return EmptyString;
+   }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 void TIASound::set(uInt16 address, uInt8 value)
 {
   int chan = ~address & 0x1;
@@ -356,10 +375,12 @@ void TIASound::process(Int16* buffer, uInt32 samples)
         break;
 
       case Hardware2Stereo:  // stereo sampling with 2 hardware channels
+      case Hardware2Left:
+      case Hardware2Right:
         while((samples > 0) && (myOutputCounter >= 31400))
         {
-          *(buffer++) = v0;
-          *(buffer++) = v1;
+          *(buffer++) = myChannelMode != Hardware2Right ? v0 : v1;
+          *(buffer++) = myChannelMode != Hardware2Left  ? v1 : v0;
           myOutputCounter -= 31400;
           samples--;
         }

@@ -10,7 +10,12 @@
 #define MAINWINDOW_HPP MAINWINDOW_HPP
 
 /* base class */
+#include <QtGlobal>
+#if QT_VERSION < 0x050000
 #include <QMainWindow>
+#else
+#include <QtWidgets/QMainWindow>
+#endif
 
 /* system headers */
 

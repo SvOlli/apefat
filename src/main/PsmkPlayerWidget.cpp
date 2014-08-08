@@ -12,12 +12,22 @@
 /* system headers */
 
 /* Qt headers */
+#if QT_VERSION < 0x050000
 #include <QApplication>
 #include <QBoxLayout>
+#include <QComboBox>
 #include <QCommonStyle>
 #include <QSpinBox>
-#include <QThread>
 #include <QToolButton>
+#else
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QBoxLayout>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QCommonStyle>
+#include <QtWidgets/QSpinBox>
+#include <QtWidgets/QToolButton>
+#endif
+#include <QThread>
 
 /* local library headers */
 
@@ -34,6 +44,7 @@ PsmkPlayerWidget::PsmkPlayerWidget( QWidget *parent )
 , mpLoopButton( new QToolButton( this ) )
 , mpCurrentPattern( new QSpinBox( this ) )
 , mpCurrentNote( new QSpinBox( this ) )
+, mpChannels( new QComboBox( this ) )
 {
    setup();
    mpPlayerEmulation->start();
@@ -77,6 +88,7 @@ void PsmkPlayerWidget::setup()
    mainLayout->addWidget( mpLoopButton );
    mainLayout->addWidget( mpCurrentPattern );
    mainLayout->addWidget( mpCurrentNote );
+   mainLayout->addWidget( mpChannels );
    mainLayout->addStretch( 1 );
 
    connect( mpPlayButton, SIGNAL(toggled(bool)),
@@ -93,6 +105,8 @@ void PsmkPlayerWidget::setup()
             this, SLOT(updatePlayerState(int,int)) );
    connect( mpCurrentPattern, SIGNAL(valueChanged(int)),
             this, SLOT(setPatternByCurrent()) );
+   connect( mpChannels, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(setChannels(int)) );
 
    setText();
 }
@@ -104,6 +118,12 @@ void PsmkPlayerWidget::setText()
    mpPlayButton->setIcon( style.standardIcon( mpPlayButton->isChecked() ? QStyle::SP_MediaStop : QStyle::SP_MediaPlay ) );
 
    setTitle( tr("Player:") );
+   mpChannels->clear();
+   /* order is the same as in enum PlayerConfig::Channels */
+   mpChannels->addItem( tr("Mono") );
+   mpChannels->addItem( tr("Stereo") );
+   mpChannels->addItem( tr("Left") );
+   mpChannels->addItem( tr("Right") );
 }
 
 
@@ -139,4 +159,15 @@ void PsmkPlayerWidget::updateSong()
 void PsmkPlayerWidget::setPatternByCurrent()
 {
    mpPlayerEmulation->setCurrentPattern( mpCurrentPattern->value() - 1 );
+}
+
+
+void PsmkPlayerWidget::setChannels( int index )
+{
+   PlayerConfig::Channels channels = PlayerConfig::Mono;
+   if( (index >= 0) && (index < 4) )
+   {
+      channels = static_cast<PlayerConfig::Channels>( index );
+   }
+   mpPlayerEmulation->setChannels( channels );
 }

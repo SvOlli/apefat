@@ -20,6 +20,7 @@
 
 /* local headers */
 #include "PsmkPlayerWidget.hpp"
+#include "PlayerConfig.hpp"
 
 /* forward declaration of Qt classes */
 class QTimer;
@@ -50,6 +51,13 @@ public:
 
    */
    virtual ~PlayerEmulation();
+
+   /*!
+    \brief \todo
+
+    \param channels
+   */
+   void setChannels( PlayerConfig::Channels channels );
 
 public slots:
    /*!

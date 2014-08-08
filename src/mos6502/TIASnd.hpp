@@ -35,6 +35,14 @@
 class TIASound
 {
   public:
+   enum ChannelMode {
+     Hardware2Mono,    // mono sampling with 2 hardware channels
+     Hardware2Stereo,  // stereo sampling with 2 hardware channels
+     Hardware2Left,    // stereo sampling only outputing left channel (0)
+     Hardware2Right,   // stereo sampling only outputing right channel (1)
+     Hardware1         // mono/stereo sampling with only 1 hardware channel
+   };
+
     /**
       Create a new TIA Sound object using the specified output frequency
     */
@@ -67,6 +75,7 @@ class TIASound
       @return  Status of the channel configuration used
     */
     string channels(uInt32 hardware, bool stereo);
+    string channels(uInt32 hardware, ChannelMode mode);
 
   public:
     /**
@@ -131,12 +140,6 @@ class TIASound
       DIV3_MASK  = 0x0c,
       AUDV_SHIFT = 10     // shift 2 positions for AUDV,
                           // then another 8 for 16-bit sound
-    };
-
-    enum ChannelMode {
-      Hardware2Mono,    // mono sampling with 2 hardware channels
-      Hardware2Stereo,  // stereo sampling with 2 hardware channels
-      Hardware1         // mono/stereo sampling with only 1 hardware channel
     };
 
   private:

@@ -12,16 +12,26 @@
 /* system headers */
 
 /* Qt headers */
+#if QT_VERSION < 0x050000
 #include <QApplication>
 #include <QBoxLayout>
 #include <QCheckBox>
-#include <QClipboard>
 #include <QLabel>
-#include <QMimeData>
 #include <QPushButton>
 #include <QScrollArea>
-#include <QSignalMapper>
 #include <QTextEdit>
+#else
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QBoxLayout>
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
+#include <QtWidgets/QTextEdit>
+#endif
+#include <QClipboard>
+#include <QMimeData>
+#include <QSignalMapper>
 
 /* local library headers */
 

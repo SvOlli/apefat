@@ -12,19 +12,32 @@
 /* system headers */
 
 /* Qt headers */
+#if QT_VERSION < 0x050000
 #include <QApplication>
-#include <QClipboard>
 #include <QBoxLayout>
 #include <QCheckBox>
 #include <QCommonStyle>
-#include <QDragEnterEvent>
 #include <QGridLayout>
 #include <QLineEdit>
 #include <QLabel>
 #include <QPushButton>
-#include <QSettings>
 #include <QSpinBox>
 #include <QStackedWidget>
+#else
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QBoxLayout>
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QCommonStyle>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
+#include <QtWidgets/QStackedWidget>
+#endif
+#include <QDragEnterEvent>
+#include <QClipboard>
+#include <QSettings>
 #include <QTimer>
 
 /* local library headers */

@@ -12,7 +12,14 @@
 /* system headers */
 
 /* Qt headers */
-#include <QtGui>
+#if QT_VERSION < 0x050000
+#include <QApplication>
+#include <QMenuBar>
+#else
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMenuBar>
+#endif
+#include <QSettings>
 
 /* local library headers */
 

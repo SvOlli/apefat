@@ -10,7 +10,12 @@
 #define PSMKCONTEXTMENU_HPP PSMKCONTEXTMENU_HPP
 
 /* base class */
+#include <QtGlobal>
+#if QT_VERSION < 0x050000
 #include <QMenu>
+#else
+#include <QtWidgets/QMenu>
+#endif
 
 /* system headers */
 

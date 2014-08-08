@@ -10,7 +10,12 @@
 #define PSMKINSTRUMENTWIDGET_HPP PSMKINSTRUMENTWIDGET_HPP
 
 /* base class */
+#include <QtGlobal>
+#if QT_VERSION < 0x050000
 #include <QGroupBox>
+#else
+#include <QtWidgets/QGroupBox>
+#endif
 
 /* system headers */
 

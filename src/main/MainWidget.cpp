@@ -12,17 +12,29 @@
 /* system headers */
 
 /* Qt headers */
+#if QT_VERSION < 0x050000
 #include <QApplication>
 #include <QBoxLayout>
 #include <QCommonStyle>
 #include <QLabel>
 #include <QPushButton>
 #include <QScrollArea>
-#include <QSettings>
 #include <QTabWidget>
 #include <QTextEdit>
-#include <QTimer>
 #include <QFileDialog>
+#else
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QBoxLayout>
+#include <QtWidgets/QCommonStyle>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
+#include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTextEdit>
+#include <QtWidgets/QFileDialog>
+#endif
+#include <QSettings>
+#include <QTimer>
 
 /* local library headers */
 #include <json.h>

@@ -10,7 +10,12 @@
 #define PSMKTONECOMBOBOX_HPP PSMKTONECOMBOBOX_HPP
 
 /* base class */
+#include <QtGlobal>
+#if QT_VERSION < 0x050000
 #include <QComboBox>
+#else
+#include <QtWidgets/QComboBox>
+#endif
 
 /* system headers */
 

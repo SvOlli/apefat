@@ -12,12 +12,20 @@
 /* system headers */
 
 /* Qt headers */
-#include <QGridLayout>
+#if QT_VERSION < 0x050000
 #include <QCheckBox>
+#include <QGridLayout>
 #include <QLabel>
 #include <QLineEdit>
-#include <QSignalMapper>
 #include <QSpinBox>
+#else
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QSpinBox>
+#endif
+#include <QSignalMapper>
 
 /* local library headers */
 #include <Tones.h>

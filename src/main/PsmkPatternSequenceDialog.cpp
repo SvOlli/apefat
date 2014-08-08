@@ -12,15 +12,25 @@
 /* system headers */
 
 /* Qt headers */
+#if QT_VERSION < 0x050000
 #include <QApplication>
 #include <QBoxLayout>
-#include <QClipboard>
 #include <QLabel>
-#include <QMimeData>
 #include <QPushButton>
 #include <QScrollArea>
-#include <QSettings>
 #include <QTextEdit>
+#else
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QBoxLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
+#include <QtWidgets/QTextEdit>
+#endif
+#include <QClipboard>
+#include <QMimeData>
+#include <QSettings>
+
 
 /* local library headers */
 

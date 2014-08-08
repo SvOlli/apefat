@@ -10,7 +10,12 @@
 #define PSMKPLAYERWIDGET_HPP PSMKPLAYERWIDGET_HPP
 
 /* base class */
+#include <QtGlobal>
+#if QT_VERSION < 0x050000
 #include <QGroupBox>
+#else
+#include <QtWidgets/QGroupBox>
+#endif
 
 /* system headers */
 
@@ -21,6 +26,7 @@
 /* local headers */
 
 /* forward declaration of Qt classes */
+class QComboBox;
 class QSpinBox;
 class QThread;
 class QToolButton;
@@ -69,6 +75,7 @@ public slots:
    void updatePlayerState( int pattern, int note );
    void updateSong();
    void setPatternByCurrent();
+   void setChannels( int index );
 
 signals:
    void playingPattern( int pattern );
@@ -84,6 +91,7 @@ private:
    QToolButton          *mpLoopButton;
    QSpinBox             *mpCurrentPattern;
    QSpinBox             *mpCurrentNote;
+   QComboBox            *mpChannels;
 };
 
 #endif

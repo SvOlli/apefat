@@ -12,13 +12,22 @@
 /* system headers */
 
 /* Qt headers */
+#if QT_VERSION < 0x050000
 #include <QBoxLayout>
 #include <QCheckBox>
 #include <QCommonStyle>
-#include <QDragEnterEvent>
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
+#else
+#include <QtWidgets/QBoxLayout>
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QCommonStyle>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
+#endif
+#include <QDragEnterEvent>
 
 /* local library headers */
 #include <json.h>

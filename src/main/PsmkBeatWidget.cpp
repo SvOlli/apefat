@@ -12,15 +12,22 @@
 /* system headers */
 
 /* Qt headers */
+#if QT_VERSION < 0x050000
 #include <QBoxLayout>
-#include <QDragEnterEvent>
-#include <QDropEvent>
 #include <QLabel>
 #include <QLineEdit>
+#else
+#include <QtWidgets/QBoxLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#endif
+#include <QDragEnterEvent>
+#include <QDropEvent>
 #include <QMimeData>
 #include <QPainter>
 #include <QSignalMapper>
 #include <QTimer>
+
 
 /* local library headers */
 #include <json.h>
