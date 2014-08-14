@@ -11,7 +11,8 @@ PROJECT( mos6502 )
 
 INCLUDE( LocalTools )
 
-INCLUDE_DIRECTORIES( ${SDL_INCLUDE_DIR}
+INCLUDE_DIRECTORIES(
+   ${SDL2_INCLUDE_DIRS}
 )
 
 ADD_SOURCE( bspf                  hpp )

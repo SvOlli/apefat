@@ -65,10 +65,26 @@ INCLUDE_DIRECTORIES(
 )
 
 # SDL is needed for audio only
-SET( SDL_BUILDING_LIBRARY 1 )
-FIND_PACKAGE( SDL REQUIRED )
+SET( SDL2_BUILDING_LIBRARY 1 )
+INCLUDE( FindSDL2 )
+#FIND_PACKAGE( SDL REQUIRED )
 #FindSDL()
 
+# end of searching for external components print out results
+IF( NOT SDL2_FOUND )
+   MESSAGE( STATUS "SDL2 NOT FOUND!")
+   SET( FAIL TRUE )
+ELSE( NOT SDL2_FOUND )
+   MESSAGE( STATUS "SDL2 found." )
+   MESSAGE( STATUS "  include dir: ${SDL2_INCLUDE_DIRS}" )
+   MESSAGE( STATUS "  libraries: ${SDL2_LIBRARIES}" )
+ENDIF( NOT SDL2_FOUND )
+MESSAGE( STATUS "Qt Edition: ${QT_EDITION} Version: ${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}" )
+MESSAGE( STATUS "QT_USE_FILE=${QT_USE_FILE}" )
+
+IF( FAIL )
+   MESSAGE( FATAL "Not all build requirements are fulfilled" )
+ENDIF( FAIL )
 
 # additional cmake files
 SET( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake )
