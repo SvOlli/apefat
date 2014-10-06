@@ -1,6 +1,7 @@
 
 TEMPLATE     = lib
 TARGET       = json
+DESTDIR      = ../lib
 DEPENDPATH  += .
 INCLUDEPATH += .
 CONFIG      += staticlib

@@ -1,6 +1,7 @@
 
 TEMPLATE     = lib
 TARGET       = notemapping
+DESTDIR      = ../lib
 DEPENDPATH  += .
 INCLUDEPATH += .
 CONFIG      += staticlib

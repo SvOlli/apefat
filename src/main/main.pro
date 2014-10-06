@@ -1,11 +1,11 @@
 
 TEMPLATE     = app
 TARGET       = apefat
+DESTDIR      = ../bin
 DEPENDPATH  += .
 INCLUDEPATH += . ../json ../notemapping ../mos6502
-LIBS        += -L../json -ljson
-LIBS        += -L../notemapping -lnotemapping
-LIBS        += -L../mos6502 -lmos6502
+QMAKE_LIBDIR+= ../lib
+LIBS        += -ljson -lnotemapping -lmos6502
 QT          += core gui network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

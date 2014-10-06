@@ -1,6 +1,7 @@
 
 TEMPLATE     = lib
 TARGET       = mos6502
+DESTDIR      = ../lib
 DEPENDPATH  += .
 INCLUDEPATH += .
 CONFIG      += staticlib
