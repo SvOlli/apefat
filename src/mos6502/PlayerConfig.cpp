@@ -9,7 +9,9 @@
 /* class declaration */
 #include "PlayerConfig.hpp"
 
-#include "QFile"
+#if 0
+#include <QFile>
+#endif
 
 #include "System.hpp"
 #include "TIASnd.hpp"
@@ -112,6 +114,7 @@ bool PlayerConfig::keepOnRunning()
 }
 
 
+#if 0
 void PlayerConfig::dumpMem()
 {
    static int counter = 0;
@@ -120,3 +123,4 @@ void PlayerConfig::dumpMem()
    tmp.write( (const char*)&mMemory[0], 0x2000 );
    tmp.close();
 }
+#endif

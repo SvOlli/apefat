@@ -17,6 +17,7 @@
 /* Qt headers */
 #include <QFile>
 #include <QTimer>
+#include <QDir>
 
 /* local library headers */
 #include <PlayerConfig.hpp>

@@ -28,6 +28,7 @@
 #include <QtWidgets/QPushButton>
 #endif
 #include <QDragEnterEvent>
+#include <QMimeData>
 
 /* local library headers */
 #include <json.h>

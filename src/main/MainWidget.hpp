@@ -14,7 +14,7 @@
 #if QT_VERSION < 0x050000
 #include <QWidget>
 #else
-#include <QtWidgets/QtWidget>
+#include <QtWidgets/QWidget>
 #endif
 
 /* system headers */

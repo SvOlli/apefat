@@ -135,7 +135,7 @@ void MainWidget::fileSave()
          int indention = 0;
          foreach( QChar c, data )
          {
-            switch( c.toAscii() )
+            switch( c.toLatin1() )
             {
 #if 1
             case '{':
