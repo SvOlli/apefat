@@ -9,6 +9,7 @@
 /* class declaration */
 #include "cpu6502.hpp"
 #include "PlayerEmulation.hpp"
+#define SDL_MAIN_HANDLED
 #include "SoundSDL2.hpp"
 #include "TIASnd.hpp"
 

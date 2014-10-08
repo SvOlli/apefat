@@ -20,6 +20,7 @@
 #include <sstream>
 #include <cassert>
 #include <cmath>
+#define SDL_MAIN_HANDLED
 #include <SDL.h>
 
 #include "System.hpp"
